@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Archivos de origen">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Archivos de encabezado">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Archivos de recursos">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{65af20f0-83ba-491e-97d0-a012280a02b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logic">
+      <UniqueIdentifier>{dc950c45-7607-4585-967e-c248a793d88a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Screen">
+      <UniqueIdentifier>{015e844a-a277-46d3-9f6f-e4525fbb9d25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Screen\Credits">
+      <UniqueIdentifier>{a154c5c2-6019-4b04-9502-1c1b292e1d96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Screen\Defeat">
+      <UniqueIdentifier>{69dae809-2f13-4b21-a756-8afab20b8c9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Screen\Gameplay">
+      <UniqueIdentifier>{917c7dba-0e37-4481-8520-8ba4f141cfb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Screen\Menu">
+      <UniqueIdentifier>{91cd1828-d897-472c-9096-701246dbc9a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Screen\Win">
+      <UniqueIdentifier>{661f30bb-e2c4-406f-aa66-a7ed640c9682}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logic\Player">
+      <UniqueIdentifier>{ff979276-501a-40be-8f03-15135baeae8a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
