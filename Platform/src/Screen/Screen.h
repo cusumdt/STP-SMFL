@@ -9,6 +9,10 @@ public:
 	Screen();
 	Screen(int width, int height);
 	virtual ~Screen();
+	void setWidth(const int width);
+	void setHeight(const int height);
+	int getWidth() const { return _width; }
+	int getHeight() const { return _height; }
 };
 
 #endif // !SCREEN_H
