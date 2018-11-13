@@ -49,7 +49,6 @@
     <ClCompile Include="..\src\Screen\Credits\Credits.cpp">
       <Filter>Screen\Credits</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp" />
     <ClCompile Include="..\src\Logic\Player\Player.cpp">
       <Filter>Logic\Player</Filter>
     </ClCompile>
@@ -73,7 +72,6 @@
     <ClInclude Include="..\src\Screen\Credits\Credits.h">
       <Filter>Screen\Credits</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h" />
     <ClInclude Include="..\src\Logic\Player\Player.h">
       <Filter>Logic\Player</Filter>
     </ClInclude>

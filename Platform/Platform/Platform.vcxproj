@@ -27,7 +27,6 @@
     <ClCompile Include="..\src\Screen\Menu\Menu.cpp" />
     <ClCompile Include="..\src\Screen\Screen.cpp" />
     <ClCompile Include="..\src\Screen\Win\Win.cpp" />
-    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Logic\Player\Player.h" />
@@ -37,7 +36,6 @@
     <ClInclude Include="..\src\Screen\Menu\Menu.h" />
     <ClInclude Include="..\src\Screen\Screen.h" />
     <ClInclude Include="..\src\Screen\Win\Win.h" />
-    <ClInclude Include="Player.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -97,6 +95,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libs\SFML\include;$(SolutionDir)Libs\STP\include;$(SolutionDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
