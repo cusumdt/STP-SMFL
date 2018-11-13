@@ -1,18 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Archivos de origen">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Archivos de encabezado">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Archivos de recursos">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Game">
       <UniqueIdentifier>{65af20f0-83ba-491e-97d0-a012280a02b7}</UniqueIdentifier>
     </Filter>
@@ -40,5 +28,54 @@
     <Filter Include="Logic\Player">
       <UniqueIdentifier>{ff979276-501a-40be-8f03-15135baeae8a}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\Screen\Screen.cpp">
+      <Filter>Screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Screen\Menu\Menu.cpp">
+      <Filter>Screen\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Screen\Win\Win.cpp">
+      <Filter>Screen\Win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Screen\Gameplay\Gameplay.cpp">
+      <Filter>Screen\Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Screen\Defeat\Defeat.cpp">
+      <Filter>Screen\Defeat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Screen\Credits\Credits.cpp">
+      <Filter>Screen\Credits</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="..\src\Logic\Player\Player.cpp">
+      <Filter>Logic\Player</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Screen\Screen.h">
+      <Filter>Screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Screen\Menu\Menu.h">
+      <Filter>Screen\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Screen\Win\Win.h">
+      <Filter>Screen\Win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Screen\Gameplay\Gameplay.h">
+      <Filter>Screen\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Screen\Defeat\Defeat.h">
+      <Filter>Screen\Defeat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Screen\Credits\Credits.h">
+      <Filter>Screen\Credits</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="..\src\Logic\Player\Player.h">
+      <Filter>Logic\Player</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
