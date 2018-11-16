@@ -1,5 +1,9 @@
-Platform/.vs/
-Platform/[Oo]bj/
+#Ignore bin
 Platform/[Bb]in/
-Platform/*.db
-Platform/*.opendb
+
+#Ignore obj
+Platform/[Oo]bj/
+
+#Ignore .vs except .suo
+**/.vs
+.vs\Platform\v15\!.suo
