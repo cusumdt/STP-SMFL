@@ -1,15 +1,16 @@
 #include "game.h"
 
-#include <SFML/Graphics.hpp>
 #include "STP/TMXLoader.hpp"
 
+#include "../Player/player.h"
 using namespace tmx;
 using namespace sf;
 
 namespace G {
-
-	sf::RenderWindow window(sf::VideoMode(1280, 768), "TILED");
-	tmx::TileMap map("res/map.tmx");
+	RenderWindow window (sf::VideoMode(640, 768), "TILED");
+	tmx::TileMap map("res/tile.tmx");
+	sf::View vw1;
+	Player* player = new Player();
 
 	Game::Game() {
 
@@ -33,6 +34,7 @@ namespace G {
 		window.clear();
 		// Draw the map
 		window.draw(map);
+		player->drawPlayer();
 		// Update the window
 		window.display();
 	}
@@ -42,7 +44,6 @@ namespace G {
 
 	void Game::runGame() {
 		init();
-
 		// Main game loop
 		while (window.isOpen())
 		{
@@ -53,6 +54,12 @@ namespace G {
 				if (event.type == sf::Event::Closed)
 					window.close();
 			}
+		
+			player->movement();
+			vw1.reset(sf::FloatRect(player->getX(),0.f,640,768));
+			window.setView(vw1);
+			sf::View currentView = window.getView();
+		
 			update();
 			draw();
 		}

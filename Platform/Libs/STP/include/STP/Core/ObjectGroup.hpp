@@ -52,6 +52,8 @@ enum ObjectType { Rectangle, Ellipse, Polygon, Polyline, Tile };
 ////////////////////////////////////////////////////////////
 class STP_API ObjectGroup : public MapObject {
  public:
+	 class Object;
+	 std::vector<tmx::ObjectGroup::Object> objects_;
     ////////////////////////////////////////////////////////////
     /// \brief Default constructor
     ///
@@ -79,7 +81,7 @@ class STP_API ObjectGroup : public MapObject {
     /// Nested classes
     ///
     ////////////////////////////////////////////////////////////
-    class Object;
+
 
     ////////////////////////////////////////////////////////////
     /// \brief Add a new Object to the object group
@@ -107,9 +109,6 @@ class STP_API ObjectGroup : public MapObject {
 
  private:
     void draw(sf::RenderTarget& target, sf::RenderStates states) const;
-
- private:
-    std::vector<tmx::ObjectGroup::Object> objects_;
 };
 
 ////////////////////////////////////////////////////////////
