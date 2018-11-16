@@ -1,5 +1,6 @@
 #include "player.h"
-
+static const short int velocity = 2;
+static bool ifInsideMap(float x);
 Player::Player()
 {
 	_x = 0;
@@ -27,13 +28,20 @@ void Player::drawPlayer()
 }
 void Player::movement() 
 {
+
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) 
 	{
-		if(_x<640)_x += 1; 
+		if(ifInsideMap(_x))_x += velocity;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) 
 	{
-		if(_x>0)_x -= 1; 
+		if(_x>0)_x -= velocity; 
 	}
 	sprite.setPosition(_x+100, _y);
+}
+
+bool ifInsideMap(float x)
+{
+	if (x < G::map.GetWidth()*G::map.GetTileWidth() - G::window.getSize().x) { return true; }
+	else { return false; }
 }

@@ -1,7 +1,5 @@
 #include "game.h"
 
-#include "STP/TMXLoader.hpp"
-
 #include "../Player/player.h"
 using namespace tmx;
 using namespace sf;
@@ -9,6 +7,7 @@ using namespace sf;
 namespace G {
 	RenderWindow window (sf::VideoMode(640, 768), "TILED");
 	tmx::TileMap map("res/tile.tmx");
+	
 	sf::View vw1;
 	Player* player = new Player();
 

@@ -1,8 +1,9 @@
 #ifndef GAME_H
 #define GAME_H
 #include "SFML/Graphics.hpp"
+#include "STP/TMXLoader.hpp"
 namespace G {
-
+	extern tmx::TileMap map;
 	extern	sf::RenderWindow window;
 
 	class Game {
