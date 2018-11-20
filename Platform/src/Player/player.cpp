@@ -27,12 +27,12 @@ void Player::drawPlayer() {
 
 void Player::movement() {
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
 		if (Player::playerScreenLimiter()) {
 			_x += velocity;
 		}
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 		if (_x > 0) {
 			_x -= velocity;
 		}

@@ -23,15 +23,18 @@ void Camera::setRotation(float rotation){
 }
 void Camera::movementCamera(){
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)){
 		if (Camera::CameraScreenLimiter()) {
 			_pos.x += velocity;
 		}
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)){
 		if (_pos.x > 0) {
 			_pos.x -= velocity;
 		}
+	}
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
+
 	}
 }
 void Camera::shakeCamera(){
