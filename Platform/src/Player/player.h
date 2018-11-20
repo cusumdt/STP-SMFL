@@ -17,6 +17,7 @@ public:
 	float getY(){ return _y; }
 	void drawPlayer();
 	void movement();
+	bool playerScreenLimiter() { return (_x < G::map.GetWidth()*G::map.GetTileWidth()- texture.getSize().x); }
 };
 
 

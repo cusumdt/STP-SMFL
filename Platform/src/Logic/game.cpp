@@ -1,6 +1,7 @@
 #include "game.h"
 
 #include "../Player/player.h"
+#include "../Utility/camera.h"
 using namespace tmx;
 using namespace sf;
 
@@ -10,7 +11,7 @@ namespace G {
 	
 	sf::View vw1;
 	Player* player = new Player();
-
+	Camera* camera = new Camera();
 	Game::Game() {
 
 	}
@@ -53,9 +54,9 @@ namespace G {
 				if (event.type == sf::Event::Closed)
 					window.close();
 			}
-		
+			camera->movementCamera();
 			player->movement();
-			vw1.reset(sf::FloatRect(player->getX(),0.f,640,768));
+			vw1.reset(sf::FloatRect(camera->getPosX(),0.f,640,768));
 			window.setView(vw1);
 			sf::View currentView = window.getView();
 		

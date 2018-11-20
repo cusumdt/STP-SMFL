@@ -2,8 +2,7 @@
 
 using namespace G;
 
-int main()
-{
+int main(){
 	Game* game = new Game();
 	game->runGame();
 	delete game;
