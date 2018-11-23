@@ -1,7 +1,7 @@
 #ifndef GAMEPLAY_H
 #define GAMEPLAY_H
 
-namespace GP {
+namespace platform {
 
 	class Gameplay {
 	public:

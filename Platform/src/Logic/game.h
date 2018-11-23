@@ -2,7 +2,7 @@
 #define GAME_H
 #include "SFML/Graphics.hpp"
 #include "STP/TMXLoader.hpp"
-namespace G {
+namespace platform {
 	extern tmx::TileMap map;
 	extern	sf::RenderWindow window;
 

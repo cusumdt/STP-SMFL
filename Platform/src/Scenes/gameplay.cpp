@@ -6,7 +6,7 @@
 using namespace tmx;
 using namespace sf;
 
-namespace GP {
+namespace platform {
 
 	Gameplay::Gameplay() {
 

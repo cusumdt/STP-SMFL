@@ -1,6 +1,6 @@
 #include "Logic\game.h"
 
-using namespace G;
+using namespace platform;
 
 int main(){
 	Game* game = new Game();

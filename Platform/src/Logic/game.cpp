@@ -5,13 +5,14 @@
 using namespace tmx;
 using namespace sf;
 
-namespace G {
+namespace platform {
 	RenderWindow window (sf::VideoMode(640, 768), "TILED");
 	tmx::TileMap map("res/tile.tmx");
 	
 	sf::View vw1;
 	Player* player = new Player();
 	Camera* camera = new Camera();
+
 	Game::Game() {
 
 	}
@@ -19,7 +20,6 @@ namespace G {
 	Game::~Game() {
 
 	}
-
 
 	void Game::init() {
 		map.ShowObjects(); // Display all the layer objects.
@@ -54,8 +54,9 @@ namespace G {
 				if (event.type == sf::Event::Closed)
 					window.close();
 			}
-			camera->movementCamera();
 			player->movement();
+			camera->movementCamera(player->getX(),0.0f,player->initPositionX());
+		
 			vw1.reset(sf::FloatRect(camera->getPosX(),0.f,640,768));
 			window.setView(vw1);
 			sf::View currentView = window.getView();
