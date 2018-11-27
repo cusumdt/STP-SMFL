@@ -13,4 +13,4 @@ All notable changes to this project will be documented in this file.
 -Fixed Things
 
 ## [Versions]
-[0.1]: https://github.com/InsaneFury/flappybird/compare/v0.1...v0.2
+[0.1]: https://github.com/InsaneFury/flappybird/compare/v0.1...v0.5
