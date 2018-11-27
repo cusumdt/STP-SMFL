@@ -57,7 +57,7 @@ namespace platform {
 					window.close();
 			}
 			player->movement();
-			camera->movementCamera(player->getX(),0.0f,player->initPositionX());
+			camera->movementCamera(player,FOLLOW);
 		
 			vw1.reset(sf::FloatRect(camera->getPosX(),0.f,screenWidth,screenHeight));
 			window.setView(vw1);

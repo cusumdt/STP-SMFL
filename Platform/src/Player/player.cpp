@@ -34,13 +34,19 @@ namespace platform
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
 			if (Player::playerScreenLimiter()) {
 				_x += velocity;
+				sprite.setPosition(_x, _y);
+				whatKeyPressed = RIGHT;
 			}
 		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-			if (_x > initPositionX()) {
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+			if (_x > 0) {
 				_x -= velocity;
+				sprite.setPosition(_x, _y);
+				whatKeyPressed = LEFT;
 			}
+		}else{
+			whatKeyPressed = NONE;
 		}
-		sprite.setPosition(_x, _y);
+	
 	}
 }

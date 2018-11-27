@@ -1,9 +1,12 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 #include "../Logic/game.h"
-
+#include "../Player/player.h"
 namespace platform {
-
+	enum TypeCamera
+	{
+		STAGE,FOLLOW
+	};
 	class Camera {
 	private:
 		sf::Vector2f _pos;
@@ -19,7 +22,8 @@ namespace platform {
 		void setPosY(float posY);
 		void setPos(sf::Vector2f pos);
 		void setRotation(float rotation);
-		void movementCamera(float posX,float posY, float posPlayerInCamera);
+		//void movementCamera(float posX,float posY, float posPlayerInCamera);
+		void movementCamera(Player* player, TypeCamera type);
 		void shakeCamera();
 		bool CameraScreenLimiter() { return (_pos.x < map.GetWidth()*map.GetTileWidth() - window.getSize().x); }
 	};
