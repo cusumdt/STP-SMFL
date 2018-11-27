@@ -1,6 +1,16 @@
-![logo](https://github.com/cusumdt/Dragons-SideScrolling/blob/master/Dragons-SideScrolling/res/logo.png)
+# SIMPLE PLATFORMER Change Log
 
-# V-0.1 <br/> 
+All notable changes to this project will be documented in this file.
 
-* --------------- <br/> 
+## [0.1] - 2018-11-27
+### Added
+- Added things
 
+### Changed
+-modified Things
+
+### Fixed
+-Fixed Things
+
+## [Versions]
+[0.1]: https://github.com/InsaneFury/flappybird/compare/v0.1...v0.2
