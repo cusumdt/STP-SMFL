@@ -26,9 +26,12 @@ namespace platform {
 	}
 	void Camera::movementCamera(float posX, float posY, float posPlayerInCamera) {
 		if (CameraScreenLimiter()) {
-			_pos.x = posX - posPlayerInCamera;
+			if (posX >= posPlayerInCamera * 2) {
+				_pos.x = posX - posPlayerInCamera *2 ;
+			}
 			_pos.y = posY;
 		}
+
 	}
 	void Camera::shakeCamera() {
 	}
