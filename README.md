@@ -1,5 +1,5 @@
 <p align="center">
-<h1>LOGO</h1>
+<h1 align="center">LOGO</h1>
 </p>
 
 # Hello!
@@ -8,10 +8,10 @@ A simple platformer.
 Enjoy!
 
 # Some Screenshots
--image-image-image
--image-image-image
--image-image-image
--image-image-image
+-image-image-image<br>
+-image-image-image<br>
+-image-image-image<br>
+-image-image-image<br>
 -image-image-image
 
 # Skills Ivan Castellano
@@ -30,13 +30,13 @@ Enjoy!
 
 
 # Social Networks 
-**Ivan Castellano**
+**Ivan Castellano** <br>
 [![Twitter URL](https://img.shields.io/badge/Twitter--cyan.svg?longCache=true&style=flat-square)](https://twitter.com/IvanCaastellano)
 [![Instagram URL](https://img.shields.io/badge/Instagram--ff69b4.svg?longCache=true&style=flat-square)](https://www.instagram.com/ivancastellanoo)
 [![Facebook URL](https://img.shields.io/badge/Facebook--blue.svg?longCache=true&style=flat-square)](https://www.facebook.com/ivanignaciocastellano)
 [![Soundcloud URL](https://img.shields.io/badge/Soundcloud--yellow.svg?longCache=true&style=flat-square)](https://soundcloud.com/justdarsan)
 
-**Cristian Cusumano**
+**Cristian Cusumano** <br>
 [![Instagram URL](https://img.shields.io/badge/Instagram--ff69b4.svg?longCache=true&style=flat-square)](https://www.instagram.com/cristian_cusumano)
 [![Facebook URL](https://img.shields.io/badge/Facebook--blue.svg?longCache=true&style=flat-square)](https://www.facebook.com/cristiancusumano)
 
