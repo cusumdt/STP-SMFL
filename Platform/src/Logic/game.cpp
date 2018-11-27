@@ -6,7 +6,9 @@ using namespace tmx;
 using namespace sf;
 
 namespace platform {
-	RenderWindow window (sf::VideoMode(640, 768), "TILED");
+	static const short int screenWidth = 1280;
+	static const short int screenHeight = 768;
+	RenderWindow window (sf::VideoMode(screenWidth, screenHeight), "TILED");
 	tmx::TileMap map("res/tile.tmx");
 	
 	sf::View vw1;
@@ -57,7 +59,7 @@ namespace platform {
 			player->movement();
 			camera->movementCamera(player->getX(),0.0f,player->initPositionX());
 		
-			vw1.reset(sf::FloatRect(camera->getPosX(),0.f,640,768));
+			vw1.reset(sf::FloatRect(camera->getPosX(),0.f,screenWidth,screenHeight));
 			window.setView(vw1);
 			sf::View currentView = window.getView();
 		
