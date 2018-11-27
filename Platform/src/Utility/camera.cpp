@@ -40,10 +40,10 @@ namespace platform {
 			if (type == FOLLOW) {
 
 				if (player->getWhatKeyPressed() == RIGHT && player->getX() >= _pos.x + window.getSize().x / 2 + 100) {
-						_pos.x += 2;
+					_pos.x += 2;
 				}
 				if (player->getWhatKeyPressed() == LEFT && player->getX() <= _pos.x + window.getSize().x / 2 - 100 && _pos.x > 0) {
-						_pos.x -= 2;
+					_pos.x -= 2;
 				}
 				if (player->getWhatKeyPressed() == NONE) {
 					if (player->getX() > _pos.x + window.getSize().x / 2) {
@@ -59,10 +59,10 @@ namespace platform {
 			}
 			if (type == STAGE) {
 				if (player->getWhatKeyPressed() == RIGHT && player->getX() >= _pos.x + window.getSize().x) {
-						_pos.x += window.getSize().x -player->getTextureSizeX();
+					_pos.x += window.getSize().x - player->getTextureSizeX();
 				}
-				if (player->getWhatKeyPressed() == LEFT && player->getX() <= _pos.x && _pos.x>0) {
-						_pos.x -= window.getSize().x + player->getTextureSizeX();
+				if (player->getWhatKeyPressed() == LEFT && player->getX() <= _pos.x && _pos.x > 0) {
+					_pos.x -= window.getSize().x + player->getTextureSizeX();
 				}
 				if (_pos.x < 0) {
 					_pos.x = 0;
@@ -70,6 +70,15 @@ namespace platform {
 			}
 
 			_pos.y = player->getY();
+		}
+		if (!CameraScreenLimiter()) {
+			if (type == FOLLOW && player->getWhatKeyPressed() == LEFT && player->getX() <= _pos.x + window.getSize().x / 2 - 100) {
+				_pos.x -= 2;
+			}
+			if (type == STAGE && player->getWhatKeyPressed() == LEFT && player->getX() <= _pos.x && _pos.x > 0) {
+				_pos.x -= window.getSize().x + player->getTextureSizeX();
+			}
+
 		}
 
 	}
