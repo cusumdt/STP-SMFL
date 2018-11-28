@@ -24,17 +24,6 @@ namespace platform {
 	void Camera::setRotation(float rotation) {
 		_rotation = rotation;
 	}
-	/*
-	void Camera::movementCamera(float posX, float posY, float posPlayerInCamera) {
-		if (CameraScreenLimiter()) {
-			if (posX >= posPlayerInCamera * 2) {
-				_pos.x = posX - posPlayerInCamera *2 ;
-			}
-			_pos.y = posY;
-		}
-
-	}
-	*/
 	void Camera::movementCamera(Player* player, TypeCamera type) {
 		if (CameraScreenLimiter()) {
 			if (type == FOLLOW) {
