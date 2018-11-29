@@ -7,10 +7,10 @@ namespace platform {
 	extern tmx::TileMap map;
 	extern	sf::RenderWindow window;
 
-	class Game {
-	private:
-		
+	class Game {		
 	public:
+		static const short int screenWidth;
+		static const short int screenHeight;
 		static float _deltaTime;
 		Game();
 		~Game();

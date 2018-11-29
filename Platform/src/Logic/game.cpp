@@ -6,21 +6,17 @@ using namespace tmx;
 using namespace sf;
 
 namespace platform {
-	static const short int screenWidth = 1280;
-	static const short int screenHeight = 768;
-
-	RenderWindow window (VideoMode(screenWidth, screenHeight), "TILED",Style::Close);
-
-	tmx::TileMap map("res/tile.tmx");
+	//Screen Size
+	const short int Game::screenWidth = 1280;
+	const short int Game::screenHeight = 768;
 	
-	View vw1;
-	Player* player = new Player();
-	Camera* camera = new Camera();
-
+	//DeltaTime
 	Clock _clock;
 	Time _elapsed;
-
 	float Game::_deltaTime = 0;
+
+	//Window renderer
+	RenderWindow window (VideoMode(Game::screenWidth,Game::screenHeight), "Simple Platform",Style::Close);
 
 	Game::Game() {
 		_deltaTime = 0;
@@ -36,12 +32,7 @@ namespace platform {
 	}
 
 	void Game::update() {
-		player->movement();
-		camera->movementCamera(player, FOLLOW);
-
-		vw1.reset(sf::FloatRect(camera->getPosX(), 0.f, screenWidth, screenHeight));
-		window.setView(vw1);
-		View currentView = window.getView();
+		
 	}
 
 	void Game::draw() {
@@ -49,7 +40,7 @@ namespace platform {
 		window.clear();
 		// Draw the map
 		window.draw(map);
-		player->drawPlayer();
+		
 		// Update the window
 		window.display();
 	}

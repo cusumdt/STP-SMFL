@@ -32,6 +32,7 @@
     <ClInclude Include="..\src\Scenes\gameplay.h" />
     <ClInclude Include="..\src\Scenes\menu.h" />
     <ClInclude Include="..\src\Utility\camera.h" />
+    <ClInclude Include="..\src\Utility\const_data.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
