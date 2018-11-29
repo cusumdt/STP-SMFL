@@ -79,8 +79,8 @@ namespace platform
 		if (_isJumping) {
 			_timeJump += Game::_deltaTime;
 			std::cout << _timeJump<<std::endl;
-			if (_timeJump < 0.3f) {
-				_y -= PLAYER_VELOCITY * Game::_deltaTime;
+			if (_timeJump < 0.2f) {
+				_y -= PLAYER_VELOCITY * 2 * Game::_deltaTime;
 				sprite.setPosition(_x, _y);
 			
 
