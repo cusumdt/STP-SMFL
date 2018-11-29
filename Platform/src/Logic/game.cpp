@@ -2,8 +2,9 @@
 
 #include "../Player/player.h"
 #include "../Utility/camera.h"
-
 #include "../Scenes/gameplay.h"
+
+
 
 using namespace tmx;
 using namespace sf;
@@ -18,21 +19,23 @@ namespace platform {
 	Time _elapsed;
 	float Game::_deltaTime = 0;
 
-	//Window renderer
-	RenderWindow window (VideoMode(Game::screenWidth,Game::screenHeight), "Simple Platform",Style::None);
-	
-	ActualScene actualScene = GameScene;
+		//Window renderer
+	RenderWindow window(VideoMode(Game::screenWidth, Game::screenHeight), "Simple Platform", Style::None, ContextSettings(24, 8, 4));
+
 	Gameplay gameplay;
+	ActualScene actualScene = GameScene;
 
 	Game::Game() {
+		
 		_deltaTime = 0;
 	}
 
 	Game::~Game() {
-
+		
 	}
 
 	void Game::init() {
+		gameplay.init();
 		_deltaTime = 0;
 		switch (actualScene) {
 		case MenuScene:

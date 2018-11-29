@@ -15,7 +15,7 @@ namespace platform {
 
 	extern ActualScene actualScene;
 
-	class Game {		
+	class Game {
 	public:
 		static const short int screenWidth;
 		static const short int screenHeight;

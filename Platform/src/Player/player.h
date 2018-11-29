@@ -15,11 +15,14 @@ namespace platform {
 	private:
 		float _x;
 		float _y;
+		bool _isOnGround;
+		float _timeJump;
 		Key keyPressed;
 		sf::Texture texture;
 		sf::Sprite sprite;
 		Direction direction;
-		
+		sf::RectangleShape _collider;
+
 	public:
 		Player();
 		~Player();
@@ -33,7 +36,10 @@ namespace platform {
 		void drawPlayer();
 		void movement();
 		bool fire();
+		sf::RectangleShape getCollider();
 		bool playerScreenLimiter() { return (_x < map.GetWidth()*map.GetTileWidth() - texture.getSize().x); }
+		void setIsOnGround(bool isOnGround);
+		bool getIsOnGround() { return _isOnGround; }
 		Key getKeyPressed() { return keyPressed; }
 		Direction getDirection() { return direction; }
 	};

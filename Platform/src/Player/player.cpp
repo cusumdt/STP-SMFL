@@ -9,6 +9,9 @@ namespace platform
 		sprite.setTexture(texture);
 		sprite.setPosition(_x, _y);
 		direction = Direction::RIGHTD;
+		_collider.setPosition(sprite.getPosition());
+		_collider.setSize(sf::Vector2f(texture.getSize().x, texture.getSize().y));
+		_isOnGround = false;
 	}
 
 	Player::~Player() {
@@ -46,11 +49,35 @@ namespace platform
 				sprite.setScale(-1, 1);
 			}
 		}
+
+	
+		/*else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+			if (_isOnGround) {
+				_timeJump += Game::_deltaTime;
+				if (_timeJump < 1) {
+					_y -= PLAYER_VELOCITY * Game::_deltaTime;
+					sprite.setPosition(_x, _y);
+				}
+				else {
+					_isOnGround = false;
+				}
+			}
+		}*/
 		else{
 			keyPressed = Key::NONE;
 			sprite.setPosition(_x, _y);
 		}
-	
+		
+		//Move Collider
+		_collider.setPosition(sprite.getPosition());
+	}
+
+	sf::RectangleShape Player::getCollider() {
+		return _collider;
+	}
+
+	void Player::setIsOnGround(bool isOnGround) {
+		_isOnGround = isOnGround;
 	}
 	bool Player::fire() {
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {

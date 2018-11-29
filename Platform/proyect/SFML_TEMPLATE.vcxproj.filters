@@ -2,60 +2,40 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp" />
-    <ClCompile Include="..\src\Player\player.cpp">
-      <Filter>Player</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Scenes\gameplay.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Utility\camera.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="credits.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="gameOver.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Scenes\menu.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\pugixml\pugixml.cpp">
+      <Filter>pugixml</Filter>
+    </ClCompile>
     <ClCompile Include="..\src\Logic\game.cpp">
       <Filter>Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Utility\camera.cpp">
-      <Filter>Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="gameOver.cpp">
-      <Filter>Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="credits.cpp">
-      <Filter>Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Utility\gravity.cpp">
-      <Filter>Utility</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Player\bullet.cpp">
       <Filter>Player</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Player">
-      <UniqueIdentifier>{28c33277-ab9c-4043-b43e-613b3985004d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scenes">
-      <UniqueIdentifier>{dad16424-4976-4b87-ba67-c7ce76d5a6bd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Utility">
-      <UniqueIdentifier>{41a4585a-44bd-4d30-91d6-53afa4d427cc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Logic">
-      <UniqueIdentifier>{7cdbb824-d6cb-493f-af9f-129fd016dc56}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\src\Player\player.h">
+    <ClCompile Include="..\src\Player\player.cpp">
       <Filter>Player</Filter>
-    </ClInclude>
+    </ClCompile>
+    <ClCompile Include="..\src\Utility\gravity.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="..\src\Scenes\gameplay.h">
       <Filter>Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Scenes\menu.h">
-      <Filter>Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Logic\game.h">
-      <Filter>Logic</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Utility\camera.h">
       <Filter>Utility</Filter>
@@ -63,17 +43,49 @@
     <ClInclude Include="..\src\Utility\const_data.h">
       <Filter>Utility</Filter>
     </ClInclude>
-    <ClInclude Include="gameOver.h">
-      <Filter>Scenes</Filter>
-    </ClInclude>
     <ClInclude Include="credits.h">
       <Filter>Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Utility\gravity.h">
-      <Filter>Utility</Filter>
+    <ClInclude Include="gameOver.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Scenes\menu.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\pugixml\pugixml.hpp">
+      <Filter>pugixml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\pugixml\pugiconfig.hpp">
+      <Filter>pugixml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Logic\game.h">
+      <Filter>Logic</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Player\bullet.h">
       <Filter>Player</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\Player\player.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Utility\gravity.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Scenes">
+      <UniqueIdentifier>{36edb89e-c0d2-439d-8a83-7746a3074adf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{b7497e3f-065a-4041-b87b-523ce967ec96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pugixml">
+      <UniqueIdentifier>{792c6406-60d2-4d49-b87f-86fa3842756f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logic">
+      <UniqueIdentifier>{700c9ea4-272c-4818-be20-73d2efe41e62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Player">
+      <UniqueIdentifier>{93327de1-6cac-4163-a826-2a842eace65f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

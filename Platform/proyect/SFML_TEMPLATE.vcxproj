@@ -23,6 +23,7 @@
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\Player\bullet.cpp" />
     <ClCompile Include="..\src\Player\player.cpp" />
+    <ClCompile Include="..\src\pugixml\pugixml.cpp" />
     <ClCompile Include="..\src\Scenes\gameplay.cpp" />
     <ClCompile Include="..\src\Scenes\menu.cpp" />
     <ClCompile Include="..\src\Utility\camera.cpp" />
@@ -34,6 +35,8 @@
     <ClInclude Include="..\src\Logic\game.h" />
     <ClInclude Include="..\src\Player\bullet.h" />
     <ClInclude Include="..\src\Player\player.h" />
+    <ClInclude Include="..\src\pugixml\pugiconfig.hpp" />
+    <ClInclude Include="..\src\pugixml\pugixml.hpp" />
     <ClInclude Include="..\src\Scenes\gameplay.h" />
     <ClInclude Include="..\src\Scenes\menu.h" />
     <ClInclude Include="..\src\Utility\camera.h" />
