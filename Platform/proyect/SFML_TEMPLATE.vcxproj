@@ -21,20 +21,24 @@
   <ItemGroup>
     <ClCompile Include="..\src\Logic\game.cpp" />
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\Player\bullet.cpp" />
     <ClCompile Include="..\src\Player\player.cpp" />
     <ClCompile Include="..\src\Scenes\gameplay.cpp" />
     <ClCompile Include="..\src\Scenes\menu.cpp" />
     <ClCompile Include="..\src\Utility\camera.cpp" />
+    <ClCompile Include="..\src\Utility\gravity.cpp" />
     <ClCompile Include="credits.cpp" />
     <ClCompile Include="gameOver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Logic\game.h" />
+    <ClInclude Include="..\src\Player\bullet.h" />
     <ClInclude Include="..\src\Player\player.h" />
     <ClInclude Include="..\src\Scenes\gameplay.h" />
     <ClInclude Include="..\src\Scenes\menu.h" />
     <ClInclude Include="..\src\Utility\camera.h" />
     <ClInclude Include="..\src\Utility\const_data.h" />
+    <ClInclude Include="..\src\Utility\gravity.h" />
     <ClInclude Include="credits.h" />
     <ClInclude Include="gameOver.h" />
   </ItemGroup>

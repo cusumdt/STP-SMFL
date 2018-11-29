@@ -1,5 +1,4 @@
 #include "camera.h"
-#include	<iostream>
 static const short int velocity = 2;
 namespace platform {
 
@@ -27,9 +26,6 @@ namespace platform {
 	}
 	void Camera::setMoveSpeed(float speed) {
 		_moveSpeed = speed;
-	}
-	float Camera::getMoveSpeed() {
-		return _moveSpeed;
 	}
 	void Camera::movementCamera(Player* player, TypeCamera type) {
 		if (CameraScreenLimiter()) {

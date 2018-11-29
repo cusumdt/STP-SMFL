@@ -1,7 +1,5 @@
 #include "player.h"
 
-#include <iostream>
-
 namespace platform
 {
 
@@ -13,10 +11,11 @@ namespace platform
 		texture.loadFromFile("res/Player/idle/anim1.png");
 		sprite.setTexture(texture);
 		sprite.setPosition(_x, _y);
+		direction = Direction::RIGHT;
 	}
 
 	Player::~Player() {
-
+	
 	}
 
 	void Player::setX(float x) {
@@ -32,24 +31,32 @@ namespace platform
 	}
 
 	void Player::movement() {
-
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
 			if (Player::playerScreenLimiter()) {
 				_x += velocity * Game::_deltaTime;
 				sprite.setPosition(_x, _y);
-				keyPressed = RIGHT;
+				direction = Direction::RIGHT;
+				keyPressed = Key::RIGHT;
 			}
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 			if (_x > 0) {
 				_x -= velocity * Game::_deltaTime;
 				sprite.setPosition(_x, _y);
-				keyPressed = LEFT;
+				direction = Direction::LEFT;
+				keyPressed = Key::LEFT;
 			}
 		}
 		else{
-			keyPressed = NONE;
+			keyPressed = Key::NONE;
+			sprite.setPosition(_x, _y);
 		}
 	
+	}
+	bool Player::fire() {
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+			return true;
+		}
+		return false;
 	}
 }

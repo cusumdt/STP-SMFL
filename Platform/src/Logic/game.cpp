@@ -34,6 +34,7 @@ namespace platform {
 
 	void Game::init() {
 		_deltaTime = 0;
+		gameplay.init();
 		map.ShowObjects(); // Display all the layer objects.
 	}
 
@@ -84,6 +85,7 @@ namespace platform {
 	}
 
 	void Game::deInit() {
+		gameplay.deInit();
 	}
 
 	void Game::runGame() {

@@ -6,7 +6,6 @@
 namespace platform {
 	extern tmx::TileMap map;
 	extern	sf::RenderWindow window;
-
 	enum ActualScene {
 		MenuScene,
 		GameScene,
