@@ -34,8 +34,25 @@ namespace platform {
 
 	void Game::init() {
 		_deltaTime = 0;
-		gameplay.init();
-		map.ShowObjects(); // Display all the layer objects.
+		switch (actualScene) {
+		case MenuScene:
+			//menu::update();
+			break;
+		case GameScene:
+			gameplay.init();
+			map.ShowObjects(); // Display all the layer objects.
+			gameplay.update();
+			break;
+		case GameoverScene:
+			//gameOver::update();
+			break;
+		case CreditsScene:
+			//credits::update();
+			break;
+		default:
+			break;
+		}
+
 	}
 
 	void Game::update() {
@@ -85,7 +102,22 @@ namespace platform {
 	}
 
 	void Game::deInit() {
-		gameplay.deInit();
+		switch (actualScene) {
+		case MenuScene:
+			//menu::update();
+			break;
+		case GameScene:
+			gameplay.deInit();
+			break;
+		case GameoverScene:
+			//gameOver::update();
+			break;
+		case CreditsScene:
+			//credits::update();
+			break;
+		default:
+			break;
+		}
 	}
 
 	void Game::runGame() {
