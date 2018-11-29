@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "STP/TMXLoader.hpp"
 #include "../pugixml/pugixml.hpp"
+#include "../pugixml/pugiconfig.hpp"
 
 #include "../Logic/game.h"
 #include "../Player/player.h"

@@ -17,7 +17,6 @@ namespace platform {
 	extern ActualScene actualScene;
 
 	class Game {
-		ContextSettings settings; // render settings
 	public:
 		static const short int screenWidth;
 		static const short int screenHeight;
