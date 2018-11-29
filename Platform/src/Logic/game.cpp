@@ -19,8 +19,8 @@ namespace platform {
 	float Game::_deltaTime = 0;
 
 	//Window renderer
-	RenderWindow window (VideoMode(Game::screenWidth,Game::screenHeight), "Simple Platform",Style::Close);
-
+	RenderWindow window (VideoMode(Game::screenWidth,Game::screenHeight), "Simple Platform",Style::None);
+	
 	ActualScene actualScene = GameScene;
 	Gameplay gameplay;
 
@@ -98,8 +98,13 @@ namespace platform {
 			sf::Event event;
 			while (window.pollEvent(event)) {
 				// Close window : exit
-				if (event.type == sf::Event::Closed)
+				if (event.type == Event::Closed) {
 					window.close();
+				}
+				if (event.type == Event::KeyPressed && event.key.code == Keyboard::Escape) {
+					window.close();
+				}
+					
 			}
 		
 			update();
