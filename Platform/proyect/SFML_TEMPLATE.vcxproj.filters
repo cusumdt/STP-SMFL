@@ -17,6 +17,12 @@
     <ClCompile Include="..\src\Utility\camera.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
+    <ClCompile Include="gameOver.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="credits.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Player">
@@ -50,6 +56,12 @@
     </ClInclude>
     <ClInclude Include="..\src\Utility\const_data.h">
       <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="gameOver.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="credits.h">
+      <Filter>Scenes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

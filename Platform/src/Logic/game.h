@@ -7,6 +7,15 @@ namespace platform {
 	extern tmx::TileMap map;
 	extern	sf::RenderWindow window;
 
+	enum ActualScene {
+		MenuScene,
+		GameScene,
+		GameoverScene,
+		CreditsScene
+	};
+
+	extern ActualScene actualScene;
+
 	class Game {		
 	public:
 		static const short int screenWidth;

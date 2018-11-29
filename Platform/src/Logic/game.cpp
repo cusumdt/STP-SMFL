@@ -2,6 +2,9 @@
 
 #include "../Player/player.h"
 #include "../Utility/camera.h"
+
+#include "../Scenes/gameplay.h"
+
 using namespace tmx;
 using namespace sf;
 
@@ -18,6 +21,9 @@ namespace platform {
 	//Window renderer
 	RenderWindow window (VideoMode(Game::screenWidth,Game::screenHeight), "Simple Platform",Style::Close);
 
+	ActualScene actualScene = GameScene;
+	Gameplay gameplay;
+
 	Game::Game() {
 		_deltaTime = 0;
 	}
@@ -32,15 +38,47 @@ namespace platform {
 	}
 
 	void Game::update() {
-		
+		switch (actualScene) {
+		case MenuScene:
+			//menu::update();
+			break;
+		case GameScene:
+			gameplay.update();
+			break;
+		case GameoverScene:
+			//gameOver::update();
+			break;
+		case CreditsScene:
+			//credits::update();
+			break;
+		default:
+			break;
+		}
 	}
 
 	void Game::draw() {
 		// Clear screen
 		window.clear();
-		// Draw the map
-		window.draw(map);
-		
+
+		switch (actualScene) {
+		case MenuScene:
+			//menu::draw();
+			break;
+		case GameScene:
+			// Draw the map
+			window.draw(map);
+			gameplay.draw();
+			break;
+		case GameoverScene:
+			//gameOver::draw();
+			break;
+		case CreditsScene:
+			//credits::draw();
+			break;
+		default:
+			break;
+		}
+			
 		// Update the window
 		window.display();
 	}
