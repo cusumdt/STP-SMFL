@@ -6,6 +6,7 @@
 #include "../Logic/game.h"
 #include "../Player/player.h"
 #include "../Utility/camera.h"
+#include "../Utility/const_data.h"
 using namespace tmx;
 using namespace sf;
 
@@ -16,7 +17,7 @@ namespace platform {
 	Player* player = new Player();
 	Camera* camera = new Camera();
 	Gravity* gravity = new Gravity();
-	Bullet* bullet[5];
+	Bullet* bullet[MAXBULLET];
 	float _time;
 	Gameplay::Gameplay() {
 
@@ -29,7 +30,7 @@ namespace platform {
 
 	void Gameplay::init() {	
 		_time = 0;
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < MAXBULLET; i++) {
 			bullet[i] = NULL;
 			if (bullet[i] == NULL) {
 				bullet[i] = new Bullet();
@@ -46,7 +47,7 @@ namespace platform {
 		if (player->fire()) {
 			if (_time > 0.5f) {
 				_time = 0;
-				for (int i = 0; i < 5; i++) {
+				for (int i = 0; i < MAXBULLET; i++) {
 					if (bullet[i] != NULL) {
 						if (!bullet[i]->getItsAlive()) {
 							bullet[i]->setItsAlive(true);
@@ -58,14 +59,14 @@ namespace platform {
 							}
 							bullet[i]->setY(player->getY() + (player->getTextureSizeY() / 2));
 							bullet[i]->setDirection(player->getDirection());
-							i = 5;
+							i = MAXBULLET;
 						}
 					}
 				}
 			}
 		}
 		//Bullet
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < MAXBULLET; i++) {
 			if (bullet[i] != NULL) {
 				if (bullet[i]->getItsAlive()) {
 					bullet[i]->movement();
@@ -81,7 +82,7 @@ namespace platform {
 
 	void Gameplay::draw() {
 		player->drawPlayer();
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < MAXBULLET; i++) {
 			if (bullet[i] != NULL) {
 				if (bullet[i]->getItsAlive()) {
 					bullet[i]->drawBullet();
@@ -91,7 +92,7 @@ namespace platform {
 	}
 	
 	void Gameplay::deInit() {
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < MAXBULLET; i++) {
 			if (bullet[i] != NULL) {
 				delete bullet[i];
 				bullet[i] = NULL;
