@@ -38,5 +38,5 @@ Enjoy!
 
 **Cristian Cusumano** <br>
 [![Instagram URL](https://img.shields.io/badge/Instagram--ff69b4.svg?longCache=true&style=flat-square)](https://www.instagram.com/cristian_cusumano)
-[![Facebook URL](https://img.shields.io/badge/Facebook--blue.svg?longCache=true&style=flat-square)](https://www.facebook.com/cristiancusumano)
+[![Facebook URL](https://img.shields.io/badge/Facebook--blue.svg?longCache=true&style=flat-square)](https://www.facebook.com/criscusu)
 
