@@ -2,7 +2,7 @@
 #define PLAYER_H
 #include "../Logic/game.h"
 namespace platform {
-	enum KeyPressed
+	enum Key
 	{
 		RIGHT, LEFT, NONE
 	};
@@ -11,7 +11,7 @@ namespace platform {
 	private:
 		float _x;
 		float _y;
-		KeyPressed whatKeyPressed;
+		Key keyPressed;
 		sf::Texture texture;
 		sf::Sprite sprite;
 
@@ -22,7 +22,7 @@ namespace platform {
 		void setY(float y);
 		float getX() { return _x; }
 		float getY() { return _y; }
-		KeyPressed getWhatKeyPressed(){ return whatKeyPressed; }
+		Key getKeyPressed(){ return keyPressed; }
 		float getTextureSizeX() { return texture.getSize().x; }
 		void drawPlayer();
 		void movement();

@@ -8,10 +8,12 @@ using namespace sf;
 namespace platform {
 	static const short int screenWidth = 1280;
 	static const short int screenHeight = 768;
-	RenderWindow window (sf::VideoMode(screenWidth, screenHeight), "TILED");
+
+	RenderWindow window (VideoMode(screenWidth, screenHeight), "TILED",Style::Close);
+
 	tmx::TileMap map("res/tile.tmx");
 	
-	sf::View vw1;
+	View vw1;
 	Player* player = new Player();
 	Camera* camera = new Camera();
 
@@ -28,7 +30,12 @@ namespace platform {
 	}
 
 	void Game::update() {
+		player->movement();
+		camera->movementCamera(player, FOLLOW);
 
+		vw1.reset(sf::FloatRect(camera->getPosX(), 0.f, screenWidth, screenHeight));
+		window.setView(vw1);
+		View currentView = window.getView();
 	}
 
 	void Game::draw() {
@@ -56,12 +63,6 @@ namespace platform {
 				if (event.type == sf::Event::Closed)
 					window.close();
 			}
-			player->movement();
-			camera->movementCamera(player,FOLLOW);
-		
-			vw1.reset(sf::FloatRect(camera->getPosX(),0.f,screenWidth,screenHeight));
-			window.setView(vw1);
-			sf::View currentView = window.getView();
 		
 			update();
 			draw();

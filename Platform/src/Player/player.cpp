@@ -35,17 +35,18 @@ namespace platform
 			if (Player::playerScreenLimiter()) {
 				_x += velocity;
 				sprite.setPosition(_x, _y);
-				whatKeyPressed = RIGHT;
+				keyPressed = RIGHT;
 			}
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 			if (_x > 0) {
 				_x -= velocity;
 				sprite.setPosition(_x, _y);
-				whatKeyPressed = LEFT;
+				keyPressed = LEFT;
 			}
-		}else{
-			whatKeyPressed = NONE;
+		}
+		else{
+			keyPressed = NONE;
 		}
 	
 	}
