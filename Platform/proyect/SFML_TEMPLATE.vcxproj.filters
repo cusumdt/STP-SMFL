@@ -37,6 +37,9 @@
     <Filter Include="Logic">
       <UniqueIdentifier>{7cdbb824-d6cb-493f-af9f-129fd016dc56}</UniqueIdentifier>
     </Filter>
+    <Filter Include="pugixml">
+      <UniqueIdentifier>{e5a8d881-fa6e-4bfe-b431-fcf5ac568ba3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Player\player.h">

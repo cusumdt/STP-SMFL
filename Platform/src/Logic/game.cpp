@@ -20,16 +20,17 @@ namespace platform {
 
 	//Window renderer
 	RenderWindow window (VideoMode(Game::screenWidth,Game::screenHeight), "Simple Platform",Style::None);
-	
+
 	ActualScene actualScene = GameScene;
 	Gameplay gameplay;
 
 	Game::Game() {
+		settings.antialiasingLevel = 8;
 		_deltaTime = 0;
 	}
 
 	Game::~Game() {
-
+		
 	}
 
 	void Game::init() {
