@@ -35,6 +35,7 @@ namespace platform {
 	}
 
 	void Game::init() {
+		gameplay.init();
 		_deltaTime = 0;
 		map.ShowObjects(); // Display all the layer objects.
 	}

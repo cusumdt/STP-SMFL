@@ -11,6 +11,7 @@ namespace platform {
 	private:
 		float _x;
 		float _y;
+		bool _isOnGround;
 		Key keyPressed;
 		sf::Texture texture;
 		sf::Sprite sprite;
@@ -28,6 +29,8 @@ namespace platform {
 		void movement();
 		sf::RectangleShape getCollider();
 		bool playerScreenLimiter() { return (_x < map.GetWidth()*map.GetTileWidth() - texture.getSize().x); }
+		void setIsOnGround(bool isOnGround);
+		bool getIsOnGround();
 		Key getKeyPressed() { return keyPressed; }
 	};
 }
