@@ -25,7 +25,7 @@ namespace platform {
 	Gameplay gameplay;
 
 	Game::Game() {
-		settings.antialiasingLevel = 8;
+		settings.antialiasingLevel = 8; 
 		_deltaTime = 0;
 	}
 
