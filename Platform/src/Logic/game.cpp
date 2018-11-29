@@ -17,8 +17,13 @@ namespace platform {
 	Player* player = new Player();
 	Camera* camera = new Camera();
 
-	Game::Game() {
+	Clock _clock;
+	Time _elapsed;
 
+	float Game::_deltaTime = 0;
+
+	Game::Game() {
+		_deltaTime = 0;
 	}
 
 	Game::~Game() {
@@ -26,6 +31,7 @@ namespace platform {
 	}
 
 	void Game::init() {
+		_deltaTime = 0;
 		map.ShowObjects(); // Display all the layer objects.
 	}
 
@@ -56,6 +62,9 @@ namespace platform {
 		// Main game loop
 		while (window.isOpen())
 		{
+			_elapsed = _clock.restart();
+			setDeltaTime(_elapsed.asSeconds());
+
 			// Process events
 			sf::Event event;
 			while (window.pollEvent(event)) {
@@ -68,5 +77,13 @@ namespace platform {
 			draw();
 		}
 		deInit();
+	}
+
+	void Game::setDeltaTime(float elapsed) {
+		_deltaTime = elapsed;
+	}
+
+	float Game::getDeltaTime() {
+		return _deltaTime;
 	}
 }

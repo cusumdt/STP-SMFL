@@ -1,9 +1,11 @@
 #include "player.h"
+
 #include <iostream>
+
 namespace platform
 {
 
-	static const short int velocity = 2;
+	static const float velocity = 500.0f;
 
 	Player::Player() {
 		_x = initPositionX();
@@ -33,14 +35,14 @@ namespace platform
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
 			if (Player::playerScreenLimiter()) {
-				_x += velocity;
+				_x += velocity * Game::_deltaTime;
 				sprite.setPosition(_x, _y);
 				keyPressed = RIGHT;
 			}
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 			if (_x > 0) {
-				_x -= velocity;
+				_x -= velocity * Game::_deltaTime;
 				sprite.setPosition(_x, _y);
 				keyPressed = LEFT;
 			}
