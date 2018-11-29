@@ -38,12 +38,13 @@ namespace platform {
 				if (_direction == RIGHTD) {
 					_x += velocity * Game::_deltaTime;
 					sprite.setPosition(_x, _y);
+					sprite.setScale(1, 1);
 				}
 				if (_direction == LEFTD) {
 					_x -= velocity * Game::_deltaTime;
 					sprite.setPosition(_x, _y);
+					sprite.setScale(-1, 1);
 				}
-			
 			}
 			else {
 				_x = 0;

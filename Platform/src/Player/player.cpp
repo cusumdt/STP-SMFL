@@ -3,7 +3,7 @@
 namespace platform
 {
 
-	static const float velocity = 500.0f;
+	static const float velocity = 300.0f;
 
 	Player::Player() {
 		_x = initPositionX();
@@ -37,6 +37,7 @@ namespace platform
 				sprite.setPosition(_x, _y);
 				direction = Direction::RIGHTD;
 				keyPressed = Key::RIGHT;
+				sprite.setScale(1, 1);
 			}
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
@@ -45,6 +46,7 @@ namespace platform
 				sprite.setPosition(_x, _y);
 				direction = Direction::LEFTD;
 				keyPressed = Key::LEFT;
+				sprite.setScale(-1, 1);
 			}
 		}
 		else{

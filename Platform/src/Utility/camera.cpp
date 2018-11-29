@@ -6,7 +6,7 @@ namespace platform {
 		_pos.x = 0;
 		_pos.y = 0;
 		_rotation = 0;
-		_moveSpeed = 480.0f;
+		_moveSpeed = 300.0f;
 	}
 
 	Camera::~Camera() {

@@ -27,6 +27,7 @@ namespace platform {
 		float getX() { return _x; }
 		float getY() { return _y; }
 		float getTextureSizeX() { return static_cast<float>(texture.getSize().x); }
+		float getTextureSizeY() { return static_cast<float>(texture.getSize().y); }
 		float initPositionX() { return (window.getSize().x * 50.0f) / 100; }
 		void drawPlayer();
 		void movement();

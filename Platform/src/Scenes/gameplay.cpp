@@ -56,6 +56,7 @@ namespace platform {
 							if (player->getDirection() == LEFTD) {
 								bullet[i]->setX(player->getX() - 2);
 							}
+							bullet[i]->setY(player->getY() + (player->getTextureSizeY() / 2));
 							bullet[i]->setDirection(player->getDirection());
 							i = 5;
 						}
