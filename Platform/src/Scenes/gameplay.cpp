@@ -52,10 +52,10 @@ namespace platform {
 						if (!bullet[i]->getItsAlive()) {
 							bullet[i]->setItsAlive(true);
 							if (player->getDirection() == RIGHTD) {
-								bullet[i]->setX(player->getX() + 2);
+								bullet[i]->setX(player->getX() + POSCORRECTION);
 							}
 							if (player->getDirection() == LEFTD) {
-								bullet[i]->setX(player->getX() - 2);
+								bullet[i]->setX(player->getX() - POSCORRECTION);
 							}
 							bullet[i]->setY(player->getY() + (player->getTextureSizeY() / 2));
 							bullet[i]->setDirection(player->getDirection());

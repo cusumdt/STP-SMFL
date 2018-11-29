@@ -27,7 +27,6 @@ namespace platform {
 		float getY() { return _y; }
 		float getTextureSizeX() { return static_cast<float>(texture.getSize().x); }
 		bool getItsAlive() { return _itsAlive; }
-		//float initPositionX() { return (window.getSize().x * 50.0f) / 100; }
 		void drawBullet();
 		void movement();
 	};

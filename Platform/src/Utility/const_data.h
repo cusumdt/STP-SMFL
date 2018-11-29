@@ -3,6 +3,7 @@
 
 namespace platform {
 	const short int  MAXBULLET = 5;
+	const short int POSCORRECTION = 2;
 }
 
 #endif // !CONST_DATA_H
