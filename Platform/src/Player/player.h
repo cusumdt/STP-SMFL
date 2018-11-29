@@ -16,6 +16,7 @@ namespace platform {
 		float _x;
 		float _y;
 		bool _isOnGround;
+		bool _isJumping;
 		float _timeJump;
 		Key keyPressed;
 		sf::Texture texture;
@@ -35,11 +36,13 @@ namespace platform {
 		float initPositionX() { return (window.getSize().x * 50.0f) / 100; }
 		void drawPlayer();
 		void movement();
+		void jump();
 		bool fire();
 		sf::RectangleShape getCollider();
 		bool playerScreenLimiter() { return (_x < map.GetWidth()*map.GetTileWidth() - texture.getSize().x); }
 		void setIsOnGround(bool isOnGround);
 		bool getIsOnGround() { return _isOnGround; }
+		bool getIsJump() { return _isJumping; }
 		Key getKeyPressed() { return keyPressed; }
 		Direction getDirection() { return direction; }
 	};

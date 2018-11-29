@@ -35,7 +35,6 @@ namespace platform {
 	}
 
 	void Game::init() {
-		gameplay.init();
 		_deltaTime = 0;
 		switch (actualScene) {
 		case MenuScene:

@@ -1,5 +1,6 @@
 #include "player.h"
 #include "../Utility/const_data.h"
+#include <iostream>
 namespace platform
 {
 	Player::Player() {
@@ -12,10 +13,12 @@ namespace platform
 		_collider.setPosition(sprite.getPosition());
 		_collider.setSize(sf::Vector2f(texture.getSize().x, texture.getSize().y));
 		_isOnGround = false;
+		_isJumping = false;
+		_timeJump = 0;
 	}
 
 	Player::~Player() {
-	
+
 	}
 
 	void Player::setX(float x) {
@@ -38,6 +41,11 @@ namespace platform
 				direction = Direction::RIGHTD;
 				keyPressed = Key::RIGHT;
 				sprite.setScale(1, 1);
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+					if (_isOnGround) {
+						_isJumping = true;
+					}
+				}
 			}
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
@@ -47,29 +55,42 @@ namespace platform
 				direction = Direction::LEFTD;
 				keyPressed = Key::LEFT;
 				sprite.setScale(-1, 1);
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+					if (_isOnGround) {
+						_isJumping = true;
+					}
+				}
+			}
+		}
+		else {
+			keyPressed = Key::NONE;
+			sprite.setPosition(_x, _y);
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+				if (_isOnGround) {
+					_isJumping = true;
+				}
 			}
 		}
 
-	
-		/*else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-			if (_isOnGround) {
-				_timeJump += Game::_deltaTime;
-				if (_timeJump < 1) {
-					_y -= PLAYER_VELOCITY * Game::_deltaTime;
-					sprite.setPosition(_x, _y);
-				}
-				else {
-					_isOnGround = false;
-				}
-			}
-		}*/
-		else{
-			keyPressed = Key::NONE;
-			sprite.setPosition(_x, _y);
-		}
-		
 		//Move Collider
 		_collider.setPosition(sprite.getPosition());
+	}
+	void Player::jump() {
+		if (_isJumping) {
+			_timeJump += Game::_deltaTime;
+			std::cout << _timeJump<<std::endl;
+			if (_timeJump < 0.3f) {
+				_y -= PLAYER_VELOCITY * Game::_deltaTime;
+				sprite.setPosition(_x, _y);
+			
+
+			}
+			else {
+				_isJumping = false;
+				_isOnGround = false;
+				_timeJump = 0;
+			}
+		}
 	}
 
 	sf::RectangleShape Player::getCollider() {

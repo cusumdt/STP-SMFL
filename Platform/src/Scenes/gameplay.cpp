@@ -86,12 +86,14 @@ namespace platform {
 
 	void Gameplay::update() {
 		//Player
-		if (!player->getIsOnGround()) {
+		if (!player->getIsOnGround() && !player->getIsJump()) {
 			gravity->state(Game::_deltaTime);
 			player->setY(player->getY() + gravity->getStrong());
 		}
-	
+	//	cout << player->getIsOnGround() << "    " << player->getIsJump() << endl;
 		player->movement();
+		player->jump();
+	
 		_time += Game::_deltaTime;
 		if (player->fire()) {
 			if (_time > 0.5f) {
