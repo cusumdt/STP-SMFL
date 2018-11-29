@@ -1,5 +1,5 @@
 #include "camera.h"
-static const short int velocity = 2;
+
 namespace platform {
 
 	Camera::Camera() {
