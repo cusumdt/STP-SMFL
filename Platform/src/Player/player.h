@@ -3,6 +3,7 @@
 #include "../Logic/game.h"
 #include "../Utility/gravity.h"
 #include "bullet.h"
+
 namespace platform {
 	enum Key
 	{
