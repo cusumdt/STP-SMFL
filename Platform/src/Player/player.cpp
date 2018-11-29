@@ -11,7 +11,7 @@ namespace platform
 		texture.loadFromFile("res/Player/idle/anim1.png");
 		sprite.setTexture(texture);
 		sprite.setPosition(_x, _y);
-		direction = Direction::RIGHT;
+		direction = Direction::RIGHTD;
 	}
 
 	Player::~Player() {
@@ -35,7 +35,7 @@ namespace platform
 			if (Player::playerScreenLimiter()) {
 				_x += velocity * Game::_deltaTime;
 				sprite.setPosition(_x, _y);
-				direction = Direction::RIGHT;
+				direction = Direction::RIGHTD;
 				keyPressed = Key::RIGHT;
 			}
 		}
@@ -43,7 +43,7 @@ namespace platform
 			if (_x > 0) {
 				_x -= velocity * Game::_deltaTime;
 				sprite.setPosition(_x, _y);
-				direction = Direction::LEFT;
+				direction = Direction::LEFTD;
 				keyPressed = Key::LEFT;
 			}
 		}

@@ -8,9 +8,7 @@ namespace platform {
 	{
 		RIGHT, LEFT, NONE
 	};
-	enum Direction {
-		RIGHT,LEFT
-	};
+
 	class Player
 	{
 	private:

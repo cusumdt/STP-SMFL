@@ -2,7 +2,9 @@
 #define BULLET_H
 #include "../Logic/game.h"
 namespace platform {
-
+	enum Direction {
+		RIGHTD, LEFTD
+	};
 	class Bullet
 	{
 	private:
@@ -13,12 +15,14 @@ namespace platform {
 		float _time;
 		float _timeLive;
 		bool _itsAlive;
+		Direction _direction;
 	public:
 		Bullet();
 		~Bullet();
 		void setX(float x);
 		void setY(float y);
 		void setItsAlive(bool itsAlive);
+		void setDirection(Direction direction);
 		float getX() { return _x; }
 		float getY() { return _y; }
 		float getTextureSizeX() { return static_cast<float>(texture.getSize().x); }

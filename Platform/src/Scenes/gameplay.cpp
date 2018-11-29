@@ -50,6 +50,13 @@ namespace platform {
 					if (bullet[i] != NULL) {
 						if (!bullet[i]->getItsAlive()) {
 							bullet[i]->setItsAlive(true);
+							if (player->getDirection() == RIGHTD) {
+								bullet[i]->setX(player->getX() + 2);
+							}
+							if (player->getDirection() == LEFTD) {
+								bullet[i]->setX(player->getX() - 2);
+							}
+							bullet[i]->setDirection(player->getDirection());
 							i = 5;
 						}
 					}

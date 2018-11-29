@@ -1,7 +1,6 @@
 #include "bullet.h"
-#include <iostream>
 namespace platform {
-	static const float velocity = 500.0f;
+	static const float velocity = 700.0f;
 	Bullet::Bullet() {
 		_x = 0;
 		_y = 200;
@@ -24,6 +23,9 @@ namespace platform {
 	void Bullet::setItsAlive(bool itsAlive) {
 		_itsAlive = itsAlive;
 	}
+	void Bullet::setDirection(Direction direction) {
+		_direction = direction;
+	}
 	void Bullet::drawBullet() {
 		if (_itsAlive) {
 			window.draw(sprite);
@@ -33,8 +35,15 @@ namespace platform {
 		if (_itsAlive) {
 			_timeLive += Game::_deltaTime;
 			if (_timeLive < 1) {
-				_x += velocity * Game::_deltaTime;
-				sprite.setPosition(_x, _y);
+				if (_direction == RIGHTD) {
+					_x += velocity * Game::_deltaTime;
+					sprite.setPosition(_x, _y);
+				}
+				if (_direction == LEFTD) {
+					_x -= velocity * Game::_deltaTime;
+					sprite.setPosition(_x, _y);
+				}
+			
 			}
 			else {
 				_x = 0;
