@@ -14,7 +14,7 @@ namespace platform {
 		Key keyPressed;
 		sf::Texture texture;
 		sf::Sprite sprite;
-
+		sf::RectangleShape _collider;
 	public:
 		Player();
 		~Player();
@@ -26,6 +26,7 @@ namespace platform {
 		float initPositionX() { return (window.getSize().x * 50.0f) / 100; }
 		void drawPlayer();
 		void movement();
+		sf::RectangleShape getCollider();
 		bool playerScreenLimiter() { return (_x < map.GetWidth()*map.GetTileWidth() - texture.getSize().x); }
 		Key getKeyPressed() { return keyPressed; }
 	};

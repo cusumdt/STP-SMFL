@@ -13,6 +13,8 @@ namespace platform
 		texture.loadFromFile("res/Player/idle/anim1.png");
 		sprite.setTexture(texture);
 		sprite.setPosition(_x, _y);
+		_collider.setPosition(sprite.getPosition());
+		_collider.setSize(sprite.getScale());
 	}
 
 	Player::~Player() {
@@ -32,7 +34,7 @@ namespace platform
 	}
 
 	void Player::movement() {
-
+		
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
 			if (Player::playerScreenLimiter()) {
 				_x += velocity * Game::_deltaTime;
@@ -50,6 +52,13 @@ namespace platform
 		else{
 			keyPressed = NONE;
 		}
-	
+		
+		//Move Collider
+		_collider.setPosition(sprite.getPosition());
+		_collider.setSize(sprite.getScale());
+	}
+
+	sf::RectangleShape Player::getCollider() {
+		return _collider;
 	}
 }

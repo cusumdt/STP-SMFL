@@ -27,10 +27,14 @@ namespace platform {
 	pugi::xml_node_iterator someObjects = object.begin(); // test purposes, not used for making collision shapes. 
 	// It was used to manually select objects ids.
 
+	sf::RectangleShape test; // not used in final game, just for testing purposes.
+	sf::RectangleShape rectangles[maxColisionsBoxes];
 	
 	View vw1;
 	Player* player = new Player();
 	Camera* camera = new Camera();
+
+	
 
 	Gameplay::Gameplay() {
 
@@ -42,7 +46,25 @@ namespace platform {
 	
 
 	void Gameplay::init() {	
-		
+		//// Adding Colission box Rectangles from the .tmx Tilemap File
+		//
+		int i = 0;
+		for (pugi::xml_node_iterator it = object.begin(); it != object.end(); ++it)
+		{
+			rectangles[i].setPosition(sf::Vector2f(it->attribute("x").as_int(),
+				it->attribute("y").as_int()));
+
+			rectangles[i].setSize(sf::Vector2f(it->attribute("width").as_int(),
+				it->attribute("height").as_int()));
+
+			rectangles[i].setFillColor(sf::Color::Green);
+			i++;
+		}
+		i = 0;
+		////
+		test.setPosition(sf::Vector2f(0, 0));
+		test.setSize(sf::Vector2f(0, 0));
+		test.setFillColor(sf::Color::Transparent);
 	}
 
 	void Gameplay::update() {
@@ -54,10 +76,41 @@ namespace platform {
 		vw1.reset(sf::FloatRect(camera->getPosX(), 0.f, Game::screenWidth, Game::screenHeight));
 		window.setView(vw1);
 		View currentView = window.getView();
+
+		//Collisions
+		if (player->getCollider().getGlobalBounds().intersects(test.getGlobalBounds()))
+		{
+			player->getCollider().setPosition(player->getCollider().getPosition().x, test.getPosition().y - (player->getCollider().getLocalBounds().height));
+			map.GetLayer("ground").SetColor({ 255,0,0 });
+		}
+		else
+		{
+			map.GetLayer("ground").SetColor({ 255,255,255 });
+		}
+
+		for (int i = 0; i < maxColisionsBoxes; i++)
+		{
+			if (player->getCollider().getGlobalBounds().intersects(rectangles[i].getGlobalBounds()))
+			{
+				player->getCollider().setPosition(player->getCollider().getPosition().x, rectangles[i].getPosition().y - (player->getCollider().getLocalBounds().height));
+				map.GetLayer("ground").SetColor({ 255,0,0 });
+			}
+			else
+			{
+				map.GetLayer("ground").SetColor({ 255,255,255 });
+			}
+		}
+		
 	}
 
 	void Gameplay::draw() {
 		player->drawPlayer();
+
+		//Collisions
+		for (int i = 0; i < maxColisionsBoxes; i++)
+		{
+			window.draw(rectangles[i]);
+		}
 	}
 	
 	void Gameplay::deInit() {
