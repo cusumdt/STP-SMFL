@@ -6,7 +6,7 @@ namespace platform
 	Player::Player() {
 		_x = initPositionX();
 		_y = 500;
-		texture.loadFromFile("res/Player/idle/anim1.png");
+		texture.loadFromFile("res/pj.png");
 		sprite.setTexture(texture);
 		sprite.setPosition(_x, _y);
 		direction = Direction::RIGHTD;
@@ -79,8 +79,8 @@ namespace platform
 		if (_isJumping) {
 			_timeJump += Game::_deltaTime;
 			std::cout << _timeJump<<std::endl;
-			if (_timeJump < 0.2f) {
-				_y -= PLAYER_VELOCITY * 2 * Game::_deltaTime;
+			if (_timeJump < 0.5f) {
+				_y -= PLAYER_VELOCITY * Game::_deltaTime;
 				sprite.setPosition(_x, _y);
 			
 

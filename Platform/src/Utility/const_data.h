@@ -3,7 +3,7 @@
 
 namespace platform {
 	const short int  MAXBULLET = 5;
-	const short int POSCORRECTION = 2;
+	const short int POSCORRECTION = 100;
 	const float PLAYER_VELOCITY = 300.0f;
 	const float BULLET_VELOCITY = 700.0F;
 }

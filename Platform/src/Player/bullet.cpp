@@ -4,7 +4,7 @@ namespace platform {
 	Bullet::Bullet() {
 		_x = 0;
 		_y = 200;
-		texture.loadFromFile("res/Player/idle/anim1.png");
+		texture.loadFromFile("res/atack.png");
 		sprite.setTexture(texture);
 		sprite.setPosition(_x, _y);
 		_time=0;
