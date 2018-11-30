@@ -6,6 +6,7 @@ namespace platform {
 	const short int POSCORRECTION = 100;
 	const float PLAYER_VELOCITY = 300.0f;
 	const float BULLET_VELOCITY = 700.0F;
+	const short int CANT_ENEMYS = 5;
 }
 
 #endif // !CONST_DATA_H

@@ -2,102 +2,111 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\Utility\buttons.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Player\bullet.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Utility\camera.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Utility\Collision.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Scenes\credits.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Enemy\enemy.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Logic\game.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Scenes\gameOver.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
     <ClCompile Include="..\src\Scenes\gameplay.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Utility\camera.cpp">
+    <ClCompile Include="..\src\Utility\gravity.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Scenes\menu.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\pugixml\pugixml.cpp">
-      <Filter>pugixml</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Logic\game.cpp">
-      <Filter>Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Player\bullet.cpp">
-      <Filter>Player</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Player\player.cpp">
       <Filter>Player</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Utility\gravity.cpp">
-      <Filter>Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Scenes\gameOver.cpp">
-      <Filter>Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Scenes\credits.cpp">
-      <Filter>Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Utility\Collision.cpp">
-      <Filter>Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Utility\buttons.cpp">
-      <Filter>Utility</Filter>
+    <ClCompile Include="..\src\pugixml\pugixml.cpp">
+      <Filter>pugixml</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\Scenes\gameplay.h">
-      <Filter>Scenes</Filter>
+    <ClInclude Include="..\src\Utility\buttons.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Player\bullet.h">
+      <Filter>Enemy</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Utility\camera.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Utility\Collision.h">
       <Filter>Utility</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Utility\const_data.h">
       <Filter>Utility</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Scenes\menu.h">
+    <ClInclude Include="..\src\Scenes\credits.h">
       <Filter>Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\pugixml\pugixml.hpp">
-      <Filter>pugixml</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\pugixml\pugiconfig.hpp">
-      <Filter>pugixml</Filter>
+    <ClInclude Include="..\src\Enemy\enemy.h">
+      <Filter>Enemy</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Logic\game.h">
       <Filter>Logic</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Player\bullet.h">
-      <Filter>Player</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Player\player.h">
-      <Filter>Player</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Utility\gravity.h">
-      <Filter>Utility</Filter>
+    <ClInclude Include="..\src\Scenes\gameplay.h">
+      <Filter>Scenes</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Scenes\gameOver.h">
       <Filter>Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Scenes\credits.h">
+    <ClInclude Include="..\src\Utility\gravity.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Scenes\menu.h">
       <Filter>Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Utility\Collision.h">
-      <Filter>Utility</Filter>
+    <ClInclude Include="..\src\Player\player.h">
+      <Filter>Player</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Utility\buttons.h">
-      <Filter>Utility</Filter>
+    <ClInclude Include="..\src\pugixml\pugiconfig.hpp">
+      <Filter>pugixml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\pugixml\pugixml.hpp">
+      <Filter>pugixml</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Scenes">
-      <UniqueIdentifier>{36edb89e-c0d2-439d-8a83-7746a3074adf}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Utility">
-      <UniqueIdentifier>{b7497e3f-065a-4041-b87b-523ce967ec96}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="pugixml">
-      <UniqueIdentifier>{792c6406-60d2-4d49-b87f-86fa3842756f}</UniqueIdentifier>
+      <UniqueIdentifier>{97d38f39-0f44-4ae5-a545-30baec047203}</UniqueIdentifier>
     </Filter>
     <Filter Include="Logic">
-      <UniqueIdentifier>{700c9ea4-272c-4818-be20-73d2efe41e62}</UniqueIdentifier>
+      <UniqueIdentifier>{d7c388ab-b8a0-4676-bc51-5549df9aa90a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemy">
+      <UniqueIdentifier>{bbe1efa6-e725-4409-a6eb-acdf1bb58235}</UniqueIdentifier>
     </Filter>
     <Filter Include="Player">
-      <UniqueIdentifier>{93327de1-6cac-4163-a826-2a842eace65f}</UniqueIdentifier>
+      <UniqueIdentifier>{de47f146-4a18-4e86-b1e2-7f3af092d913}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pugixml">
+      <UniqueIdentifier>{f59326c5-6ee2-477e-872c-dca4eaabe16c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes">
+      <UniqueIdentifier>{68f808be-eb06-40a4-8fc7-93991c3be7be}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

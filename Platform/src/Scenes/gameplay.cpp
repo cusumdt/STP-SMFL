@@ -10,7 +10,11 @@
 #include "../Player/player.h"
 #include "../Utility/camera.h"
 #include "../Utility/const_data.h"
+
 #include "../Utility/buttons.h"
+
+#include "../Enemy/enemy.h"
+#include <ctime>
 
 #include <iostream>
 
@@ -20,7 +24,8 @@ using namespace std;
 
 namespace platform {
 	TileMap map("res/map.tmx");
-
+	static int data = (map.GetWidth()*map.GetTileWidth() - window.getSize().x);
+	static int randomEnemy;
 	const int maxColisionsBoxes = 1;
 
 	pugi::xml_document doc;
@@ -41,12 +46,13 @@ namespace platform {
 
 	View vw1;
 	Player* player = new Player();
+	Enemy* vecEnemy[CANT_ENEMYS];
 	Camera* camera = new Camera();
 
 	Gravity* gravity = new Gravity();
 	Bullet* bullet[MAXBULLET];
 	float _time;
-
+	float _collisionTime;
 
 	int testCounter = 0;
 
@@ -60,9 +66,12 @@ namespace platform {
 
 	void Gameplay::init() {
 
+
 	//	mouseTex.loadFromFile("res/BTN_PLAY.png");
 	//	mouseSprite.setTexture(mouseTex);
 
+
+		srand(time(0));
 		_time = 0;
 		for (int i = 0; i < MAXBULLET; i++) {
 			bullet[i] = NULL;
@@ -71,7 +80,14 @@ namespace platform {
 			}
 		}
 
-		
+		for (int i = 0; i < CANT_ENEMYS; i++) {
+			vecEnemy[i] = NULL;
+			if (vecEnemy[i] == NULL) {
+				
+				randomEnemy = rand() % data + window.getSize().x;
+				vecEnemy[i] = new Enemy(1,randomEnemy,rand()% 200 + 400);
+			}
+		}
 
 		//// Adding Colission box Rectangles from the .tmx Tilemap File
 		//
@@ -135,6 +151,15 @@ namespace platform {
 				}
 			}
 		}
+		//Enemy
+
+		for (int i = 0; i < CANT_ENEMYS; i++) {
+			if (vecEnemy[i] != NULL) {
+				if (vecEnemy[i]->getLife() > 0) {
+					vecEnemy[i]->movement();
+				}
+			}
+		}
 		//Camera
 		camera->movementCamera(player, FOLLOW);
 		vw1.reset(sf::FloatRect(camera->getPosX(), 0.f, Game::screenWidth, Game::screenHeight));
@@ -148,7 +173,6 @@ namespace platform {
 			{
 				player->getCollider().setPosition(player->getCollider().getPosition().x, rectangles[i].getPosition().y - (player->getCollider().getLocalBounds().height));
 				//map.GetLayer("ground").SetColor({ 255,0,0 });
-				cout << "COLLISION!!!" << testCounter++ << endl;
 				player->setIsOnGround(true);
 			}
 			else
@@ -159,35 +183,65 @@ namespace platform {
 		}
 
 		//PPCD
+
 		/*if (Collision::PixelPerfectTest(mouseSprite, spriteTest)) {
 			cout << "HELLO CRIS!" << endl;
 		}*/
+
+		for (int i = 0; i < MAXBULLET; i++) {
+			if (bullet[i] != NULL) {
+				if (bullet[i]->getItsAlive()) {
+					for (int j = 0; j < CANT_ENEMYS; j++) {
+						if (vecEnemy[j] != NULL && vecEnemy[j]->getLife() > 0) {
+							if (Collision::PixelPerfectTest(bullet[i]->getSprite(), vecEnemy[j]->getSprite())) {
+								vecEnemy[j]->setLife(0);
+								bullet[i]->setItsAlive(false);
+							}
+						}
+					}
+				}
+			}
+		}
+		for (int i = 0; i < CANT_ENEMYS; i++) {
+			for (int j = 0; j < CANT_ENEMYS; j++) {
+				if (Collision::PixelPerfectTest(vecEnemy[i]->getSprite(), vecEnemy[j]->getSprite()) && j != i && vecEnemy[j] != NULL && vecEnemy[i]!=NULL &&vecEnemy[i]->getLife()>0 && vecEnemy[j]->getLife()>0) {
+					randomEnemy = rand() % data + window.getSize().x;
+					vecEnemy[i]->setX(randomEnemy);
+					vecEnemy[i]->setY(rand() % 200 + 400);
+				}
+			}
+		}
 
 	}
 
 	void Gameplay::draw() {
 		player->drawPlayer();
+
 		//window.draw(mouseSprite);
+
+		for (int i = 0; i < CANT_ENEMYS; i++) {
+			if (vecEnemy[i] != NULL && vecEnemy[i]->getLife()>0) {
+				vecEnemy[i]->drawEnemy();
+			}
+		}
+		for (int i = 0; i < MAXBULLET; i++) {
+			if (bullet[i] != NULL) {
+				if (bullet[i]->getItsAlive()) {
+					bullet[i]->drawBullet();
+				}
+			}
+		}
+
 		//Collisions
 		for (int i = 0; i < maxColisionsBoxes; i++)
 		{
 			window.draw(rectangles[i]); 
-
-			for (int i = 0; i < MAXBULLET; i++) {
-				if (bullet[i] != NULL) {
-					if (bullet[i]->getItsAlive()) {
-						bullet[i]->drawBullet();
-					}
-				}
-
-
 				//Collisions
 				for (int i = 0; i < maxColisionsBoxes; i++)
 				{
 					window.draw(rectangles[i]);
 
 				}
-			}
 		}
 
 	}
@@ -197,6 +251,12 @@ namespace platform {
 			if (bullet[i] != NULL) {
 				delete bullet[i];
 				bullet[i] = NULL;
+			}
+		}
+		for (int i = 0; i < CANT_ENEMYS; i++) {
+			if (vecEnemy[i] != NULL) {
+				delete vecEnemy[i];
+				vecEnemy[i] = NULL;
 			}
 		}
 	}

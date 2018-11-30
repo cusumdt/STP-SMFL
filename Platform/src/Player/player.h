@@ -13,6 +13,7 @@ namespace platform {
 	class Player
 	{
 	private:
+		int _life;
 		float _x;
 		float _y;
 		bool _isOnGround;
@@ -29,18 +30,20 @@ namespace platform {
 		~Player();
 		void setX(float x);
 		void setY(float y);
+		void setLife(int life);
+		int getLife() { return _life; }
 		float getX() { return _x; }
 		float getY() { return _y; }
 		float getTextureSizeX() { return static_cast<float>(texture.getSize().x); }
 		float getTextureSizeY() { return static_cast<float>(texture.getSize().y); }
-		float initPositionX() { return (window.getSize().x * 50.0f) / 100; }
+		float initPositionX() { return (window.getSize().x * 25.0f) / 100; }
 		void drawPlayer();
 		void movement();
 		void jump();
 		bool fire();
-		sf::RectangleShape getCollider();
+		sf::RectangleShape getCollider() { return _collider; }
 		bool playerScreenLimiter() { return (_x < map.GetWidth()*map.GetTileWidth() - texture.getSize().x); }
-		sf::Sprite getSprite();
+		sf::Sprite getSprite() { return sprite; }
 		void setIsOnGround(bool isOnGround);
 		bool getIsOnGround() { return _isOnGround; }
 		bool getIsJump() { return _isJumping; }

@@ -26,6 +26,7 @@ namespace platform {
 		float getX() { return _x; }
 		float getY() { return _y; }
 		float getTextureSizeX() { return static_cast<float>(texture.getSize().x); }
+		sf::Sprite getSprite() { return sprite; }
 		bool getItsAlive() { return _itsAlive; }
 		void drawBullet();
 		void movement();
