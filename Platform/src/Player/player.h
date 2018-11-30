@@ -40,6 +40,7 @@ namespace platform {
 		bool fire();
 		sf::RectangleShape getCollider();
 		bool playerScreenLimiter() { return (_x < map.GetWidth()*map.GetTileWidth() - texture.getSize().x); }
+		sf::Sprite getSprite();
 		void setIsOnGround(bool isOnGround);
 		bool getIsOnGround() { return _isOnGround; }
 		bool getIsJump() { return _isJumping; }
