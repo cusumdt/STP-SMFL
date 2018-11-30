@@ -70,7 +70,7 @@ namespace platform {
 		//Pixel Perfect init
 		texture.loadFromFile("res/test.png");
 		spriteTest.setTexture(texture);
-		spriteTest.setPosition(20, 50);
+		spriteTest.setPosition(800,300 );
 
 		//// Adding Colission box Rectangles from the .tmx Tilemap File
 		//
