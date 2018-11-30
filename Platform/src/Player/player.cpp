@@ -106,4 +106,8 @@ namespace platform
 		}
 		return false;
 	}
+
+	sf::Sprite Player::getSprite() {
+		return sprite;
+	}
 }

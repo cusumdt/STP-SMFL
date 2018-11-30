@@ -4,6 +4,7 @@
 #include "STP/TMXLoader.hpp"
 #include "../pugixml/pugixml.hpp"
 #include "../pugixml/pugiconfig.hpp"
+#include "../Utility/Collision.h"
 
 #include "../Logic/game.h"
 #include "../Player/player.h"
@@ -33,6 +34,10 @@ namespace platform {
 	//sf::RectangleShape test; // not used in final game, just for testing purposes.
 	sf::RectangleShape rectangles[maxColisionsBoxes];
 
+	//Pixel Perfect Collision Detection Example
+	sf::Texture texture;
+	sf::Sprite spriteTest;
+
 	View vw1;
 	Player* player = new Player();
 	Camera* camera = new Camera();
@@ -52,7 +57,6 @@ namespace platform {
 
 	}
 
-
 	void Gameplay::init() {
 
 		_time = 0;
@@ -62,6 +66,11 @@ namespace platform {
 				bullet[i] = new Bullet();
 			}
 		}
+
+		//Pixel Perfect init
+		texture.loadFromFile("res/test.png");
+		spriteTest.setTexture(texture);
+		spriteTest.setPosition(20, 50);
 
 		//// Adding Colission box Rectangles from the .tmx Tilemap File
 		//
@@ -79,9 +88,7 @@ namespace platform {
 		}
 		i = 0;
 		////
-		/*test.setPosition(sf::Vector2f(0, 0));
-		test.setSize(sf::Vector2f(0, 0));
-		test.setFillColor(sf::Color::Transparent);*/
+
 	}
 
 	void Gameplay::update() {
@@ -90,10 +97,10 @@ namespace platform {
 			gravity->state(Game::_deltaTime);
 			player->setY(player->getY() + gravity->getStrong());
 		}
-	//	cout << player->getIsOnGround() << "    " << player->getIsJump() << endl;
+		//	cout << player->getIsOnGround() << "    " << player->getIsJump() << endl;
 		player->movement();
 		player->jump();
-	
+
 		_time += Game::_deltaTime;
 		if (player->fire()) {
 			if (_time > 0.5f) {
@@ -147,27 +154,40 @@ namespace platform {
 			}
 		}
 
+		//PPCD
+		if (Collision::PixelPerfectTest(player->getSprite(), spriteTest)) {
+			cout << "HELLO CRIS!" << endl;
+		}
+
 	}
 
 	void Gameplay::draw() {
 		player->drawPlayer();
+		window.draw(spriteTest);
+		//Collisions
+		for (int i = 0; i < maxColisionsBoxes; i++)
+		{
+			window.draw(rectangles[i]); 
 
-		for (int i = 0; i < MAXBULLET; i++) {
-			if (bullet[i] != NULL) {
-				if (bullet[i]->getItsAlive()) {
-					bullet[i]->drawBullet();
+			for (int i = 0; i < MAXBULLET; i++) {
+				if (bullet[i] != NULL) {
+					if (bullet[i]->getItsAlive()) {
+						bullet[i]->drawBullet();
+					}
+				}
+
+
+				//Collisions
+				for (int i = 0; i < maxColisionsBoxes; i++)
+				{
+					window.draw(rectangles[i]);
+
 				}
 			}
-
-
-			//Collisions
-			for (int i = 0; i < maxColisionsBoxes; i++)
-			{
-				window.draw(rectangles[i]);
-
-			}
 		}
+
 	}
+
 	void Gameplay::deInit() {
 		for (int i = 0; i < MAXBULLET; i++) {
 			if (bullet[i] != NULL) {
@@ -177,6 +197,5 @@ namespace platform {
 		}
 	}
 }
-
 
 

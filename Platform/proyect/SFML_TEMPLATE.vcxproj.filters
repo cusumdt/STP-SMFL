@@ -8,12 +8,6 @@
     <ClCompile Include="..\src\Utility\camera.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
-    <ClCompile Include="credits.cpp">
-      <Filter>Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="gameOver.cpp">
-      <Filter>Scenes</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Scenes\menu.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
@@ -32,6 +26,15 @@
     <ClCompile Include="..\src\Utility\gravity.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Scenes\gameOver.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Scenes\credits.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Utility\Collision.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Scenes\gameplay.h">
@@ -42,12 +45,6 @@
     </ClInclude>
     <ClInclude Include="..\src\Utility\const_data.h">
       <Filter>Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="credits.h">
-      <Filter>Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="gameOver.h">
-      <Filter>Scenes</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Scenes\menu.h">
       <Filter>Scenes</Filter>
@@ -68,6 +65,15 @@
       <Filter>Player</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Utility\gravity.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Scenes\gameOver.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Scenes\credits.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Utility\Collision.h">
       <Filter>Utility</Filter>
     </ClInclude>
   </ItemGroup>
