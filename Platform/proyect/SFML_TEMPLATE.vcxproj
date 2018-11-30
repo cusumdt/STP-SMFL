@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\Enemy\enemy.cpp" />
     <ClCompile Include="..\src\Logic\game.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\Player\bullet.cpp" />
@@ -33,6 +34,7 @@
     <ClCompile Include="..\src\Utility\gravity.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\Enemy\enemy.h" />
     <ClInclude Include="..\src\Logic\game.h" />
     <ClInclude Include="..\src\Player\bullet.h" />
     <ClInclude Include="..\src\Player\player.h" />

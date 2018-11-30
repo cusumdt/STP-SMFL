@@ -15,16 +15,18 @@ namespace platform
 		_isOnGround = false;
 		_isJumping = false;
 		_timeJump = 0;
+		_life = 3;
 	}
 
 	Player::~Player() {
 
 	}
-
+	void Player::setLife(int life) {
+		_life = life;
+	}
 	void Player::setX(float x) {
 		_x = x;
 	}
-
 	void Player::setY(float y) {
 		_y = y;
 	}
@@ -34,46 +36,48 @@ namespace platform
 	}
 
 	void Player::movement() {
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-			if (Player::playerScreenLimiter()) {
-				_x += PLAYER_VELOCITY * Game::_deltaTime;
+		if (_life > 0) {
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+				if (Player::playerScreenLimiter()) {
+					_x += PLAYER_VELOCITY * Game::_deltaTime;
+					sprite.setPosition(_x, _y);
+					direction = Direction::RIGHTD;
+					keyPressed = Key::RIGHT;
+					sprite.setScale(1, 1);
+					if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+						if (_isOnGround) {
+							_isJumping = true;
+						}
+					}
+				}
+			}
+			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+				if (_x > 0 + texture.getSize().x) {
+					_x -= PLAYER_VELOCITY * Game::_deltaTime;
+					sprite.setPosition(_x, _y);
+					direction = Direction::LEFTD;
+					keyPressed = Key::LEFT;
+					sprite.setScale(-1, 1);
+					if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+						if (_isOnGround) {
+							_isJumping = true;
+						}
+					}
+				}
+			}
+			else {
+				keyPressed = Key::NONE;
 				sprite.setPosition(_x, _y);
-				direction = Direction::RIGHTD;
-				keyPressed = Key::RIGHT;
-				sprite.setScale(1, 1);
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 					if (_isOnGround) {
 						_isJumping = true;
 					}
 				}
 			}
-		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-			if (_x > 0) {
-				_x -= PLAYER_VELOCITY * Game::_deltaTime;
-				sprite.setPosition(_x, _y);
-				direction = Direction::LEFTD;
-				keyPressed = Key::LEFT;
-				sprite.setScale(-1, 1);
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-					if (_isOnGround) {
-						_isJumping = true;
-					}
-				}
-			}
-		}
-		else {
-			keyPressed = Key::NONE;
-			sprite.setPosition(_x, _y);
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-				if (_isOnGround) {
-					_isJumping = true;
-				}
-			}
-		}
 
-		//Move Collider
-		_collider.setPosition(sprite.getPosition());
+			//Move Collider
+			_collider.setPosition(sprite.getPosition());
+		}
 	}
 	void Player::jump() {
 		if (_isJumping) {
@@ -93,10 +97,6 @@ namespace platform
 		}
 	}
 
-	sf::RectangleShape Player::getCollider() {
-		return _collider;
-	}
-
 	void Player::setIsOnGround(bool isOnGround) {
 		_isOnGround = isOnGround;
 	}
@@ -105,9 +105,5 @@ namespace platform
 			return true;
 		}
 		return false;
-	}
-
-	sf::Sprite Player::getSprite() {
-		return sprite;
 	}
 }

@@ -35,6 +35,9 @@
     <ClCompile Include="..\src\Utility\Collision.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Enemy\enemy.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Scenes\gameplay.h">
@@ -76,6 +79,9 @@
     <ClInclude Include="..\src\Utility\Collision.h">
       <Filter>Utility</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\Enemy\enemy.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scenes">
@@ -92,6 +98,9 @@
     </Filter>
     <Filter Include="Player">
       <UniqueIdentifier>{93327de1-6cac-4163-a826-2a842eace65f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemy">
+      <UniqueIdentifier>{d330e6a4-9f61-47e7-8a51-ccea3a23a565}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
