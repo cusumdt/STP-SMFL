@@ -10,6 +10,7 @@
 #include "../Player/player.h"
 #include "../Utility/camera.h"
 #include "../Utility/const_data.h"
+#include "../Utility/buttons.h"
 
 #include <iostream>
 
@@ -34,9 +35,9 @@ namespace platform {
 	//sf::RectangleShape test; // not used in final game, just for testing purposes.
 	sf::RectangleShape rectangles[maxColisionsBoxes];
 
-	//Pixel Perfect Collision Detection Example
-	sf::Texture texture;
-	sf::Sprite spriteTest;
+	////Mouse Trigger
+	//sf::Texture mouseTex;
+	//sf::Sprite mouseSprite;
 
 	View vw1;
 	Player* player = new Player();
@@ -59,6 +60,9 @@ namespace platform {
 
 	void Gameplay::init() {
 
+	//	mouseTex.loadFromFile("res/BTN_PLAY.png");
+	//	mouseSprite.setTexture(mouseTex);
+
 		_time = 0;
 		for (int i = 0; i < MAXBULLET; i++) {
 			bullet[i] = NULL;
@@ -67,10 +71,7 @@ namespace platform {
 			}
 		}
 
-		//Pixel Perfect init
-		texture.loadFromFile("res/test.png");
-		spriteTest.setTexture(texture);
-		spriteTest.setPosition(800,300 );
+		
 
 		//// Adding Colission box Rectangles from the .tmx Tilemap File
 		//
@@ -100,6 +101,9 @@ namespace platform {
 		//	cout << player->getIsOnGround() << "    " << player->getIsJump() << endl;
 		player->movement();
 		player->jump();
+
+		//Mouse trigger
+		//mouseSprite.setPosition(Vector2f(sf::Mouse::getPosition(window)));
 
 		_time += Game::_deltaTime;
 		if (player->fire()) {
@@ -155,15 +159,15 @@ namespace platform {
 		}
 
 		//PPCD
-		if (Collision::PixelPerfectTest(player->getSprite(), spriteTest)) {
+		/*if (Collision::PixelPerfectTest(mouseSprite, spriteTest)) {
 			cout << "HELLO CRIS!" << endl;
-		}
+		}*/
 
 	}
 
 	void Gameplay::draw() {
 		player->drawPlayer();
-		window.draw(spriteTest);
+		//window.draw(mouseSprite);
 		//Collisions
 		for (int i = 0; i < maxColisionsBoxes; i++)
 		{

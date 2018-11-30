@@ -3,6 +3,7 @@
 #include "../Player/player.h"
 #include "../Utility/camera.h"
 #include "../Scenes/gameplay.h"
+#include "../Scenes/menu.h"
 
 
 
@@ -23,6 +24,7 @@ namespace platform {
 	RenderWindow window(VideoMode(Game::screenWidth, Game::screenHeight), "Simple Platform", Style::None, ContextSettings(24, 8, 4));
 
 	Gameplay gameplay;
+	Menu menu;
 	ActualScene actualScene = GameScene;
 
 	Game::Game() {
@@ -38,12 +40,12 @@ namespace platform {
 		_deltaTime = 0;
 		switch (actualScene) {
 		case MenuScene:
-			//menu::update();
+			menu.init();
 			break;
 		case GameScene:
 			gameplay.init();
-			map.ShowObjects(); // Display all the layer objects.
-			gameplay.update();
+			//map.ShowObjects(); // Display all the layer objects.
+			//gameplay.update();
 			break;
 		case GameoverScene:
 			//gameOver::update();
@@ -60,7 +62,7 @@ namespace platform {
 	void Game::update() {
 		switch (actualScene) {
 		case MenuScene:
-			//menu::update();
+			menu.update();
 			break;
 		case GameScene:
 			gameplay.update();
@@ -82,7 +84,7 @@ namespace platform {
 
 		switch (actualScene) {
 		case MenuScene:
-			//menu::draw();
+		    menu.draw();
 			break;
 		case GameScene:
 			// Draw the map
