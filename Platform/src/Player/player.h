@@ -1,7 +1,8 @@
 #ifndef PLAYER_H
 #define PLAYER_H
+#include "SFML/Graphics.hpp"
+#include "STP/TMXLoader.hpp"
 #include "../Logic/game.h"
-#include "../Utility/gravity.h"
 #include "bullet.h"
 
 namespace platform {

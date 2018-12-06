@@ -45,14 +45,13 @@ namespace platform {
 	//sf::Sprite mouseSprite;
 
 	View vw1;
-	Player* player = new Player();
-	Enemy* vecEnemy[CANT_ENEMYS];
-	Camera* camera = new Camera();
-
-	Gravity* gravity = new Gravity();
-	Bullet* bullet[MAXBULLET];
-	float _time;
-	float _collisionTime;
+	static	Player* player = new Player();
+	static	Enemy* vecEnemy[CANT_ENEMYS];
+	static	Camera* camera = new Camera();
+	static	Gravity* gravity = new Gravity();
+	static	Bullet* bullet[MAXBULLET];
+	static	float _time;
+	static	float _collisionTime;
 
 	int testCounter = 0;
 
@@ -172,13 +171,11 @@ namespace platform {
 			if (player->getCollider().getGlobalBounds().intersects(rectangles[i].getGlobalBounds()))
 			{
 				player->getCollider().setPosition(player->getCollider().getPosition().x, rectangles[i].getPosition().y - (player->getCollider().getLocalBounds().height));
-				//map.GetLayer("ground").SetColor({ 255,0,0 });
 				player->setIsOnGround(true);
 			}
 			else
 			{
 				player->setIsOnGround(false);
-				//map.GetLayer("ground").SetColor({ 255,255,255 });
 			}
 		}
 

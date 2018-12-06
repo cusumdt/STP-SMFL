@@ -5,9 +5,6 @@
     <ClCompile Include="..\src\Utility\buttons.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Player\bullet.cpp">
-      <Filter>Enemy</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Utility\camera.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
@@ -41,13 +38,16 @@
     <ClCompile Include="..\src\pugixml\pugixml.cpp">
       <Filter>pugixml</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Player\bullet.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Tiles\tiles.cpp">
+      <Filter>Tiles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Utility\buttons.h">
       <Filter>Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Player\bullet.h">
-      <Filter>Enemy</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Utility\camera.h">
       <Filter>Utility</Filter>
@@ -88,6 +88,12 @@
     <ClInclude Include="..\src\pugixml\pugixml.hpp">
       <Filter>pugixml</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\Player\bullet.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Tiles\tiles.h">
+      <Filter>Tiles</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Utility">
@@ -107,6 +113,9 @@
     </Filter>
     <Filter Include="Scenes">
       <UniqueIdentifier>{68f808be-eb06-40a4-8fc7-93991c3be7be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tiles">
+      <UniqueIdentifier>{d397012f-2a02-49c9-9bda-a0647ca2db01}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

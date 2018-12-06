@@ -16,6 +16,7 @@ namespace platform
 		_isJumping = false;
 		_timeJump = 0;
 		_life = 3;
+	
 	}
 
 	Player::~Player() {
