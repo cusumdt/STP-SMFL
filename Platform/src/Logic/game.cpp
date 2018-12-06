@@ -5,8 +5,6 @@
 #include "../Scenes/gameplay.h"
 #include "../Scenes/menu.h"
 
-
-
 using namespace tmx;
 using namespace sf;
 
