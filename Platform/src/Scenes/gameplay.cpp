@@ -14,6 +14,9 @@
 #include "../Utility/buttons.h"
 
 #include "../Enemy/enemy.h"
+
+#include "../Map/levelTutorial.h"
+
 #include <ctime>
 
 #include <iostream>
@@ -50,6 +53,7 @@ namespace platform {
 	static	Camera* camera = new Camera();
 	static	Gravity* gravity = new Gravity();
 	static	Bullet* bullet[MAXBULLET];
+	static LEVELONE* levelone = new LEVELONE();
 	static	float _time;
 	static	float _collisionTime;
 
@@ -68,9 +72,8 @@ namespace platform {
 
 	//	mouseTex.loadFromFile("res/BTN_PLAY.png");
 	//	mouseSprite.setTexture(mouseTex);
-
-
 		srand(time(0));
+		levelone->initLevel();
 		_time = 0;
 		for (int i = 0; i < MAXBULLET; i++) {
 			bullet[i] = NULL;
@@ -79,6 +82,7 @@ namespace platform {
 			}
 		}
 
+	
 		for (int i = 0; i < CANT_ENEMYS; i++) {
 			vecEnemy[i] = NULL;
 			if (vecEnemy[i] == NULL) {
@@ -212,6 +216,7 @@ namespace platform {
 	}
 
 	void Gameplay::draw() {
+		levelone->drawLevel();
 		player->drawPlayer();
 
 		//window.draw(mouseSprite);
@@ -255,6 +260,22 @@ namespace platform {
 				delete vecEnemy[i];
 				vecEnemy[i] = NULL;
 			}
+		}
+		if (player != NULL) {
+			delete player;
+			player = NULL;
+		}
+		if (camera != NULL) {
+			delete camera;
+			camera = NULL;
+		}
+		if (gravity != NULL) {
+			delete gravity;
+			gravity = NULL;
+		}
+		if (levelone != NULL) {
+			delete levelone;
+			levelone = NULL;
 		}
 	}
 }

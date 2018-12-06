@@ -7,6 +7,7 @@ namespace platform {
 	enum typeTile {
 		PLATFORM,
 		WALL,
+		DECORATION
 	};
 	class Tiles{
 	private:
@@ -17,7 +18,9 @@ namespace platform {
 		sf::Sprite _sprite;
 		sf::RectangleShape _collider;
 	public:
-		Tiles(float x, float y, typeTile type,char texture[]);
+		Tiles(float x, float y, typeTile type, sf::Sprite sprite);
+		Tiles(float x, float y, typeTile type, sf::Texture texture);
+		Tiles(float x, float y, typeTile type,const char texture[]);
 		void setX(float x);
 		void setY(float y);
 		void setType(typeTile type);
@@ -28,6 +31,7 @@ namespace platform {
 		float getTextureSizeY() { return static_cast<float>(_texture.getSize().y); }
 		sf::RectangleShape getCollider() { return _collider; }
 		sf::Sprite getSprite() { return _sprite; }
+		void drawTile();
 	};
 }
 

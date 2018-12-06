@@ -85,7 +85,7 @@ namespace platform
 			_timeJump += Game::_deltaTime;
 			std::cout << _timeJump<<std::endl;
 			if (_timeJump < 0.5f) {
-				_y -= PLAYER_VELOCITY * Game::_deltaTime;
+				_y -= PLAYER_VELOCITY *2  * Game::_deltaTime;
 				sprite.setPosition(_x, _y);
 			
 

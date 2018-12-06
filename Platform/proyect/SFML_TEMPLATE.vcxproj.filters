@@ -44,6 +44,9 @@
     <ClCompile Include="..\src\Tiles\tiles.cpp">
       <Filter>Tiles</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Map\levelTutorial.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Utility\buttons.h">
@@ -94,6 +97,9 @@
     <ClInclude Include="..\src\Tiles\tiles.h">
       <Filter>Tiles</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\Map\levelTutorial.h">
+      <Filter>Map</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Utility">
@@ -116,6 +122,9 @@
     </Filter>
     <Filter Include="Tiles">
       <UniqueIdentifier>{d397012f-2a02-49c9-9bda-a0647ca2db01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map">
+      <UniqueIdentifier>{d3c3765e-d08d-4782-96f5-9b1bc413a4e1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
