@@ -2,13 +2,13 @@
 
 namespace platform {
 
-	LEVELONE::LEVELONE(){
+	LEVELONE::LEVELONE() {
 		for (int i = 0; i < MAXTILES; i++) {
 			tiles[i] = NULL;
 		}
 
 	}
-	LEVELONE::~LEVELONE(){
+	LEVELONE::~LEVELONE() {
 		for (int i = 0; i < MAXTILES; i++) {
 			if (tiles[0] != NULL) {
 				delete tiles[i];
@@ -33,16 +33,16 @@ namespace platform {
 			tiles[4] = new Tiles(2300, -10, DECORATION, CACTUS);
 		}
 		if (tiles[5] == NULL) {
-			tiles[5] = new Tiles(2300+tiles[4]->getTextureSizeX(), 93, DECORATION, GRASS1);
+			tiles[5] = new Tiles(2300 + tiles[4]->getTextureSizeX(), 93, DECORATION, GRASS1);
 		}
 		if (tiles[6] == NULL) {
 			tiles[6] = new Tiles(1680, 230, DECORATION, GRASS2);
 		}
 		if (tiles[7] == NULL) {
-			tiles[7] = new Tiles(1680+tiles[3]->getTextureSizeX()-tiles[6]->getTextureSizeX(), 243, DECORATION, GRASS1);
+			tiles[7] = new Tiles(1680 + tiles[3]->getTextureSizeX() - tiles[6]->getTextureSizeX(), 243, DECORATION, GRASS1);
 		}
 		if (tiles[8] == NULL) {
-			tiles[8] = new Tiles(1300 + tiles[2]->getTextureSizeX()/2 - tiles[4]->getTextureSizeX()/2, 140, DECORATION, CACTUS);
+			tiles[8] = new Tiles(1300 + tiles[2]->getTextureSizeX() / 2 - tiles[4]->getTextureSizeX() / 2, 140, DECORATION, CACTUS);
 		}
 		if (tiles[9] == NULL) {
 			tiles[9] = new Tiles(600, 401, DECORATION, MUSHROOM);

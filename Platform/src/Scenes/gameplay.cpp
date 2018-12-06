@@ -188,7 +188,15 @@ namespace platform {
 		/*if (Collision::PixelPerfectTest(mouseSprite, spriteTest)) {
 			cout << "HELLO CRIS!" << endl;
 		}*/
-
+		for (int i = 0; i < MAXTILES; i++)
+		{
+			if (levelone->tiles[i] != NULL && levelone->tiles[i]->getType() == PLATFORM ) {
+				if (Collision::PixelPerfectTest(player->getSprite(),levelone->tiles[i]->getSprite())) {
+					player->setIsOnGround(true);
+				}
+			}
+		}
+	
 		for (int i = 0; i < MAXBULLET; i++) {
 			if (bullet[i] != NULL) {
 				if (bullet[i]->getItsAlive()) {

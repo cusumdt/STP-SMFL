@@ -8,10 +8,8 @@
 namespace platform {
 
 	class LEVELONE{
-	private:
-
-		Tiles * tiles[MAXTILES];
 	public:
+		Tiles * tiles[MAXTILES];
 		LEVELONE();
 		~LEVELONE();
 		void initLevel();
