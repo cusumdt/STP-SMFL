@@ -115,6 +115,38 @@ namespace platform {
 				PORTAL1
 			);
 		}
+		if (tiles[11] == NULL) {
+			tiles[11] = new Tiles(
+				levelTutorialConstData::TEXTKEY1CORDINATE_X,
+				levelTutorialConstData::TEXTKEY1CORDINATE_Y,
+				DECORATION,
+				TUTORIALKEY
+			);
+		}
+		if (tiles[12] == NULL) {
+			tiles[12] = new Tiles(
+				levelTutorialConstData::TEXTKEY2CORDINATE_X,
+				levelTutorialConstData::TEXTKEY2CORDINATE_Y,
+				DECORATION,
+				TUTORIALKEY2
+			);
+		}
+		if (tiles[13] == NULL) {
+			tiles[13] = new Tiles(
+				levelTutorialConstData::TEXTCORDINATE_X,
+				levelTutorialConstData::TEXTCORDINATE_Y,
+				DECORATION,
+				TUTORIALTEXT
+			);
+		}
+		if (tiles[14] == NULL) {
+			tiles[14] = new Tiles(
+				levelTutorialConstData::TEXT2CORDINATE_X,
+				levelTutorialConstData::TEXT2CORDINATE_Y,
+				DECORATION,
+				TUTORIALTEXT2
+			);
+		}
 		//Enemy
 		if (vecEnemy[0] == NULL) {
 			vecEnemy[0] = new Enemy(

@@ -47,6 +47,9 @@
     <ClCompile Include="..\src\Map\levelTutorial.cpp">
       <Filter>Map</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Map\levelOne.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Utility\buttons.h">
@@ -98,6 +101,9 @@
       <Filter>Tiles</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Map\levelTutorial.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Map\levelOne.h">
       <Filter>Map</Filter>
     </ClInclude>
   </ItemGroup>

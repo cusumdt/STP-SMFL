@@ -13,9 +13,9 @@
 
 #include "../Utility/buttons.h"
 
-
-
+#include "../Map/level.h"
 #include "../Map/levelTutorial.h"
+#include "../Map/levelOne.h"
 
 #include <ctime>
 
@@ -53,19 +53,23 @@ namespace platform {
 	static	Gravity* gravity = new Gravity();
 	static	Bullet* bullet[MAXBULLET];
 	static LevelTutorial* levelTutorial = new LevelTutorial();
+	static LevelOne* levelOne = new LevelOne();
 	static	float _time;
 	static	float _collisionTime;
 
 	int testCounter = 0;
 
 	Gameplay::Gameplay() {
-
+		_level = LEVELONE;
 	}
 
 	Gameplay::~Gameplay() {
 
 	}
 
+	void Gameplay::setLevel(LevelEnum level) {
+		_level = level;
+	}
 	void Gameplay::init() {
 
 
@@ -73,6 +77,8 @@ namespace platform {
 	//	mouseSprite.setTexture(mouseTex);
 		srand(time(0));
 		levelTutorial->initLevel();
+		levelOne->initLevel();
+
 		_time = 0;
 		for (int i = 0; i < MAXBULLET; i++) {
 			bullet[i] = NULL;
@@ -172,24 +178,58 @@ namespace platform {
 			cout << "HELLO CRIS!" << endl;
 		}*/
 		//LevelTutorial
-		for (int i = 0; i < MAXTILES; i++)
+		switch (_level)
 		{
-			if (levelTutorial->tiles[i] != NULL && levelTutorial->tiles[i]->getType() == PLATFORM ) {
-				if (Collision::PixelPerfectTest(player->getSprite(),levelTutorial->tiles[i]->getSprite())) {
-					player->setIsOnGround(true);
+		case platform::LEVELTUTORIAL:
+			for (int i = 0; i < MAXTILES; i++)
+			{
+				if (levelTutorial->tiles[i] != NULL && levelTutorial->tiles[i]->getType() == PLATFORM) {
+					if (Collision::PixelPerfectTest(player->getSprite(), levelTutorial->tiles[i]->getSprite())) {
+						player->setIsOnGround(true);
+					}
+				}
+				else if (levelTutorial->tiles[i] != NULL && levelTutorial->tiles[i]->getType() == PORTAL) {
+					if (Collision::PixelPerfectTest(player->getSprite(), levelTutorial->tiles[i]->getSprite())) {
+						//Aca condicion de portal
+					}
 				}
 			}
-			else if (levelTutorial->tiles[i] != NULL && levelTutorial->tiles[i]->getType() == PORTAL) {
-			if (Collision::PixelPerfectTest(player->getSprite(), levelTutorial->tiles[i]->getSprite())) {
-					//Aca condicion de portal
+			levelTutorial->updateLevel(bullet, player);
+			break;
+		case platform::LEVELONE:
+			for (int i = 0; i < MAXTILES; i++)
+			{
+				if (levelOne->tiles[i] != NULL && levelOne->tiles[i]->getType() == PLATFORM) {
+					if (Collision::PixelPerfectTest(player->getSprite(), levelOne->tiles[i]->getSprite())) {
+						player->setIsOnGround(true);
+					}
+				}
+				else if (levelOne->tiles[i] != NULL && levelOne->tiles[i]->getType() == PORTAL) {
+					if (Collision::PixelPerfectTest(player->getSprite(), levelOne->tiles[i]->getSprite())) {
+						//Aca condicion de portal
+					}
 				}
 			}
+			levelOne->updateLevel(bullet, player);
+			break;
+		default:
+			break;
 		}
-		levelTutorial->updateLevel(bullet,player);
+
 	}
 
 	void Gameplay::draw() {
-		levelTutorial->drawLevel();
+		switch (_level)
+		{
+		case platform::LEVELTUTORIAL:
+			levelTutorial->drawLevel();
+			break;
+		case platform::LEVELONE:
+			levelOne->drawLevel();
+			break;
+		default:
+			break;
+		}
 		player->drawPlayer();
 
 		//window.draw(mouseSprite);

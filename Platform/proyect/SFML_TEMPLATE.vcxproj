@@ -22,6 +22,7 @@
     <ClCompile Include="..\src\Enemy\enemy.cpp" />
     <ClCompile Include="..\src\Logic\game.cpp" />
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\Map\levelOne.cpp" />
     <ClCompile Include="..\src\Map\levelTutorial.cpp" />
     <ClCompile Include="..\src\Player\bullet.cpp" />
     <ClCompile Include="..\src\Player\player.cpp" />
@@ -39,6 +40,7 @@
   <ItemGroup>
     <ClInclude Include="..\src\Enemy\enemy.h" />
     <ClInclude Include="..\src\Logic\game.h" />
+    <ClInclude Include="..\src\Map\levelOne.h" />
     <ClInclude Include="..\src\Map\levelTutorial.h" />
     <ClInclude Include="..\src\Player\bullet.h" />
     <ClInclude Include="..\src\Player\player.h" />
