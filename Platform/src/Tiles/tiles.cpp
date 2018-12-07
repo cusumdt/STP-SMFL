@@ -1,5 +1,5 @@
 #include "tiles.h"
-#include "../Logic/game.h"
+#include "Logic/game.h"
 namespace platform {
 	Tiles::Tiles(float x, float y, typeTile type, sf::Sprite sprite) {
 		_x = x;

@@ -1,5 +1,5 @@
 #include "levelTutorial.h"
-#include "../Utility/Collision.h"
+#include "Utility/Collision.h"
 namespace platform {
 	
 	LevelTutorial::LevelTutorial() {

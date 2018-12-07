@@ -1,6 +1,9 @@
 #include "bullet.h"
-#include "../Utility/const_data.h"
+
 #include <iostream>
+
+#include "Utility/const_data.h"
+
 namespace platform {
 	Bullet::Bullet() {
 		_x = 0;

@@ -1,6 +1,8 @@
 #ifndef BULLET_H
 #define BULLET_H
-#include "../Logic/game.h"
+
+#include "Logic/game.h"
+
 namespace platform {
 	enum Direction {
 		RIGHTD, LEFTD

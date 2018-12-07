@@ -1,6 +1,9 @@
 #include "player.h"
-#include "../Utility/const_data.h"
+
 #include <iostream>
+
+#include "Utility/const_data.h"
+
 namespace platform
 {
 	Player::Player() {

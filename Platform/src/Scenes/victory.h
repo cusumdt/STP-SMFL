@@ -1,8 +1,10 @@
 #ifndef VICTORY_H
 #define VICTORY_H
 
-#include "../Utility/scenes.h"
 #include "SFML\Graphics.hpp"
+
+#include "Utility/scenes.h"
+
 
 namespace platform {
 

@@ -1,6 +1,6 @@
 #ifndef GRAVITY_H
 #define GRAVITY_H
-#include "../Player/player.h"
+#include "Player/player.h"
 namespace platform {
 
 	class Gravity {

@@ -1,5 +1,6 @@
 #include "enemy.h"
-#include "../Utility/const_data.h"
+#include "Utility/const_data.h"
+
 namespace platform {
 	Enemy::Enemy(int life, float x, float y) {
 		_life = life;

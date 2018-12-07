@@ -1,8 +1,10 @@
 #ifndef CREDITS_H
 #define CREDITS_H
 
-#include "../Utility/scenes.h"
 #include "SFML/Graphics.hpp"
+
+#include "Utility/scenes.h"
+
 
 namespace platform {
 	class Credits : public Scene {

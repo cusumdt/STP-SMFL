@@ -1,14 +1,16 @@
 #include "game.h"
 
-#include "../Player/player.h"
-#include "../Utility/camera.h"
-#include "../Scenes/gameplay.h"
-#include "../Scenes/menu.h"
-#include "../Scenes/credits.h"
-#include "../Scenes/gameOver.h"
-#include "../Scenes/victory.h"
-
 #include <iostream>
+
+#include "Player/player.h"
+#include "Utility/camera.h"
+#include "Scenes/gameplay.h"
+#include "Scenes/menu.h"
+#include "Scenes/credits.h"
+#include "Scenes/gameOver.h"
+#include "Scenes/victory.h"
+
+
 
 using namespace tmx;
 using namespace sf;

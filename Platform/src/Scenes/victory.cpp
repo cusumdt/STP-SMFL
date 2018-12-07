@@ -1,11 +1,9 @@
 #include "victory.h"
 
-#include <iostream>
-
 #include "TGUI\TGUI.hpp"
 
-#include "../Logic/game.h"
-#include "../Scenes/gameplay.h"
+#include "Logic/game.h"
+#include "Scenes/gameplay.h"
 
 using namespace sf;
 

@@ -4,8 +4,8 @@
 
 #include "TGUI\TGUI.hpp"
 
-#include "../Logic/game.h"
-#include "../Scenes/gameplay.h"
+#include "Logic/game.h"
+#include "Scenes/gameplay.h"
 
 namespace platform {
 

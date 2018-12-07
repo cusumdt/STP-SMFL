@@ -1,7 +1,8 @@
 #ifndef ENEMY_H
 #define ENEMY_H
-#include "../Logic/game.h"
-#include "../Utility/gravity.h"
+#include "Logic/game.h"
+#include "Utility/gravity.h"
+
 namespace platform {
 	enum DirectEnemy {
 		RIGHTDE, LEFTDE

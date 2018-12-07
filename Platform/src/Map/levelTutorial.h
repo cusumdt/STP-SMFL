@@ -1,11 +1,14 @@
 #ifndef LEVELTUTOTRIAL_H
 #define	LEVELTUTORIAL_H
-#include "../Tiles/tiles.h"
-#include "../Utility/const_data.h"
-#include "../Enemy/enemy.h"
-#include "../Player/bullet.h"
+
 #include "SFML/Graphics.hpp"
 #include "STP/TMXLoader.hpp"
+
+#include "Tiles/tiles.h"
+#include "Utility/const_data.h"
+#include "Enemy/enemy.h"
+#include "Player/bullet.h"
+
 
 namespace platform {
 

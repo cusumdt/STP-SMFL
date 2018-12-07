@@ -125,7 +125,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)libs\SFML-2.5.1\include;$(SolutionDir)libs\STP\include;$(SolutionDir)libs\TGUI-0.8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libs\SFML-2.5.1\include;$(SolutionDir)libs\STP\include;$(SolutionDir)libs\TGUI-0.8\include;$(SolutionDir)src\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)libs\SFML-2.5.1\lib;$(SolutionDir)libs\STP\lib;$(SolutionDir)libs\TGUI-0.8\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -151,7 +151,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)libs\SFML-2.5.1\include;$(SolutionDir)libs\STP\include;$(SolutionDir)libs\TGUI-0.8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libs\SFML-2.5.1\include;$(SolutionDir)libs\STP\include;$(SolutionDir)libs\TGUI-0.8\include;$(SolutionDir)src\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>

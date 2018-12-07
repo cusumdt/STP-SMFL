@@ -1,8 +1,10 @@
 #ifndef GAMEPLAY_H
 #define GAMEPLAY_H
 
-#include "../Utility/scenes.h"
 #include "SFML\Graphics.hpp"
+
+#include "Utility/scenes.h"
+
 
 namespace platform {
 	enum LevelEnum {

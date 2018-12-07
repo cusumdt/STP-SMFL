@@ -1,20 +1,22 @@
 #include "gameplay.h"
 
-#include "STP/TMXLoader.hpp"
-#include "../pugixml/pugixml.hpp"
-#include "../pugixml/pugiconfig.hpp"
-#include "../Utility/Collision.h"
-
-#include "../Logic/game.h"
-#include "../Player/player.h"
-#include "../Utility/camera.h"
-#include "../Utility/const_data.h"
-
-#include "../Map/level.h"
-#include "../Map/levelTutorial.h"
-#include "../Map/levelOne.h"
-
 #include <iostream>
+
+#include "STP/TMXLoader.hpp"
+#include "pugixml/pugixml.hpp"
+#include "pugixml/pugiconfig.hpp"
+#include "Utility/Collision.h"
+
+#include "Logic/game.h"
+#include "Player/player.h"
+#include "Utility/camera.h"
+#include "Utility/const_data.h"
+
+#include "Map/level.h"
+#include "Map/levelTutorial.h"
+#include "Map/levelOne.h"
+
+
 
 using namespace tmx;
 using namespace sf;

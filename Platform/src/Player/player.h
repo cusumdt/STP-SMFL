@@ -2,7 +2,9 @@
 #define PLAYER_H
 #include "SFML/Graphics.hpp"
 #include "STP/TMXLoader.hpp"
-#include "../Logic/game.h"
+
+#include "Logic/game.h"
+
 #include "bullet.h"
 
 namespace platform {

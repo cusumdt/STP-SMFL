@@ -1,7 +1,7 @@
 #ifndef CAMERA_H
 #define CAMERA_H
-#include "../Logic/game.h"
-#include "../Player/player.h"
+#include "Logic/game.h"
+#include "Player/player.h"
 namespace platform {
 	enum TypeCamera
 	{

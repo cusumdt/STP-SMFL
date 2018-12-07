@@ -1,5 +1,4 @@
 #include "gravity.h"
-#include <iostream>
 
 namespace platform {
 
