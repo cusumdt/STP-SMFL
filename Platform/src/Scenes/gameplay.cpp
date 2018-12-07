@@ -11,8 +11,6 @@
 #include "../Utility/camera.h"
 #include "../Utility/const_data.h"
 
-#include "../Utility/buttons.h"
-
 #include "../Map/level.h"
 #include "../Map/levelTutorial.h"
 #include "../Map/levelOne.h"
@@ -70,7 +68,6 @@ namespace platform {
 		srand(time(0));
 		levelTutorial->initLevel();
 		levelOne->initLevel();
-
 		_time = 0;
 		for (int i = 0; i < MAXBULLET; i++) {
 			bullet[i] = NULL;
@@ -262,6 +259,22 @@ namespace platform {
 			delete levelTutorial;
 			levelTutorial = NULL;
 		}
+	}
+
+	void Gameplay::showGUI() {
+		/*for (int i = 0; i < maxButtons; i++) {
+			if (buttons[i] != NULL) {
+				buttons[i]->setVisible(true);
+			}
+		}*/
+	}
+
+	void Gameplay::hideGUI() {
+		/*for (int i = 0; i < maxButtons; i++) {
+			if (buttons[i] != NULL) {
+				buttons[i]->setVisible(false);
+			}
+		}*/
 	}
 }
 

@@ -1,12 +1,14 @@
 #ifndef GAMEPLAY_H
 #define GAMEPLAY_H
 
+#include "../Utility/scenes.h"
+
 namespace platform {
 	enum LevelEnum {
 		LEVELTUTORIAL,
 		LEVELONE
 	};
-	class Gameplay {
+	class Gameplay : public Scene {
 		LevelEnum _level;
 	public:
 		Gameplay();
@@ -17,6 +19,8 @@ namespace platform {
 		void update();
 		void draw();
 		void deInit();
+		void showGUI();
+		void hideGUI();
 	};	
 }
 #endif // !GAMEPLAY.H

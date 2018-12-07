@@ -1,0 +1,31 @@
+#ifndef GAMEPLAY_H
+#define GAMEPLAY_H
+
+#include "../Utility/scenes.h"
+
+namespace platform {
+<<<<<<< HEAD
+	enum LevelEnum {
+		LEVELTUTORIAL,
+		LEVELONE
+	};
+	class Gameplay {
+		LevelEnum _level;
+=======
+
+	class Gameplay : public Scene {
+>>>>>>> 5e34f92a70a4e605c87f6405963bb76a32e2e62a
+	public:
+		Gameplay();
+		~Gameplay();
+		void setLevel(LevelEnum level);
+		LevelEnum getLevel(){ return _level; }
+		void init();
+		void update();
+		void draw();
+		void deInit();
+		void showGUI();
+		void hideGUI();
+	};	
+}
+#endif // !GAMEPLAY.H

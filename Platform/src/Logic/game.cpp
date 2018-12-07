@@ -4,8 +4,7 @@
 #include "../Utility/camera.h"
 #include "../Scenes/gameplay.h"
 #include "../Scenes/menu.h"
-
-
+#include "../Scenes/credits.h"
 
 using namespace tmx;
 using namespace sf;
@@ -21,106 +20,66 @@ namespace platform {
 	float Game::_deltaTime = 0;
 
 		//Window renderer
-	RenderWindow window(VideoMode(Game::screenWidth, Game::screenHeight), "Simple Platform", Style::None, ContextSettings(24, 8, 4));
+	RenderWindow window(VideoMode(Game::screenWidth, Game::screenHeight), 
+	"Simple Platform",
+	Style::Close, 
+	ContextSettings(24, 8, 4));
 
-	Gameplay gameplay;
-	Menu menu;
-	ActualScene actualScene = GameScene;
+	ActualScene Game::_currentScene = MenuScene;
+	Scene* Game::scenes[scenesAmount];
+
+	tgui::Gui gui{ window };
 
 	Game::Game() {
-		
 		_deltaTime = 0;
+		for (int i = 0; i < scenesAmount; i++) {
+			if (scenes[i] != NULL) {
+				scenes[i] = NULL;
+			}
+		}
+
+		scenes[MenuScene] = new Menu();
+		scenes[GameScene] = new Gameplay();
+		scenes[CreditsScene] = new Credits();
 	}
 
 	Game::~Game() {
-		
+		for (int i = 0; i < scenesAmount; i++){
+			if (scenes[i] != NULL) {
+				delete scenes[i];
+			}
+		}
 	}
 
 	void Game::init() {
-		_deltaTime = 0;
-		switch (actualScene) {
-		case MenuScene:
-			menu.init();
-			break;
-		case GameScene:
-			gameplay.init();
-			//map.ShowObjects(); // Display all the layer objects.
-			//gameplay.update();
-			break;
-		case GameoverScene:
-			//gameOver::update();
-			break;
-		case CreditsScene:
-			//credits::update();
-			break;
-		default:
-			break;
-		}
 
+		_deltaTime = 0;
+
+		for (int i = 0; i < scenesAmount; i++){
+			if (scenes[i] != NULL){
+				scenes[i]->init();
+			}
+		}
 	}
 
 	void Game::update() {
-		switch (actualScene) {
-		case MenuScene:
-			menu.update();
-			break;
-		case GameScene:
-			gameplay.update();
-			break;
-		case GameoverScene:
-			//gameOver::update();
-			break;
-		case CreditsScene:
-			//credits::update();
-			break;
-		default:
-			break;
-		}
+
+		
 	}
 
 	void Game::draw() {
-		// Clear screen
-		window.clear();
+		
 
-		switch (actualScene) {
-		case MenuScene:
-		    menu.draw();
-			break;
-		case GameScene:
-			// Draw the map
-			window.draw(map);
-			gameplay.draw();
-			break;
-		case GameoverScene:
-			//gameOver::draw();
-			break;
-		case CreditsScene:
-			//credits::draw();
-			break;
-		default:
-			break;
-		}
-			
-		// Update the window
-		window.display();
+		
+
+		
 	}
 
 	void Game::deInit() {
-		switch (actualScene) {
-		case MenuScene:
-			//menu::update();
-			break;
-		case GameScene:
-			gameplay.deInit();
-			break;
-		case GameoverScene:
-			//gameOver::update();
-			break;
-		case CreditsScene:
-			//credits::update();
-			break;
-		default:
-			break;
+		for (int i = 0; i < scenesAmount; i++){
+			if (scenes[i] != NULL){
+				scenes[i]->deInit();
+			}
 		}
 	}
 
@@ -139,14 +98,35 @@ namespace platform {
 				if (event.type == Event::Closed) {
 					window.close();
 				}
-				if (event.type == Event::KeyPressed && event.key.code == Keyboard::Escape) {
-					window.close();
-				}
-					
+
+				gui.handleEvent(event);
 			}
-		
-			update();
-			draw();
+			
+			window.clear();
+			window.draw(map);
+
+			if (scenes[_currentScene] != NULL){
+
+				scenes[_currentScene]->update();
+
+				scenes[_currentScene]->draw();
+
+				if (_currentScene == GameScene && scenes[_currentScene] != NULL) {
+					scenes[GameScene]->draw();
+				}
+
+				scenes[_currentScene]->showGUI();
+				for (int i = 0; i < scenesAmount; i++){
+
+					if (i != _currentScene)
+					{
+						scenes[i]->hideGUI();
+					}
+				}
+			}
+
+			gui.draw();
+			window.display();
 		}
 		deInit();
 	}
@@ -157,5 +137,13 @@ namespace platform {
 
 	float Game::getDeltaTime() {
 		return _deltaTime;
+	}
+
+	void Game::setCurrentScene(ActualScene current) {
+		_currentScene = current;
+	}
+
+	ActualScene Game::getCurrentScene() {
+		return _currentScene;
 	}
 }

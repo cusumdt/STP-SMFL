@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\src\main.cpp" />
+<<<<<<< HEAD
+    <ClCompile Include="..\src\Utility\buttons.cpp">
+      <Filter>Utility</Filter>
+=======
+    <ClCompile Include="..\src\Player\bullet.cpp">
+      <Filter>Enemy</Filter>
+>>>>>>> 5e34f92a70a4e605c87f6405963bb76a32e2e62a
+    </ClCompile>
+    <ClCompile Include="..\src\Utility\camera.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Utility\Collision.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Scenes\credits.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Enemy\enemy.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Logic\game.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Scenes\gameOver.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Scenes\gameplay.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Utility\gravity.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Scenes\menu.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Player\player.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\pugixml\pugixml.cpp">
+      <Filter>pugixml</Filter>
+    </ClCompile>
+<<<<<<< HEAD
+    <ClCompile Include="..\src\Player\bullet.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Tiles\tiles.cpp">
+      <Filter>Tiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Map\levelTutorial.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Map\levelOne.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Utility\buttons.h">
+      <Filter>Utility</Filter>
+=======
+    <ClCompile Include="..\src\Utility\scenes.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Player\bullet.h">
+      <Filter>Enemy</Filter>
+>>>>>>> 5e34f92a70a4e605c87f6405963bb76a32e2e62a
+    </ClInclude>
+    <ClInclude Include="..\src\Utility\camera.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Utility\Collision.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Utility\const_data.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Scenes\credits.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Enemy\enemy.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Logic\game.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Scenes\gameplay.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Scenes\gameOver.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Utility\gravity.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Scenes\menu.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Player\player.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\pugixml\pugiconfig.hpp">
+      <Filter>pugixml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\pugixml\pugixml.hpp">
+      <Filter>pugixml</Filter>
+    </ClInclude>
+<<<<<<< HEAD
+    <ClInclude Include="..\src\Player\bullet.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Tiles\tiles.h">
+      <Filter>Tiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Map\levelTutorial.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Map\levelOne.h">
+      <Filter>Map</Filter>
+=======
+    <ClInclude Include="..\src\Utility\scenes.h">
+      <Filter>Utility</Filter>
+>>>>>>> 5e34f92a70a4e605c87f6405963bb76a32e2e62a
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{97d38f39-0f44-4ae5-a545-30baec047203}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logic">
+      <UniqueIdentifier>{d7c388ab-b8a0-4676-bc51-5549df9aa90a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemy">
+      <UniqueIdentifier>{bbe1efa6-e725-4409-a6eb-acdf1bb58235}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Player">
+      <UniqueIdentifier>{de47f146-4a18-4e86-b1e2-7f3af092d913}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pugixml">
+      <UniqueIdentifier>{f59326c5-6ee2-477e-872c-dca4eaabe16c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes">
+      <UniqueIdentifier>{68f808be-eb06-40a4-8fc7-93991c3be7be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tiles">
+      <UniqueIdentifier>{d397012f-2a02-49c9-9bda-a0647ca2db01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map">
+      <UniqueIdentifier>{d3c3765e-d08d-4782-96f5-9b1bc413a4e1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
