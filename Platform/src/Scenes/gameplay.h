@@ -4,6 +4,7 @@
 namespace platform {
 
 	class Gameplay {
+		static bool _sceneEnd;
 	public:
 		Gameplay();
 		~Gameplay();
@@ -11,6 +12,8 @@ namespace platform {
 		void update();
 		void draw();
 		void deInit();
+		bool getSceneEnd();
+		static void setSceneEnd(bool end);
 	};	
 }
 #endif // !GAMEPLAY.H

@@ -4,6 +4,7 @@
 #include "../Utility/camera.h"
 #include "../Scenes/gameplay.h"
 #include "../Scenes/menu.h"
+#include "../Scenes/credits.h"
 
 using namespace tmx;
 using namespace sf;
@@ -13,17 +14,26 @@ namespace platform {
 	const short int Game::screenWidth = 1280;
 	const short int Game::screenHeight = 768;
 	
+	ActualScene actualScene = MenuScene;
+	int Game:: _currentScene = MenuScene;
+
 	//DeltaTime
 	Clock _clock;
 	Time _elapsed;
 	float Game::_deltaTime = 0;
 
 		//Window renderer
-	RenderWindow window(VideoMode(Game::screenWidth, Game::screenHeight), "Simple Platform", Style::None, ContextSettings(24, 8, 4));
+	RenderWindow window(VideoMode(Game::screenWidth, Game::screenHeight), 
+	"Simple Platform",
+	Style::Close, 
+	ContextSettings(24, 8, 4));
+
+	tgui::Gui gui{ window };
 
 	Gameplay gameplay;
 	Menu menu;
-	ActualScene actualScene = GameScene;
+	Credits credits;
+	
 
 	Game::Game() {
 		
@@ -36,40 +46,71 @@ namespace platform {
 
 	void Game::init() {
 		_deltaTime = 0;
-		switch (actualScene) {
-		case MenuScene:
-			menu.init();
-			break;
-		case GameScene:
-			gameplay.init();
-			//map.ShowObjects(); // Display all the layer objects.
-			//gameplay.update();
-			break;
-		case GameoverScene:
-			//gameOver::update();
-			break;
-		case CreditsScene:
-			//credits::update();
-			break;
-		default:
-			break;
-		}
+		menu.init();
 
 	}
 
 	void Game::update() {
-		switch (actualScene) {
+
+		switch (_currentScene) {
 		case MenuScene:
+			
 			menu.update();
+			if (menu.getSceneEnd()) {
+				menu.deInit();
+
+				switch (_currentScene) {
+				case CreditsScene:
+					credits.init();
+					break;
+				case GameScene:
+					gameplay.init();
+					break;
+				case GameoverScene:
+
+					break;
+				}
+			}
+			
 			break;
 		case GameScene:
 			gameplay.update();
+			if (gameplay.getSceneEnd()) {
+				gameplay.deInit();
+
+				switch (_currentScene) {
+				case MenuScene:
+					menu.init();
+					break;
+				case CreditsScene:
+					credits.init();
+					break;
+				case GameoverScene:
+
+					break;
+				}
+			}
 			break;
 		case GameoverScene:
-			//gameOver::update();
+
 			break;
 		case CreditsScene:
-			//credits::update();
+			credits.update();
+				if (credits.getSceneEnd()) {
+					credits.deInit();
+
+					switch (_currentScene) {
+					case MenuScene:
+						menu.init();
+						break;
+					case GameScene:
+						gameplay.init();
+						break;
+					case GameoverScene:
+
+						break;
+					}
+				}
 			break;
 		default:
 			break;
@@ -77,49 +118,34 @@ namespace platform {
 	}
 
 	void Game::draw() {
-		// Clear screen
 		window.clear();
-
-		switch (actualScene) {
+		window.draw(map);
+		switch (_currentScene) {
 		case MenuScene:
 		    menu.draw();
 			break;
 		case GameScene:
-			// Draw the map
-			window.draw(map);
 			gameplay.draw();
 			break;
 		case GameoverScene:
-			//gameOver::draw();
+
 			break;
 		case CreditsScene:
-			//credits::draw();
+			credits.draw();
 			break;
 		default:
 			break;
 		}
 			
-		// Update the window
+		gui.draw();
+
 		window.display();
 	}
 
 	void Game::deInit() {
-		switch (actualScene) {
-		case MenuScene:
-			//menu::update();
-			break;
-		case GameScene:
+			menu.deInit();
 			gameplay.deInit();
-			break;
-		case GameoverScene:
-			//gameOver::update();
-			break;
-		case CreditsScene:
-			//credits::update();
-			break;
-		default:
-			break;
-		}
+			credits.deInit();
 	}
 
 	void Game::runGame() {
@@ -140,7 +166,7 @@ namespace platform {
 				if (event.type == Event::KeyPressed && event.key.code == Keyboard::Escape) {
 					window.close();
 				}
-					
+				gui.handleEvent(event);
 			}
 		
 			update();
@@ -155,5 +181,16 @@ namespace platform {
 
 	float Game::getDeltaTime() {
 		return _deltaTime;
+	}
+
+	void Game::setCurrentScene(int current) {
+		_currentScene = current;
+	}
+	int Game::getCurrentScene() {
+		return _currentScene;
+	}
+
+	ActualScene Game::getActualScene() {
+		return actualScene;
 	}
 }

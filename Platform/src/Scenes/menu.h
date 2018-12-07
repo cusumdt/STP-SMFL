@@ -4,17 +4,18 @@
 #include "../Utility/buttons.h"
 
 namespace platform {
+	
 	class Menu {
-		Texture playTex;
-		Texture exitTex;
-		Button play;
-		Button exit;
+		static bool _sceneEnd;
 	public:
 		Menu();
 		~Menu();
 		void init();
 		void update();
 		void draw();
+		void deInit();
+		bool getSceneEnd();
+		static void setSceneEnd(bool end);
 	};
 }
 #endif // !MENU_H

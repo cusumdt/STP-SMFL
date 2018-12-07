@@ -2,9 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp" />
-    <ClCompile Include="..\src\Utility\buttons.cpp">
-      <Filter>Utility</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Player\bullet.cpp">
       <Filter>Enemy</Filter>
     </ClCompile>
@@ -43,9 +40,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\Utility\buttons.h">
-      <Filter>Utility</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Player\bullet.h">
       <Filter>Enemy</Filter>
     </ClInclude>

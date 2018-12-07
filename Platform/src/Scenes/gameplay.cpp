@@ -40,9 +40,7 @@ namespace platform {
 	//sf::RectangleShape test; // not used in final game, just for testing purposes.
 	sf::RectangleShape rectangles[maxColisionsBoxes];
 
-	////Mouse Trigger
-	//sf::Texture mouseTex;
-	//sf::Sprite mouseSprite;
+	bool Gameplay::_sceneEnd = false;
 
 	View vw1;
 	Player* player = new Player();
@@ -66,10 +64,7 @@ namespace platform {
 
 	void Gameplay::init() {
 
-
-	//	mouseTex.loadFromFile("res/BTN_PLAY.png");
-	//	mouseSprite.setTexture(mouseTex);
-
+		
 
 		srand(time(0));
 		_time = 0;
@@ -259,6 +254,14 @@ namespace platform {
 				vecEnemy[i] = NULL;
 			}
 		}
+	}
+
+	bool Gameplay::getSceneEnd() {
+		return _sceneEnd;
+	}
+
+	void Gameplay::setSceneEnd(bool end) {
+		_sceneEnd = end;
 	}
 }
 
