@@ -23,6 +23,8 @@ namespace platform {
 		void setY(float y);
 		void setItsAlive(bool itsAlive);
 		void setDirection(Direction direction);
+		void setTime(float time);
+		void setTimeLive(float timeLive);
 		float getX() { return _x; }
 		float getY() { return _y; }
 		float getTextureSizeX() { return static_cast<float>(texture.getSize().x); }

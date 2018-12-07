@@ -27,6 +27,12 @@ namespace platform {
 	void Bullet::setDirection(Direction direction) {
 		_direction = direction;
 	}
+	void Bullet::setTime(float time) {
+		_time = time;
+	}
+	void Bullet::setTimeLive(float timeLive) {
+		_timeLive = timeLive;
+	}
 	void Bullet::drawBullet() {
 		if (_itsAlive) {
 			window.draw(sprite);

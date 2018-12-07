@@ -210,6 +210,8 @@ namespace platform {
 								if (vecEnemy[j]->getLife() == 0) {
 									cantEnemys--;
 								}
+								bullet[i]->setTime(0.0f);
+								bullet[i]->setTimeLive(0.0f);
 								bullet[i]->setItsAlive(false);
 							}
 						}
