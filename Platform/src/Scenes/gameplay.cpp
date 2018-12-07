@@ -40,14 +40,10 @@ namespace platform {
 	pugi::xml_node_iterator someObjects = object.begin(); // test purposes, not used for making collision shapes. 
 	// It was used to manually select objects ids.
 
-	//sf::RectangleShape test; // not used in final game, just for testing purposes.
 	sf::RectangleShape rectangles[maxColisionsBoxes];
 
-	////Mouse Trigger
-	//sf::Texture mouseTex;
-	//sf::Sprite mouseSprite;
-
 	View vw1;
+
 	static	Player* player = new Player();
 	static	Camera* camera = new Camera();
 	static	Gravity* gravity = new Gravity();
@@ -71,10 +67,6 @@ namespace platform {
 		_level = level;
 	}
 	void Gameplay::init() {
-
-
-	//	mouseTex.loadFromFile("res/BTN_PLAY.png");
-	//	mouseSprite.setTexture(mouseTex);
 		srand(time(0));
 		levelTutorial->initLevel();
 		levelOne->initLevel();
@@ -115,12 +107,9 @@ namespace platform {
 			gravity->state(Game::_deltaTime);
 			player->setY(player->getY() + gravity->getStrong());
 		}
-		//	cout << player->getIsOnGround() << "    " << player->getIsJump() << endl;
+
 		player->movement();
 		player->jump();
-
-		//Mouse trigger
-		//mouseSprite.setPosition(Vector2f(sf::Mouse::getPosition(window)));
 
 		_time += Game::_deltaTime;
 		if (player->fire()) {
@@ -174,10 +163,7 @@ namespace platform {
 
 		//PPCD
 
-		/*if (Collision::PixelPerfectTest(mouseSprite, spriteTest)) {
-			cout << "HELLO CRIS!" << endl;
-		}*/
-		//LevelTutorial
+		//Level
 		switch (_level)
 		{
 		case platform::LEVELTUTORIAL:
@@ -206,7 +192,7 @@ namespace platform {
 				}
 				else if (levelOne->tiles[i] != NULL && levelOne->tiles[i]->getType() == PORTAL) {
 					if (Collision::PixelPerfectTest(player->getSprite(), levelOne->tiles[i]->getSprite())) {
-						std::cout << "Portal" << std::endl;
+						//Aca condicion de portal
 					}
 				}
 			}
@@ -231,9 +217,6 @@ namespace platform {
 			break;
 		}
 		player->drawPlayer();
-
-		//window.draw(mouseSprite);
-
 		for (int i = 0; i < MAXBULLET; i++) {
 			if (bullet[i] != NULL) {
 				if (bullet[i]->getItsAlive()) {
