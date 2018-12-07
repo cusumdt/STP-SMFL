@@ -9,7 +9,7 @@
 #include "Scenes/credits.h"
 #include "Scenes/gameOver.h"
 #include "Scenes/victory.h"
-
+#include "SFML/Audio.hpp"
 
 
 using namespace tmx;
@@ -24,10 +24,12 @@ namespace platform {
 	Clock _clock;
 	Time _elapsed;
 	float Game::_deltaTime = 0;
-
+	//View Camera
 	View vw2;
+	//Music
 
-		//Window renderer
+
+	//Window renderer
 	RenderWindow window(VideoMode(Game::screenWidth, Game::screenHeight), 
 	"Simple Platform",
 	Style::Close, 
@@ -51,6 +53,13 @@ namespace platform {
 		scenes[CreditsScene] = new Credits();
 		scenes[GameOverScene] = new GameOver();
 		scenes[VictoryScene] = new Victory();
+		sf::Music music;
+		if (!music.openFromFile("res/Sound/nedkamun.ogg")) {
+			std::cout << "error reload sound" << std::endl;
+		}
+		music.setVolume(100);         // reduce the volume
+		music.setLoop(true);         // make it loop
+		music.play();
 	}
 
 	Game::~Game() {
@@ -111,7 +120,9 @@ namespace platform {
 
 				gui.handleEvent(event);
 			}
-			
+	
+
+		
 			window.clear();
 			window.draw(map);
 
