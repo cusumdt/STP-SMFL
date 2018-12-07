@@ -1,5 +1,6 @@
 #include "bullet.h"
 #include "../Utility/const_data.h"
+#include <iostream>
 namespace platform {
 	Bullet::Bullet() {
 		_x = 0;
@@ -47,6 +48,7 @@ namespace platform {
 				}
 			}
 			else {
+				std::cout << _timeLive << std::endl;
 				_x = 0;
 				_timeLive = 0;
 				_itsAlive = false;

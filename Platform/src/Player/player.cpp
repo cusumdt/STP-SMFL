@@ -45,7 +45,6 @@ namespace platform
 					sprite.setPosition(_x, _y);
 					direction = Direction::RIGHTD;
 					keyPressed = Key::RIGHT;
-
 					sprite.setScale(1, 1);
 				}
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
@@ -81,7 +80,6 @@ namespace platform
 					}
 				}
 			}
-
 			//Move Collider
 			_collider.setPosition(sprite.getPosition());
 		}
@@ -90,7 +88,6 @@ namespace platform
 		if (_life > 0) {
 			if (_isJumping) {
 				_timeJump += Game::_deltaTime;
-				std::cout << _timeJump << std::endl;
 				if (_timeJump < 0.5f) {
 					_y -= PLAYER_VELOCITY * 2 * Game::_deltaTime;
 					sprite.setPosition(_x, _y);

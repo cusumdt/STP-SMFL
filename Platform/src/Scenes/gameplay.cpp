@@ -206,7 +206,7 @@ namespace platform {
 				}
 				else if (levelOne->tiles[i] != NULL && levelOne->tiles[i]->getType() == PORTAL) {
 					if (Collision::PixelPerfectTest(player->getSprite(), levelOne->tiles[i]->getSprite())) {
-						//Aca condicion de portal
+						std::cout << "Portal" << std::endl;
 					}
 				}
 			}

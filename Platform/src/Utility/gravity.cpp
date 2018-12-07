@@ -4,7 +4,7 @@
 namespace platform {
 
 	Gravity::Gravity() {
-		_intensity = 100.0f;
+		_intensity = 0.5f;
 		_strong = 0;
 		_time = 0.0f;
 		_state = true;
@@ -14,11 +14,11 @@ namespace platform {
 	}
 	void Gravity::state(float deltaTime) {
 		_state = true;
-		
+			
 			_time += deltaTime;
 			if (_time>1) {
 				_time = 0;
-				_strong += _intensity*deltaTime;
+				_strong =_intensity;
 			}
 		
 	}
