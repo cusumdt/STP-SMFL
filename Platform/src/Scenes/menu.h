@@ -2,10 +2,13 @@
 #define MENU_H
 
 #include "../Utility/scenes.h"
+#include "SFML\Graphics.hpp"
 
 namespace platform {
 	
 	class Menu : public Scene {
+		sf::Texture logo;
+		sf::Sprite sprite_logo;
 	public:
 		Menu();
 		~Menu();

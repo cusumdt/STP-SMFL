@@ -2,20 +2,26 @@
 
 #include <iostream>
 
-#include <SFML/Graphics.hpp>
 #include "TGUI\TGUI.hpp"
 
 #include "../Logic/game.h"
 #include "../Scenes/gameplay.h"
 
+using namespace sf;
+
 namespace platform {
 
+	
+	// Declare and load a font
+	sf::Font font;
+	
 	//UI Font
 	static tgui::Font fontButtons("res/fonts/roboto.ttf");
 
 	//UI Theme
 	static tgui::Theme blackTheme{ "res/themes/Black.txt" };
 
+	static Text version;
 
 	//Buttons
 	static const int maxButtons = 4;
@@ -36,7 +42,21 @@ namespace platform {
 
 	}
 	void Menu::init() {
-		
+		logo.loadFromFile("res/logo.png");
+		sprite_logo.setTexture(logo);
+		sprite_logo.setPosition(static_cast<float>(Game::screenWidth/2), 150.0f);
+		sprite_logo.setScale(0.5f, 0.5f);
+		sprite_logo.setOrigin(sprite_logo.getTexture()->getSize().x / 2, sprite_logo.getTexture()->getSize().y / 2);
+
+		font.loadFromFile("res/fonts/roboto.ttf");
+
+		version.setString("V1.0");
+		version.setFont(font);
+		version.setCharacterSize(35);
+		version.setStyle(sf::Text::Regular);
+		version.setFillColor(sf::Color::White);
+		version.setPosition(static_cast<float>(Game::screenWidth - 85), static_cast<float>(Game::screenHeight - 45));
+
 		for (int i = 0; i < maxButtons; i++) {
 			buttons[i] = tgui::Button::create();
 			gui.add(buttons[i]);
@@ -66,7 +86,9 @@ namespace platform {
 
 	}
 	void Menu::draw() {
-		
+		// Draw it
+		window.draw(version);
+		window.draw(sprite_logo);
 	}
 	void Menu::deInit() {
 	}
