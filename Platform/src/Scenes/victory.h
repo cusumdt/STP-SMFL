@@ -1,17 +1,17 @@
-#ifndef GAMEOVER_H
-#define GAMEOVER_H
+#ifndef VICTORY_H
+#define VICTORY_H
 
 #include "../Utility/scenes.h"
 #include "SFML\Graphics.hpp"
 
 namespace platform {
 
-	class GameOver : public Scene {
+	class Victory : public Scene {
 		// Declare and load a font
 		sf::Font font;
 	public:
-		GameOver();
-		~GameOver();
+		Victory();
+		~Victory();
 		void init();
 		void update();
 		void draw();
@@ -20,6 +20,7 @@ namespace platform {
 		void hideGUI();
 	};
 }
-#endif // !GAMEOVER_H
+#endif // !VICTORY_H
+
 
 

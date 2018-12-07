@@ -50,6 +50,7 @@ namespace platform {
 		bool getIsJump() { return _isJumping; }
 		Key getKeyPressed() { return keyPressed; }
 		Direction getDirection() { return direction; }
+		void init();
 	};
 }
 

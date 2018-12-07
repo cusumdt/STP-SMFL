@@ -26,6 +26,16 @@ namespace platform {
 		}
 	}
 	void LevelTutorial::initLevel() {
+
+		for (int i = 0; i < CANT_ENEMYS; i++) {
+			if (vecEnemy[i] != NULL) {
+				vecEnemy[i]->setLife(3);
+			}
+
+		}
+
+		cantEnemys = 3;
+
 		//Scene
 		if (tiles[0] == NULL) {
 			tiles[0] = new Tiles(
@@ -147,6 +157,7 @@ namespace platform {
 				TUTORIALTEXT2
 			);
 		}
+
 		//Enemy
 		if (vecEnemy[0] == NULL) {
 			vecEnemy[0] = new Enemy(
@@ -154,7 +165,6 @@ namespace platform {
 				levelTutorialConstData::ENEMY1CORDINATE_X,
 				levelTutorialConstData::ENEMY1CORDINATE_Y
 			);
-			cantEnemys++;
 		}
 		if (vecEnemy[1] == NULL) {
 			vecEnemy[1] = new Enemy(
@@ -162,7 +172,6 @@ namespace platform {
 				levelTutorialConstData::ENEMY2CORDINATE_X,
 				levelTutorialConstData::ENEMY2CORDINATE_Y
 			);
-			cantEnemys++;
 		}
 		if (vecEnemy[2] == NULL) {
 			vecEnemy[2] = new Enemy(
@@ -170,7 +179,6 @@ namespace platform {
 				levelTutorialConstData::ENEMY3CORDINATE_X,
 				levelTutorialConstData::ENEMY3CORDINATE_Y
 			);
-			cantEnemys++;
 		}
 
 	}

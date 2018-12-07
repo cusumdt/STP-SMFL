@@ -19,10 +19,11 @@ namespace platform {
 		MenuScene,
 		GameScene,
 		CreditsScene,
-		GameOverScene
+		GameOverScene,
+		VictoryScene
 	};
 
-	const int scenesAmount = 3;
+	const int scenesAmount = 5;
 
 	class Game {
 		static ActualScene _currentScene;
@@ -41,6 +42,7 @@ namespace platform {
 		void setDeltaTime(float elapsed);
 		float getDeltaTime();
 
+		static void refresh();
 		static void setCurrentScene(ActualScene current);
 		static ActualScene getCurrentScene();
 	};

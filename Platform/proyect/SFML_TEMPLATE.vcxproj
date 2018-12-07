@@ -31,6 +31,7 @@
     <ClCompile Include="..\src\Scenes\gameOver.cpp" />
     <ClCompile Include="..\src\Scenes\gameplay.cpp" />
     <ClCompile Include="..\src\Scenes\menu.cpp" />
+    <ClCompile Include="..\src\Scenes\victory.cpp" />
     <ClCompile Include="..\src\Tiles\tiles.cpp" />
     <ClCompile Include="..\src\Utility\camera.cpp" />
     <ClCompile Include="..\src\Utility\Collision.cpp" />
@@ -50,6 +51,7 @@
     <ClInclude Include="..\src\Scenes\gameOver.h" />
     <ClInclude Include="..\src\Scenes\gameplay.h" />
     <ClInclude Include="..\src\Scenes\menu.h" />
+    <ClInclude Include="..\src\Scenes\victory.h" />
     <ClInclude Include="..\src\Tiles\tiles.h" />
     <ClInclude Include="..\src\Utility\camera.h" />
     <ClInclude Include="..\src\Utility\Collision.h" />

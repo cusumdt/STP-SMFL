@@ -15,6 +15,7 @@ namespace platform {
 	public:
 		Camera();
 		~Camera();
+		void init();
 		void setPosX(float posX);
 		void setPosY(float posY);
 		void setPos(sf::Vector2f pos);

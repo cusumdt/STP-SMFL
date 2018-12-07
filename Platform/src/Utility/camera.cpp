@@ -3,13 +3,17 @@
 namespace platform {
 
 	Camera::Camera() {
+		init();
+	}
+
+	Camera::~Camera() {
+	}
+
+	void Camera::init() {
 		_pos.x = 0;
 		_pos.y = 0;
 		_rotation = 0;
 		_moveSpeed = 300.0f;
-	}
-
-	Camera::~Camera() {
 	}
 
 	void Camera::setPosX(float posX) {

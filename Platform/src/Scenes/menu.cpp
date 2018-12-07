@@ -12,8 +12,7 @@ using namespace sf;
 namespace platform {
 
 	
-	// Declare and load a font
-	sf::Font font;
+	
 	
 	//UI Font
 	static tgui::Font fontButtons("res/fonts/roboto.ttf");
@@ -21,7 +20,7 @@ namespace platform {
 	//UI Theme
 	static tgui::Theme blackTheme{ "res/themes/Black.txt" };
 
-	static Text version;
+	static Text gameOverText;
 
 	//Buttons
 	static const int maxButtons = 4;
@@ -50,12 +49,12 @@ namespace platform {
 
 		font.loadFromFile("res/fonts/roboto.ttf");
 
-		version.setString("V1.0");
-		version.setFont(font);
-		version.setCharacterSize(35);
-		version.setStyle(sf::Text::Regular);
-		version.setFillColor(sf::Color::White);
-		version.setPosition(static_cast<float>(Game::screenWidth - 85), static_cast<float>(Game::screenHeight - 45));
+		gameOverText.setString("V1.0");
+		gameOverText.setFont(font);
+		gameOverText.setCharacterSize(35);
+		gameOverText.setStyle(sf::Text::Regular);
+		gameOverText.setFillColor(sf::Color::White);
+		gameOverText.setPosition(static_cast<float>(Game::screenWidth - 85), static_cast<float>(Game::screenHeight - 45));
 
 		for (int i = 0; i < maxButtons; i++) {
 			buttons[i] = tgui::Button::create();
@@ -68,15 +67,15 @@ namespace platform {
 
 		buttons[0]->setPosition(Game::screenWidth / 2 - buttons[0]->getSize().x/2, Game::screenHeight / 2 - 140);
 		buttons[0]->setText("Play");
-		buttons[0]->connect("Pressed", [&]() {Game::setCurrentScene(GameScene); });
+		buttons[0]->connect("Pressed", [&]() {Gameplay::setLevel(LEVELONE); Game::setCurrentScene(GameScene); Game::refresh(); });
 
 		buttons[1]->setPosition(Game::screenWidth / 2 - buttons[0]->getSize().x / 2, Game::screenHeight / 2 - 20);
 		buttons[1]->setText("Tutorial");
-		buttons[1]->connect("Pressed", actualSceneIsWorking);
+		buttons[1]->connect("Pressed", [&]() { Gameplay::setLevel(LEVELTUTORIAL); Game::setCurrentScene(GameScene); Game::refresh(); });
 
 		buttons[2]->setPosition(Game::screenWidth / 2 - buttons[0]->getSize().x / 2, Game::screenHeight / 2 + 100);
 		buttons[2]->setText("Credits");
-		buttons[2]->connect("Pressed", [&]() {Game::setCurrentScene(CreditsScene); });
+		buttons[2]->connect("Pressed", [&]() {Game::setCurrentScene(CreditsScene); Game::refresh(); });
 
 		buttons[3]->setPosition(Game::screenWidth / 2 - buttons[0]->getSize().x / 2, Game::screenHeight / 2 + 220);
 		buttons[3]->setText("Exit");
@@ -87,7 +86,7 @@ namespace platform {
 	}
 	void Menu::draw() {
 		// Draw it
-		window.draw(version);
+		window.draw(gameOverText);
 		window.draw(sprite_logo);
 	}
 	void Menu::deInit() {

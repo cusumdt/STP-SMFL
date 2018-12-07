@@ -5,6 +5,10 @@
 #include "../Scenes/gameplay.h"
 #include "../Scenes/menu.h"
 #include "../Scenes/credits.h"
+#include "../Scenes/gameOver.h"
+#include "../Scenes/victory.h"
+
+#include <iostream>
 
 using namespace tmx;
 using namespace sf;
@@ -19,12 +23,14 @@ namespace platform {
 	Time _elapsed;
 	float Game::_deltaTime = 0;
 
+	View vw2;
+
 		//Window renderer
 	RenderWindow window(VideoMode(Game::screenWidth, Game::screenHeight), 
 	"Simple Platform",
 	Style::Close, 
 	ContextSettings(24, 8, 4));
-
+	
 	ActualScene Game::_currentScene = MenuScene;
 	Scene* Game::scenes[scenesAmount];
 
@@ -41,6 +47,8 @@ namespace platform {
 		scenes[MenuScene] = new Menu();
 		scenes[GameScene] = new Gameplay();
 		scenes[CreditsScene] = new Credits();
+		scenes[GameOverScene] = new GameOver();
+		scenes[VictoryScene] = new Victory();
 	}
 
 	Game::~Game() {
@@ -118,8 +126,7 @@ namespace platform {
 				scenes[_currentScene]->showGUI();
 				for (int i = 0; i < scenesAmount; i++){
 
-					if (i != _currentScene)
-					{
+					if (i != _currentScene){
 						scenes[i]->hideGUI();
 					}
 				}
@@ -145,5 +152,12 @@ namespace platform {
 
 	ActualScene Game::getCurrentScene() {
 		return _currentScene;
+	}
+
+	void Game::refresh() {
+        vw2.reset(sf::FloatRect(0.0f, 0.f, Game::screenWidth, Game::screenHeight));
+		window.setView(vw2);
+		std::cout << "REFRESH" << std::endl;
+		scenes[_currentScene]->init();
 	}
 }

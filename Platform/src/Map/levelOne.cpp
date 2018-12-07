@@ -26,6 +26,15 @@ namespace platform {
 		}
 	}
 	void LevelOne::initLevel() {
+		for (int i = 0; i < CANT_ENEMYS; i++) {
+			if (vecEnemy[i] != NULL) {
+				vecEnemy[i]->setLife(3);
+			}
+			
+		}
+		
+		cantEnemys = 7;
+
 		//Scene
 		if (tiles[0] == NULL) {
 			tiles[0] = new Tiles(
@@ -134,6 +143,7 @@ namespace platform {
 			);
 
 		}
+
 		//Enemy
 		if (vecEnemy[0] == NULL) {
 			vecEnemy[0] = new Enemy(
@@ -141,7 +151,7 @@ namespace platform {
 				levelOneConstData::ENEMY1CORDINATE_X,
 				levelOneConstData::ENEMY1CORDINATE_Y
 			);
-			cantEnemys++;
+
 		}
 		if (vecEnemy[1] == NULL) {
 			vecEnemy[1] = new Enemy(
@@ -149,7 +159,7 @@ namespace platform {
 				levelOneConstData::ENEMY2CORDINATE_X,
 				levelOneConstData::ENEMY2CORDINATE_Y
 			);
-			cantEnemys++;
+
 		}
 		if (vecEnemy[2] == NULL) {
 			vecEnemy[2] = new Enemy(
@@ -157,7 +167,7 @@ namespace platform {
 				levelOneConstData::ENEMY3CORDINATE_X,
 				levelOneConstData::ENEMY3CORDINATE_Y
 			);
-			cantEnemys++;
+
 		}
 		if (vecEnemy[3] == NULL) {
 			vecEnemy[3] = new Enemy(
@@ -165,7 +175,7 @@ namespace platform {
 				levelOneConstData::ENEMY4CORDINATE_X,
 				levelOneConstData::ENEMY4CORDINATE_Y
 			);
-			cantEnemys++;
+
 		}
 		if (vecEnemy[4] == NULL) {
 			vecEnemy[4] = new Enemy(
@@ -173,7 +183,7 @@ namespace platform {
 				levelOneConstData::ENEMY5CORDINATE_X,
 				levelOneConstData::ENEMY5CORDINATE_Y
 			);
-			cantEnemys++;
+		
 		}
 		if (vecEnemy[5] == NULL) {
 			vecEnemy[5] = new Enemy(
@@ -181,7 +191,7 @@ namespace platform {
 				levelOneConstData::ENEMY6CORDINATE_X,
 				levelOneConstData::ENEMY6CORDINATE_Y
 			);
-			cantEnemys++;
+			
 		}
 		if (vecEnemy[6] == NULL) {
 			vecEnemy[6] = new Enemy(
@@ -189,7 +199,7 @@ namespace platform {
 				levelOneConstData::ENEMY7CORDINATE_X,
 				levelOneConstData::ENEMY7CORDINATE_Y
 			);
-			cantEnemys++;
+		
 		}
 	}
 	void LevelOne::updateLevel(Bullet* bullet[], Player* &player) {

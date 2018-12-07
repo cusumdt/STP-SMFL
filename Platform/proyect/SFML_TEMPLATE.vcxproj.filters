@@ -15,7 +15,7 @@
       <Filter>Utility</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Scenes\credits.cpp">
-      <Filter>Scene</Filter>
+      <Filter>Scenes</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Enemy\enemy.cpp">
       <Filter>Enemy</Filter>
@@ -24,10 +24,10 @@
       <Filter>Logic</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Scenes\gameOver.cpp">
-      <Filter>Scene</Filter>
+      <Filter>Scenes</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Scenes\gameplay.cpp">
-      <Filter>Scene</Filter>
+      <Filter>Scenes</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Utility\gravity.cpp">
       <Filter>Utility</Filter>
@@ -39,16 +39,19 @@
       <Filter>Map</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Scenes\menu.cpp">
-      <Filter>Scene</Filter>
+      <Filter>Scenes</Filter>
     </ClCompile>
     <ClCompile Include="..\src\pugixml\pugixml.cpp">
       <Filter>pugixml</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Utility\scenes.cpp">
-      <Filter>Scene</Filter>
+      <Filter>Scenes</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Tiles\tiles.cpp">
       <Filter>Tiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Scenes\victory.cpp">
+      <Filter>Scenes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -68,7 +71,7 @@
       <Filter>Utility</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Scenes\credits.h">
-      <Filter>Scene</Filter>
+      <Filter>Scenes</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Enemy\enemy.h">
       <Filter>Enemy</Filter>
@@ -77,10 +80,10 @@
       <Filter>Logic</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Scenes\gameOver.h">
-      <Filter>Scene</Filter>
+      <Filter>Scenes</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Scenes\gameplay.h">
-      <Filter>Scene</Filter>
+      <Filter>Scenes</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Utility\gravity.h">
       <Filter>Utility</Filter>
@@ -92,7 +95,7 @@
       <Filter>Map</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Scenes\menu.h">
-      <Filter>Scene</Filter>
+      <Filter>Scenes</Filter>
     </ClInclude>
     <ClInclude Include="..\src\pugixml\pugiconfig.hpp">
       <Filter>pugixml</Filter>
@@ -101,10 +104,13 @@
       <Filter>pugixml</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Utility\scenes.h">
-      <Filter>Scene</Filter>
+      <Filter>Scenes</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Tiles\tiles.h">
       <Filter>Tiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Scenes\victory.h">
+      <Filter>Scenes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -113,9 +119,6 @@
     </Filter>
     <Filter Include="Utility">
       <UniqueIdentifier>{85d42374-d423-4805-a93f-638060adc0ce}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene">
-      <UniqueIdentifier>{e98f0c9a-2bb3-40e7-b321-666c9d085157}</UniqueIdentifier>
     </Filter>
     <Filter Include="Logic">
       <UniqueIdentifier>{b56ea418-c805-48ca-9c09-15e2cd5a8bfa}</UniqueIdentifier>
@@ -131,6 +134,9 @@
     </Filter>
     <Filter Include="Tiles">
       <UniqueIdentifier>{5fcaa6de-0801-4f8b-b1a3-98c9b2c42f41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes">
+      <UniqueIdentifier>{e98f0c9a-2bb3-40e7-b321-666c9d085157}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -4,9 +4,17 @@
 namespace platform
 {
 	Player::Player() {
+		texture.loadFromFile("res/pj.png");
+		init();
+	}
+
+	Player::~Player() {
+
+	}
+
+	void Player::init() {
 		_x = initPositionX();
 		_y = 500;
-		texture.loadFromFile("res/pj.png");
 		sprite.setTexture(texture);
 		sprite.setPosition(_x, _y);
 		sprite.setOrigin(texture.getSize().x / 2, 1);
@@ -17,12 +25,8 @@ namespace platform
 		_isJumping = false;
 		_timeJump = 0;
 		_life = 1;
-
 	}
 
-	Player::~Player() {
-
-	}
 	void Player::setLife(int life) {
 		_life = life;
 	}

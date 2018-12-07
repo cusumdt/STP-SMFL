@@ -7,6 +7,8 @@
 namespace platform {
 	
 	class Menu : public Scene {
+		// Declare and load a font
+		sf::Font font;
 		sf::Texture logo;
 		sf::Sprite sprite_logo;
 	public:

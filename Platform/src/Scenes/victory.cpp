@@ -1,4 +1,4 @@
-#include "gameOver.h"
+#include "victory.h"
 
 #include <iostream>
 
@@ -18,7 +18,7 @@ namespace platform {
 	//UI Theme
 	static tgui::Theme blackTheme{ "res/themes/Black.txt" };
 
-	static Text gameOverText;
+	static Text victoryText;
 
 	//Buttons
 	static const int maxButtons = 3;
@@ -28,23 +28,23 @@ namespace platform {
 		window.close();
 	}
 
-	GameOver::GameOver() {
+	Victory::Victory() {
 
 	}
-	GameOver::~GameOver() {
+	Victory::~Victory() {
 
 	}
-	void GameOver::init() {
+	void Victory::init() {
 
 		font.loadFromFile("res/fonts/roboto.ttf");
 
-		gameOverText.setString("GAME OVER");
-		gameOverText.setFont(font);
-		gameOverText.setCharacterSize(150);
-		gameOverText.setStyle(sf::Text::Bold);
-		gameOverText.setFillColor(sf::Color::White);
-		gameOverText.setOrigin(gameOverText.getCharacterSize() / 2,1);
-		gameOverText.setPosition(static_cast<float>(Game::screenWidth/2 - 350), 50.0f);
+		victoryText.setString("VICTORY");
+		victoryText.setFont(font);
+		victoryText.setCharacterSize(150);
+		victoryText.setStyle(sf::Text::Bold);
+		victoryText.setFillColor(sf::Color::White);
+		victoryText.setOrigin(victoryText.getCharacterSize() / 2, 1);
+		victoryText.setPosition(static_cast<float>(Game::screenWidth / 2 - 250), 50.0f);
 
 		for (int i = 0; i < maxButtons; i++) {
 			buttons[i] = tgui::Button::create();
@@ -67,17 +67,17 @@ namespace platform {
 		buttons[2]->setText("Exit");
 		buttons[2]->connect("Pressed", [&]() {actualSceneIsExit(); });
 	}
-	void GameOver::update() {
+	void Victory::update() {
 
 	}
-	void GameOver::draw() {
+	void Victory::draw() {
 		// Draw it
-		window.draw(gameOverText);
+		window.draw(victoryText);
 	}
-	void GameOver::deInit() {
+	void Victory::deInit() {
 	}
 
-	void GameOver::showGUI() {
+	void Victory::showGUI() {
 		for (int i = 0; i < maxButtons; i++) {
 			if (buttons[i] != NULL) {
 				buttons[i]->setVisible(true);
@@ -85,7 +85,7 @@ namespace platform {
 		}
 	}
 
-	void GameOver::hideGUI() {
+	void Victory::hideGUI() {
 		for (int i = 0; i < maxButtons; i++) {
 			if (buttons[i] != NULL) {
 				buttons[i]->setVisible(false);
