@@ -2,15 +2,42 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.1] - 2018-11-27
-### Added
-- Added things
-
-### Changed
--modified Things
+## [1.1] - 2018-12-07
 
 ### Fixed
--Fixed Things
+-Fixed Minor Bugs
 
-## [Versions]
-[0.1]: https://github.com/InsaneFury/flappybird/compare/v0.1...v0.5
+## [1.0] - 2018-12-07
+### Added
+- Added UI Details
+- Added Credits & Logo
+- Added TGUI lib
+- Added Buttons System
+- Added Enemy
+- Added PPCD
+- Added Jump
+- Added collider in gravity
+- Added tiles files
+- added level one
+- Added Ground Collision Detection
+- Added collisions
+- Added Gravity
+
+### Changed
+- Modified all TGUI | Optimized
+- New Character
+
+### Fixed
+- Fixed .bat copyfiles error
+- Fixed Compiler Error Using Antialiasing
+- Fixed Camera Bugs
+
+## [0.1] - 2018-11-28
+### Added
+- Added const data
+- Added Player logic
+-Added Camera
+
+### Changed
+-  Modified Camera Movement
+
