@@ -9,14 +9,15 @@ namespace platform
 		texture.loadFromFile("res/pj.png");
 		sprite.setTexture(texture);
 		sprite.setPosition(_x, _y);
+		sprite.setOrigin(texture.getSize().x / 2, 1);
 		direction = Direction::RIGHTD;
 		_collider.setPosition(sprite.getPosition());
 		_collider.setSize(sf::Vector2f(texture.getSize().x, texture.getSize().y));
 		_isOnGround = false;
 		_isJumping = false;
 		_timeJump = 0;
-		_life = 3;
-	
+		_life = 1;
+
 	}
 
 	Player::~Player() {
@@ -44,25 +45,30 @@ namespace platform
 					sprite.setPosition(_x, _y);
 					direction = Direction::RIGHTD;
 					keyPressed = Key::RIGHT;
+
 					sprite.setScale(1, 1);
-					if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-						if (_isOnGround) {
-							_isJumping = true;
-						}
+				}
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+					if (_isOnGround) {
+						_isJumping = true;
 					}
 				}
 			}
 			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-				if (_x > 0 + texture.getSize().x) {
+				if (_x > texture.getSize().x / 2) {
 					_x -= PLAYER_VELOCITY * Game::_deltaTime;
 					sprite.setPosition(_x, _y);
 					direction = Direction::LEFTD;
 					keyPressed = Key::LEFT;
 					sprite.setScale(-1, 1);
-					if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-						if (_isOnGround) {
-							_isJumping = true;
-						}
+
+				}
+				else {
+					_x = texture.getSize().x / 2;
+				}
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+					if (_isOnGround) {
+						_isJumping = true;
 					}
 				}
 			}
@@ -81,19 +87,19 @@ namespace platform
 		}
 	}
 	void Player::jump() {
-		if (_isJumping) {
-			_timeJump += Game::_deltaTime;
-			std::cout << _timeJump<<std::endl;
-			if (_timeJump < 0.5f) {
-				_y -= PLAYER_VELOCITY *2  * Game::_deltaTime;
-				sprite.setPosition(_x, _y);
-			
-
-			}
-			else {
-				_isJumping = false;
-				_isOnGround = false;
-				_timeJump = 0;
+		if (_life > 0) {
+			if (_isJumping) {
+				_timeJump += Game::_deltaTime;
+				std::cout << _timeJump << std::endl;
+				if (_timeJump < 0.5f) {
+					_y -= PLAYER_VELOCITY * 2 * Game::_deltaTime;
+					sprite.setPosition(_x, _y);
+				}
+				else {
+					_isJumping = false;
+					_isOnGround = false;
+					_timeJump = 0;
+				}
 			}
 		}
 	}

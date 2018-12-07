@@ -29,7 +29,7 @@ namespace platform {
 		float getTextureSizeY() { return static_cast<float>(texture.getSize().y); }
 		int getLife() { return _life; }
 		sf::Sprite getSprite() { return sprite; }
-		void movement();
+		void movement(float maxX, float minX);
 		void drawEnemy();
 		sf::RectangleShape getCollider() { return _collider; };
 		void setIsOnGround(bool isOnGround);

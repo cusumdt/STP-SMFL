@@ -7,9 +7,10 @@ namespace platform {
 		_y = y;
 		_isOnGround = false;
 		direct = LEFTDE;
-		texture.loadFromFile("res/pj.png");
+		texture.loadFromFile("res/Enemy/enemy.png");
 		sprite.setTexture(texture);
 		sprite.setPosition(_x, _y);
+		sprite.setOrigin(texture.getSize().x / 2, 1);
 		_collider.setPosition(sprite.getPosition());
 		_collider.setSize(sf::Vector2f(texture.getSize().x, texture.getSize().y));
 	}
@@ -25,14 +26,20 @@ namespace platform {
 	void Enemy::setY(float y) {
 		_y = y;
 	}
-	void Enemy::movement() {
-				if (direct==RIGHTDE && _x < map.GetWidth()*map.GetTileWidth() - texture.getSize().x) {
-					_x += PLAYER_VELOCITY * Game::_deltaTime;
-					sprite.setPosition(_x, _y);
-					sprite.setScale(1, 1);
+	void Enemy::movement(float maxX, float minX) {
+		if (_x>=maxX) {
+			direct = LEFTDE;
+		}
+		else if (_x <= minX) {
+			direct = RIGHTDE;
+		}
+			if (direct == RIGHTDE) {
+				_x += PLAYER_VELOCITY * Game::_deltaTime;
+				sprite.setPosition(_x, _y);
+				sprite.setScale(1, 1);
 
-				}
-			else if (direct==LEFTDE) {
+			}
+			else if (direct == LEFTDE) {
 				if (_x > 0) {
 					_x -= PLAYER_VELOCITY * Game::_deltaTime;
 					sprite.setPosition(_x, _y);
@@ -41,7 +48,7 @@ namespace platform {
 			}
 			//Move Collider
 			_collider.setPosition(sprite.getPosition());
-		
+
 	}
 	void Enemy::drawEnemy(){
 		window.draw(sprite);

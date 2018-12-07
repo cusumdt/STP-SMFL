@@ -1,59 +1,214 @@
 #include "levelTutorial.h"
-
+#include "../Utility/Collision.h"
 namespace platform {
-
-	LEVELONE::LEVELONE() {
+	
+	LevelTutorial::LevelTutorial() {
 		for (int i = 0; i < MAXTILES; i++) {
 			tiles[i] = NULL;
 		}
-
+		for (int i = 0; i < CANT_ENEMYS; i++) {
+			vecEnemy[i] = NULL;
+		}
+		cantEnemys = 0;
 	}
-	LEVELONE::~LEVELONE() {
+	LevelTutorial::~LevelTutorial() {
 		for (int i = 0; i < MAXTILES; i++) {
 			if (tiles[0] != NULL) {
 				delete tiles[i];
 				tiles[i] = NULL;
 			}
 		}
+		for (int i = 0; i < CANT_ENEMYS; i++) {
+			if (vecEnemy[i] != NULL) {
+				delete vecEnemy[i];
+				vecEnemy[i] = NULL;
+			}
+		}
 	}
-	void LEVELONE::initLevel() {
+	void LevelTutorial::initLevel() {
+		//Scene
 		if (tiles[0] == NULL) {
-			tiles[0] = new Tiles(600, 500, PLATFORM, PLATFORM_LARGE);
+			tiles[0] = new Tiles(
+				levelTutorialConstData::PLATFORM1CORDINATE_X,
+				levelTutorialConstData::PLATFORM1CORDINATE_Y, 
+				PLATFORM, 
+				PLATFORM_LARGE
+			);
 		}
 		if (tiles[1] == NULL) {
-			tiles[1] = new Tiles(1300, 300, PLATFORM, PLATFORM_LARGE);
+			tiles[1] = new Tiles(
+				levelTutorialConstData::PLATFORM2CORDINATE_X, 
+				levelTutorialConstData::PLATFORM2CORDINATE_Y, 
+				PLATFORM, 
+				PLATFORM_LARGE
+			);
 		}
 		if (tiles[2] == NULL) {
-			tiles[2] = new Tiles(1680, 300, PLATFORM, PLATFORM_LARGE);
+			tiles[2] = new Tiles(
+				levelTutorialConstData::PLATFORM3CORDINATE_X, 
+				levelTutorialConstData::PLATFORM3CORDINATE_Y, 
+				PLATFORM,
+				PLATFORM_LARGE
+			);
 		}
 		if (tiles[3] == NULL) {
-			tiles[3] = new Tiles(2300, 150, PLATFORM, PLATFORM_LARGE);
+			tiles[3] = new Tiles(
+				levelTutorialConstData::PLATFORM4CORDINATE_X,
+				levelTutorialConstData::PLATFORM4CORDINATE_Y, 
+				PLATFORM, 
+				PLATFORM_LARGE
+			);
 		}
 		if (tiles[4] == NULL) {
-			tiles[4] = new Tiles(2300, -10, DECORATION, CACTUS);
+			tiles[4] = new Tiles(
+				levelTutorialConstData::CACTUS1CORDINATE_X, 
+				levelTutorialConstData::CACTUS1CORDINATE_Y,
+				DECORATION, 
+				CACTUS
+			);
 		}
 		if (tiles[5] == NULL) {
-			tiles[5] = new Tiles(2300 + tiles[4]->getTextureSizeX(), 93, DECORATION, GRASS1);
+			tiles[5] = new Tiles(
+				levelTutorialConstData::GRASS1CORDINATE_X,
+				levelTutorialConstData::GRASS1CORDINATE_Y,
+				DECORATION, 
+				GRASS1
+			);
 		}
 		if (tiles[6] == NULL) {
-			tiles[6] = new Tiles(1680, 230, DECORATION, GRASS2);
+			tiles[6] = new Tiles(
+				levelTutorialConstData::GRASS2CORDINATE_X,
+				levelTutorialConstData::GRASS2CORDINATE_Y,
+				DECORATION, 
+				GRASS2
+			);
 		}
 		if (tiles[7] == NULL) {
-			tiles[7] = new Tiles(1680 + tiles[3]->getTextureSizeX() - tiles[6]->getTextureSizeX(), 243, DECORATION, GRASS1);
+			tiles[7] = new Tiles(
+				levelTutorialConstData::GRASS3CORDINATE_X,
+				levelTutorialConstData::GRASS3CORDINATE_Y,
+				DECORATION,
+				GRASS1
+			);
 		}
 		if (tiles[8] == NULL) {
-			tiles[8] = new Tiles(1300 + tiles[2]->getTextureSizeX() / 2 - tiles[4]->getTextureSizeX() / 2, 140, DECORATION, CACTUS);
+			tiles[8] = new Tiles(
+				levelTutorialConstData::CACTUS2CORDINATE_X,
+				levelTutorialConstData::CACTUS2CORDINATE_Y,
+				DECORATION,
+				CACTUS
+			);
 		}
 		if (tiles[9] == NULL) {
-			tiles[9] = new Tiles(600, 401, DECORATION, MUSHROOM);
+			tiles[9] = new Tiles(
+				levelTutorialConstData::MUSHROOM1CORDINATE_X,
+				levelTutorialConstData::MUSHROOM1CORDINATE_Y,
+				DECORATION,
+				MUSHROOM
+			);
+		}
+		if (tiles[10] == NULL) {
+			tiles[10] = new Tiles(
+				levelTutorialConstData::PORTALCORDINATE_X,
+				levelTutorialConstData::PORTALCORDINATE_Y,
+				PORTAL,
+				PORTAL1
+			);
+		}
+		//Enemy
+		if (vecEnemy[0] == NULL) {
+			vecEnemy[0] = new Enemy(
+				LIFEENEMY,
+				levelTutorialConstData::ENEMY1CORDINATE_X,
+				levelTutorialConstData::ENEMY1CORDINATE_Y
+			);
+			cantEnemys++;
+		}
+		if (vecEnemy[1] == NULL) {
+			vecEnemy[1] = new Enemy(
+				LIFEENEMY,
+				levelTutorialConstData::ENEMY2CORDINATE_X,
+				levelTutorialConstData::ENEMY2CORDINATE_Y
+			);
+			cantEnemys++;
+		}
+		if (vecEnemy[2] == NULL) {
+			vecEnemy[2] = new Enemy(
+				LIFEENEMY,
+				levelTutorialConstData::ENEMY3CORDINATE_X,
+				levelTutorialConstData::ENEMY3CORDINATE_Y
+			);
+			cantEnemys++;
 		}
 
 	}
-	void LEVELONE::drawLevel() {
+	void LevelTutorial::updateLevel(Bullet* bullet[], Player* &player) {
+
+		if (vecEnemy[0] != NULL) {
+			if (vecEnemy[0]->getLife() > 0) {
+				vecEnemy[0]->movement(
+					levelTutorialConstData::ENEMY1MAX_X,
+					levelTutorialConstData::ENEMY1MIN_X
+				);
+			}
+		}
+		if (vecEnemy[1] != NULL) {
+			if (vecEnemy[1]->getLife() > 0) {
+				vecEnemy[1]->movement(
+					levelTutorialConstData::ENEMY2MAX_X,
+					levelTutorialConstData::ENEMY2MIN_X
+				);
+			}
+		}
+		if (vecEnemy[2] != NULL) {
+			if (vecEnemy[2]->getLife() > 0) {
+				vecEnemy[2]->movement(
+					levelTutorialConstData::ENEMY3MAX_X,
+					levelTutorialConstData::ENEMY3MIN_X
+				);
+			}
+		}
+		for (int i = 0; i < MAXBULLET; i++) {
+			if (bullet[i] != NULL) {
+				if (bullet[i]->getItsAlive()) {
+					for (int j = 0; j < CANT_ENEMYS; j++) {
+						if (vecEnemy[j] != NULL && vecEnemy[j]->getLife() > 0) {
+							if (Collision::PixelPerfectTest(bullet[i]->getSprite(), vecEnemy[j]->getSprite())) {
+								vecEnemy[j]->setLife(vecEnemy[j]->getLife()-1);
+								if (vecEnemy[j]->getLife() == 0) {
+									cantEnemys--;
+								}
+								bullet[i]->setItsAlive(false);
+							}
+						}
+					}
+				}
+			}
+		}
+		for (int i = 0; i < CANT_ENEMYS; i++) {
+			if (vecEnemy[i] != NULL && vecEnemy[i]->getLife() > 0) {
+				if (Collision::PixelPerfectTest(player->getSprite(), vecEnemy[i]->getSprite())) {
+					player->setLife(0);
+				}
+			}
+		}
+	}
+	void LevelTutorial::drawLevel() {
 		for (int i = 0; i < MAXTILES; i++)
 		{
 			if (tiles[i] != NULL) {
-				tiles[i]->drawTile();
+				if (tiles[i]->getType() != PORTAL) {
+					tiles[i]->drawTile();
+				}
+				else if (cantEnemys == 0 && tiles[i]->getType() == PORTAL) {
+					tiles[i]->drawTile();
+				}
+			}
+			
+		}
+		for (int i = 0; i < CANT_ENEMYS; i++) {
+			if (vecEnemy[i] != NULL && vecEnemy[i]->getLife()>0) {
+				vecEnemy[i]->drawEnemy();
 			}
 		}
 	}

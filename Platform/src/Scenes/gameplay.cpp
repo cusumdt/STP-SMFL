@@ -13,7 +13,7 @@
 
 #include "../Utility/buttons.h"
 
-#include "../Enemy/enemy.h"
+
 
 #include "../Map/levelTutorial.h"
 
@@ -49,11 +49,10 @@ namespace platform {
 
 	View vw1;
 	static	Player* player = new Player();
-	static	Enemy* vecEnemy[CANT_ENEMYS];
 	static	Camera* camera = new Camera();
 	static	Gravity* gravity = new Gravity();
 	static	Bullet* bullet[MAXBULLET];
-	static LEVELONE* levelone = new LEVELONE();
+	static LevelTutorial* levelTutorial = new LevelTutorial();
 	static	float _time;
 	static	float _collisionTime;
 
@@ -73,7 +72,7 @@ namespace platform {
 	//	mouseTex.loadFromFile("res/BTN_PLAY.png");
 	//	mouseSprite.setTexture(mouseTex);
 		srand(time(0));
-		levelone->initLevel();
+		levelTutorial->initLevel();
 		_time = 0;
 		for (int i = 0; i < MAXBULLET; i++) {
 			bullet[i] = NULL;
@@ -83,14 +82,7 @@ namespace platform {
 		}
 
 	
-		for (int i = 0; i < CANT_ENEMYS; i++) {
-			vecEnemy[i] = NULL;
-			if (vecEnemy[i] == NULL) {
-				
-				randomEnemy = rand() % data + window.getSize().x;
-				vecEnemy[i] = new Enemy(1,randomEnemy,rand()% 200 + 400);
-			}
-		}
+
 
 		//// Adding Colission box Rectangles from the .tmx Tilemap File
 		//
@@ -154,15 +146,6 @@ namespace platform {
 				}
 			}
 		}
-		//Enemy
-
-		for (int i = 0; i < CANT_ENEMYS; i++) {
-			if (vecEnemy[i] != NULL) {
-				if (vecEnemy[i]->getLife() > 0) {
-					vecEnemy[i]->movement();
-				}
-			}
-		}
 		//Camera
 		camera->movementCamera(player, FOLLOW);
 		vw1.reset(sf::FloatRect(camera->getPosX(), 0.f, Game::screenWidth, Game::screenHeight));
@@ -188,52 +171,29 @@ namespace platform {
 		/*if (Collision::PixelPerfectTest(mouseSprite, spriteTest)) {
 			cout << "HELLO CRIS!" << endl;
 		}*/
+		//LevelTutorial
 		for (int i = 0; i < MAXTILES; i++)
 		{
-			if (levelone->tiles[i] != NULL && levelone->tiles[i]->getType() == PLATFORM ) {
-				if (Collision::PixelPerfectTest(player->getSprite(),levelone->tiles[i]->getSprite())) {
+			if (levelTutorial->tiles[i] != NULL && levelTutorial->tiles[i]->getType() == PLATFORM ) {
+				if (Collision::PixelPerfectTest(player->getSprite(),levelTutorial->tiles[i]->getSprite())) {
 					player->setIsOnGround(true);
 				}
 			}
-		}
-	
-		for (int i = 0; i < MAXBULLET; i++) {
-			if (bullet[i] != NULL) {
-				if (bullet[i]->getItsAlive()) {
-					for (int j = 0; j < CANT_ENEMYS; j++) {
-						if (vecEnemy[j] != NULL && vecEnemy[j]->getLife() > 0) {
-							if (Collision::PixelPerfectTest(bullet[i]->getSprite(), vecEnemy[j]->getSprite())) {
-								vecEnemy[j]->setLife(0);
-								bullet[i]->setItsAlive(false);
-							}
-						}
-					}
+			else if (levelTutorial->tiles[i] != NULL && levelTutorial->tiles[i]->getType() == PORTAL) {
+			if (Collision::PixelPerfectTest(player->getSprite(), levelTutorial->tiles[i]->getSprite())) {
+					//Aca condicion de portal
 				}
 			}
 		}
-		for (int i = 0; i < CANT_ENEMYS; i++) {
-			for (int j = 0; j < CANT_ENEMYS; j++) {
-				if (Collision::PixelPerfectTest(vecEnemy[i]->getSprite(), vecEnemy[j]->getSprite()) && j != i && vecEnemy[j] != NULL && vecEnemy[i]!=NULL &&vecEnemy[i]->getLife()>0 && vecEnemy[j]->getLife()>0) {
-					randomEnemy = rand() % data + window.getSize().x;
-					vecEnemy[i]->setX(randomEnemy);
-					vecEnemy[i]->setY(rand() % 200 + 400);
-				}
-			}
-		}
-
+		levelTutorial->updateLevel(bullet,player);
 	}
 
 	void Gameplay::draw() {
-		levelone->drawLevel();
+		levelTutorial->drawLevel();
 		player->drawPlayer();
 
 		//window.draw(mouseSprite);
 
-		for (int i = 0; i < CANT_ENEMYS; i++) {
-			if (vecEnemy[i] != NULL && vecEnemy[i]->getLife()>0) {
-				vecEnemy[i]->drawEnemy();
-			}
-		}
 		for (int i = 0; i < MAXBULLET; i++) {
 			if (bullet[i] != NULL) {
 				if (bullet[i]->getItsAlive()) {
@@ -263,12 +223,6 @@ namespace platform {
 				bullet[i] = NULL;
 			}
 		}
-		for (int i = 0; i < CANT_ENEMYS; i++) {
-			if (vecEnemy[i] != NULL) {
-				delete vecEnemy[i];
-				vecEnemy[i] = NULL;
-			}
-		}
 		if (player != NULL) {
 			delete player;
 			player = NULL;
@@ -281,9 +235,9 @@ namespace platform {
 			delete gravity;
 			gravity = NULL;
 		}
-		if (levelone != NULL) {
-			delete levelone;
-			levelone = NULL;
+		if (levelTutorial != NULL) {
+			delete levelTutorial;
+			levelTutorial = NULL;
 		}
 	}
 }

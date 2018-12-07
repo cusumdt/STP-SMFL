@@ -7,7 +7,8 @@ namespace platform {
 	enum typeTile {
 		PLATFORM,
 		WALL,
-		DECORATION
+		DECORATION,
+		PORTAL
 	};
 	class Tiles{
 	private:
