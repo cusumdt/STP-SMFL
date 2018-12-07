@@ -263,7 +263,7 @@ namespace platform {
 							player->setIsOnGround(true);
 						}
 					}
-					else if (levelTutorial->tiles[i] != NULL && levelTutorial->tiles[i]->getType() == PORTAL) {
+					else if (levelTutorial->tiles[i] != NULL && levelTutorial->tiles[i]->getType() == PORTAL && levelTutorial->getCantEnemys() == 0) {
 						if (Collision::PixelPerfectTest(player->getSprite(), levelTutorial->tiles[i]->getSprite())) {
 							camera->init();
 							vw1.reset(sf::FloatRect(0.0f, 0.f, Game::screenWidth, Game::screenHeight));
@@ -283,7 +283,7 @@ namespace platform {
 							player->setIsOnGround(true);
 						}
 					}
-					else if (levelOne->tiles[i] != NULL && levelOne->tiles[i]->getType() == PORTAL) {
+					else if (levelOne->tiles[i] != NULL && levelOne->tiles[i]->getType() == PORTAL && levelOne->getCantEnemys() == 0) {
 						if (Collision::PixelPerfectTest(player->getSprite(), levelOne->tiles[i]->getSprite())) {
 							camera->init();
 							vw1.reset(sf::FloatRect(0.0f, 0.f, Game::screenWidth, Game::screenHeight));

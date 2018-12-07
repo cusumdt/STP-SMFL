@@ -16,6 +16,7 @@ namespace platform {
 		Tiles * tiles[MAXTILES];
 		LevelTutorial();
 		~LevelTutorial();
+		int getCantEnemys() { return cantEnemys; }
 		void initLevel();
 		void updateLevel(Bullet* bullet[], Player* &player);
 		void drawLevel();

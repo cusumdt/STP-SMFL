@@ -49,7 +49,7 @@ namespace platform {
 
 		font.loadFromFile("res/fonts/roboto.ttf");
 
-		gameOverText.setString("V1.0");
+		gameOverText.setString("V1.1");
 		gameOverText.setFont(font);
 		gameOverText.setCharacterSize(35);
 		gameOverText.setStyle(sf::Text::Regular);
