@@ -30,7 +30,6 @@ namespace platform {
 
 	tgui::Gui gui{ window };
 
-
 	Game::Game() {
 		_deltaTime = 0;
 		for (int i = 0; i < scenesAmount; i++) {

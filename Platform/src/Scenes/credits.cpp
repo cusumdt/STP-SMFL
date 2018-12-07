@@ -2,7 +2,6 @@
 
 #include <iostream>
 
-#include <SFML/Graphics.hpp>
 #include "TGUI\TGUI.hpp"
 
 #include "../Logic/game.h"
@@ -22,7 +21,9 @@ namespace platform {
 	static tgui::Button::Ptr buttons[maxButtons];
 
 	Credits::Credits() {
-
+		bg.loadFromFile("res/credits_bg.png");
+		credits_bg.setTexture(bg);
+		credits_bg.setPosition(0, 0);
 	}
 	Credits::~Credits() {
 
@@ -33,12 +34,12 @@ namespace platform {
 			buttons[i] = tgui::Button::create();
 			gui.add(buttons[i]);
 			buttons[i]->setRenderer(blackTheme.getRenderer("Button"));
-			buttons[i]->setSize(240, 100);
-			buttons[i]->setTextSize(60);
+			buttons[i]->setSize(120, 50);
+			buttons[i]->setTextSize(30);
 			buttons[i]->setInheritedFont(fontButtons);
 		}
 
-		buttons[0]->setPosition(100, Game::screenHeight - 150);
+		buttons[0]->setPosition(50, Game::screenHeight -60);
 		buttons[0]->setText("Back");
 		buttons[0]->connect("Pressed", [&]() { Game::setCurrentScene(MenuScene); });
 
@@ -46,7 +47,7 @@ namespace platform {
 	void Credits::update() {
 	}
 	void Credits::draw() {
-
+		window.draw(credits_bg);
 	}
 	void Credits::deInit() {
 

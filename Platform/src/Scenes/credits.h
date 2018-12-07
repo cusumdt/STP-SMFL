@@ -2,9 +2,12 @@
 #define CREDITS_H
 
 #include "../Utility/scenes.h"
+#include "SFML/Graphics.hpp"
 
 namespace platform {
 	class Credits : public Scene {
+		sf::Texture bg;
+		sf::Sprite credits_bg;
 	public:
 		Credits();
 		~Credits();

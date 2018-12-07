@@ -42,23 +42,23 @@ namespace platform {
 			gui.add(buttons[i]);
 			buttons[i]->setRenderer(blackTheme.getRenderer("Button"));
 			buttons[i]->setSize(240, 100);
-			buttons[i]->setTextSize(60);
+			buttons[i]->setTextSize(50);
 			buttons[i]->setInheritedFont(fontButtons);
 		}
 
-		buttons[0]->setPosition(Game::screenWidth / 2 - 120, Game::screenHeight / 2 - 140);
+		buttons[0]->setPosition(Game::screenWidth / 2 - buttons[0]->getSize().x/2, Game::screenHeight / 2 - 140);
 		buttons[0]->setText("Play");
 		buttons[0]->connect("Pressed", [&]() {Game::setCurrentScene(GameScene); });
 
-		buttons[1]->setPosition(Game::screenWidth / 2 - 120, Game::screenHeight / 2 - 20);
+		buttons[1]->setPosition(Game::screenWidth / 2 - buttons[0]->getSize().x / 2, Game::screenHeight / 2 - 20);
 		buttons[1]->setText("Tutorial");
 		buttons[1]->connect("Pressed", actualSceneIsWorking);
 
-		buttons[2]->setPosition(Game::screenWidth / 2 - 120, Game::screenHeight / 2 + 100);
+		buttons[2]->setPosition(Game::screenWidth / 2 - buttons[0]->getSize().x / 2, Game::screenHeight / 2 + 100);
 		buttons[2]->setText("Credits");
 		buttons[2]->connect("Pressed", [&]() {Game::setCurrentScene(CreditsScene); });
 
-		buttons[3]->setPosition(Game::screenWidth / 2 - 120, Game::screenHeight / 2 + 220);
+		buttons[3]->setPosition(Game::screenWidth / 2 - buttons[0]->getSize().x / 2, Game::screenHeight / 2 + 220);
 		buttons[3]->setText("Exit");
 		buttons[3]->connect("Pressed", actualSceneIsExit);
 	}
