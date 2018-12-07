@@ -1,18 +1,24 @@
 <p align="center">
-<h1 align="center">LOGO</h1>
+<img width="512" src="https://github.com/cusumdt/STP-SMFL/blob/master/screenshots/logo.png">
 </p>
-
 # Hello!
 We are **Ivan Castellano** and **Cristian Cusumano** this is our first collab game dev using **C++** & **SFML**.
 A simple platformer.
 Enjoy!
 
 # Some Screenshots
--image-image-image<br>
--image-image-image<br>
--image-image-image<br>
--image-image-image<br>
--image-image-image
+<p align="center">
+<img width="1000" src="https://github.com/cusumdt/STP-SMFL/blob/master/screenshots/1.png">
+</p>
+<p align="center">
+<img width="1000" src="https://github.com/cusumdt/STP-SMFL/blob/master/screenshots/2.png">
+</p>
+<p align="center">
+<img width="1000" src="https://github.com/cusumdt/STP-SMFL/blob/master/screenshots/3.png">
+</p>
+<p align="center">
+<img width="1000" src="https://github.com/cusumdt/STP-SMFL/blob/master/screenshots/4.png">
+</p>
 
 # Skills Ivan Castellano
 - **C++/C# Programmer**
