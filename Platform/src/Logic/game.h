@@ -27,7 +27,6 @@ namespace platform {
 	const int scenesAmount = 5;
 
 	class Game {
-		sf::Music music;
 		static ActualScene _currentScene;
 		static Scene* scenes[scenesAmount];
 	public:

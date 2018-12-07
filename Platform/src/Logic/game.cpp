@@ -27,7 +27,7 @@ namespace platform {
 	//View Camera
 	View vw2;
 	//Music
-
+	sf::Music music;
 
 	//Window renderer
 	RenderWindow window(VideoMode(Game::screenWidth, Game::screenHeight), 
@@ -53,12 +53,7 @@ namespace platform {
 		scenes[CreditsScene] = new Credits();
 		scenes[GameOverScene] = new GameOver();
 		scenes[VictoryScene] = new Victory();
-		if (!music.openFromFile("res/Sound/nedkamun.ogg")) {
-			std::cout << "error reload sound" << std::endl;
-		}
-		music.setVolume(100);         // reduce the volume
-		music.setLoop(true);         // make it loop
-		music.play();
+	
 	}
 
 	Game::~Game() {
@@ -70,7 +65,12 @@ namespace platform {
 	}
 
 	void Game::init() {
-
+		if (!music.openFromFile("res/Sound/nedkamun.ogg")) {
+			std::cout << "error reload sound" << std::endl;
+		}
+		music.setVolume(100);         // reduce the volume
+		music.setLoop(true);         // make it loop
+		music.play();
 		_deltaTime = 0;
 
 		for (int i = 0; i < scenesAmount; i++){
