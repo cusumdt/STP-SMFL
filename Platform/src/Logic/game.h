@@ -2,9 +2,10 @@
 #define GAME_H
 #include "SFML/Graphics.hpp"
 #include "STP/TMXLoader.hpp"
+#include "SFML/Audio.hpp"
 #include "TGUI\TGUI.hpp"
 
-#include "../Utility/scenes.h"
+#include "Utility/scenes.h"
 
 namespace platform {
 
@@ -26,6 +27,7 @@ namespace platform {
 	const int scenesAmount = 5;
 
 	class Game {
+		sf::Music music;
 		static ActualScene _currentScene;
 		static Scene* scenes[scenesAmount];
 	public:

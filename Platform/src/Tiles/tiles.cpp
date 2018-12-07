@@ -8,7 +8,7 @@ namespace platform {
 		_sprite = sprite;
 		_sprite.setPosition(_x, _y);
 		_collider.setPosition(_sprite.getPosition());
-		_collider.setSize(sf::Vector2f(_texture.getSize().x, _texture.getSize().y));
+		_collider.setSize(sf::Vector2f(static_cast<float>(_texture.getSize().x), static_cast<float>(_texture.getSize().y)));
 	}
 	Tiles::Tiles(float x, float y, typeTile type, sf::Texture texture) {
 		_x = x;
@@ -18,7 +18,7 @@ namespace platform {
 		_sprite.setTexture(texture);
 		_sprite.setPosition(_x, _y);
 		_collider.setPosition(_sprite.getPosition());
-		_collider.setSize(sf::Vector2f(_texture.getSize().x, _texture.getSize().y));
+		_collider.setSize(sf::Vector2f(static_cast<float>(_texture.getSize().x), static_cast<float>(_texture.getSize().y)));
 	}
 	Tiles::Tiles(float x, float y, typeTile type, const char texture[]){
 		_x = x;
@@ -28,7 +28,7 @@ namespace platform {
 		_sprite.setTexture(_texture);
 		_sprite.setPosition(_x, _y);
 		_collider.setPosition(_sprite.getPosition());
-		_collider.setSize(sf::Vector2f(_texture.getSize().x, _texture.getSize().y));
+		_collider.setSize(sf::Vector2f(static_cast<float>(_texture.getSize().x), static_cast<float>(_texture.getSize().y)));
 	}
 	void Tiles::setX(float x) {
 		_x = x;

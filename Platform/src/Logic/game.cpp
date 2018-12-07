@@ -9,7 +9,7 @@
 #include "Scenes/credits.h"
 #include "Scenes/gameOver.h"
 #include "Scenes/victory.h"
-#include "SFML/Audio.hpp"
+
 
 
 using namespace tmx;
@@ -53,7 +53,6 @@ namespace platform {
 		scenes[CreditsScene] = new Credits();
 		scenes[GameOverScene] = new GameOver();
 		scenes[VictoryScene] = new Victory();
-		sf::Music music;
 		if (!music.openFromFile("res/Sound/nedkamun.ogg")) {
 			std::cout << "error reload sound" << std::endl;
 		}

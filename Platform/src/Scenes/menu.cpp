@@ -45,7 +45,7 @@ namespace platform {
 		sprite_logo.setTexture(logo);
 		sprite_logo.setPosition(static_cast<float>(Game::screenWidth/2), 150.0f);
 		sprite_logo.setScale(0.5f, 0.5f);
-		sprite_logo.setOrigin(sprite_logo.getTexture()->getSize().x / 2, sprite_logo.getTexture()->getSize().y / 2);
+		sprite_logo.setOrigin(static_cast<float>(sprite_logo.getTexture()->getSize().x / 2), static_cast<float>(sprite_logo.getTexture()->getSize().y / 2));
 
 		font.loadFromFile("res/fonts/roboto.ttf");
 

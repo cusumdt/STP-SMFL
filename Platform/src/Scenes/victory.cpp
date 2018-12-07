@@ -41,7 +41,7 @@ namespace platform {
 		victoryText.setCharacterSize(150);
 		victoryText.setStyle(sf::Text::Bold);
 		victoryText.setFillColor(sf::Color::White);
-		victoryText.setOrigin(victoryText.getCharacterSize() / 2, 1);
+		victoryText.setOrigin(static_cast<float>(victoryText.getCharacterSize() / 2), 1.0f);
 		victoryText.setPosition(static_cast<float>(Game::screenWidth / 2 - 250), 50.0f);
 
 		for (int i = 0; i < maxButtons; i++) {
