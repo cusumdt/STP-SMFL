@@ -10,16 +10,16 @@ Enjoy!
 
 # Some Screenshots
 <p align="center">
-<img width="1000" src="https://github.com/cusumdt/STP-SMFL/blob/master/screenshots/1.png">
+<img width="1000" src="https://github.com/cusumdt/STP-SMFL/blob/master/screenshots/1.jpg">
 </p>
 <p align="center">
-<img width="1000" src="https://github.com/cusumdt/STP-SMFL/blob/master/screenshots/2.png">
+<img width="1000" src="https://github.com/cusumdt/STP-SMFL/blob/master/screenshots/2.jpg">
 </p>
 <p align="center">
-<img width="1000" src="https://github.com/cusumdt/STP-SMFL/blob/master/screenshots/3.png">
+<img width="1000" src="https://github.com/cusumdt/STP-SMFL/blob/master/screenshots/3.jpg">
 </p>
 <p align="center">
-<img width="1000" src="https://github.com/cusumdt/STP-SMFL/blob/master/screenshots/4.png">
+<img width="1000" src="https://github.com/cusumdt/STP-SMFL/blob/master/screenshots/4.jpg">
 </p>
 
 # Skills Ivan Castellano
