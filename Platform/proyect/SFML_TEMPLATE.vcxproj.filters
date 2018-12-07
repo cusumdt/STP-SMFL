@@ -38,6 +38,9 @@
     <ClCompile Include="..\src\pugixml\pugixml.cpp">
       <Filter>pugixml</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Utility\scenes.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Player\bullet.h">
@@ -81,6 +84,9 @@
     </ClInclude>
     <ClInclude Include="..\src\pugixml\pugixml.hpp">
       <Filter>pugixml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Utility\scenes.h">
+      <Filter>Utility</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

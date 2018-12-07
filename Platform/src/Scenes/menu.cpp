@@ -10,8 +10,6 @@
 
 namespace platform {
 
-	bool Menu::_sceneEnd = false;
-
 	//UI Font
 	static tgui::Font fontButtons("res/fonts/roboto.ttf");
 
@@ -23,16 +21,10 @@ namespace platform {
 	static const int maxButtons = 4;
 	static tgui::Button::Ptr buttons[maxButtons];
 
-	static void actualSceneIsGame() {
-		Menu::setSceneEnd(true);
-		Game::setCurrentScene(GameScene);
+	static void actualSceneIsWorking() {
+		std::cout << "This Button Work" << std::endl;
 	}
-	static void actualSceneIsTutorial() {
-		std::cout << "Tutorial" << std::endl;
-	}
-	static void actualSceneIsCredits() {
-		Game::setCurrentScene(CreditsScene);
-	}
+
 	static void actualSceneIsExit() {
 		window.close();
 	}
@@ -56,15 +48,15 @@ namespace platform {
 
 		buttons[0]->setPosition(Game::screenWidth / 2 - 120, Game::screenHeight / 2 - 140);
 		buttons[0]->setText("Play");
-		buttons[0]->connect("Pressed", actualSceneIsGame);
+		buttons[0]->connect("Pressed", [&]() {Game::setCurrentScene(GameScene); });
 
 		buttons[1]->setPosition(Game::screenWidth / 2 - 120, Game::screenHeight / 2 - 20);
 		buttons[1]->setText("Tutorial");
-		buttons[1]->connect("Pressed", actualSceneIsTutorial);
+		buttons[1]->connect("Pressed", actualSceneIsWorking);
 
 		buttons[2]->setPosition(Game::screenWidth / 2 - 120, Game::screenHeight / 2 + 100);
 		buttons[2]->setText("Credits");
-		buttons[2]->connect("Pressed", actualSceneIsCredits);
+		buttons[2]->connect("Pressed", [&]() {Game::setCurrentScene(CreditsScene); });
 
 		buttons[3]->setPosition(Game::screenWidth / 2 - 120, Game::screenHeight / 2 + 220);
 		buttons[3]->setText("Exit");
@@ -77,18 +69,22 @@ namespace platform {
 		
 	}
 	void Menu::deInit() {
-		for (int i = 0; i < maxButtons; i++)
-		{
-			buttons[i]->setVisible(false);
+	}
+
+	void Menu::showGUI(){
+		for (int i = 0; i < maxButtons; i++){
+			if (buttons[i] != NULL){
+				buttons[i]->setVisible(true);
+			}
 		}
 	}
 
-	bool Menu::getSceneEnd() {
-		return _sceneEnd;
-	}
-
-	void Menu::setSceneEnd(bool end) {
-		_sceneEnd = end;
+	void Menu::hideGUI(){
+		for (int i = 0; i < maxButtons; i++){
+			if (buttons[i] != NULL){
+				buttons[i]->setVisible(false);
+			}
+		}
 	}
 
 	

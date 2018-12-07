@@ -1,10 +1,11 @@
 #ifndef GAMEPLAY_H
 #define GAMEPLAY_H
 
+#include "../Utility/scenes.h"
+
 namespace platform {
 
-	class Gameplay {
-		static bool _sceneEnd;
+	class Gameplay : public Scene {
 	public:
 		Gameplay();
 		~Gameplay();
@@ -12,8 +13,8 @@ namespace platform {
 		void update();
 		void draw();
 		void deInit();
-		bool getSceneEnd();
-		static void setSceneEnd(bool end);
+		void showGUI();
+		void hideGUI();
 	};	
 }
 #endif // !GAMEPLAY.H

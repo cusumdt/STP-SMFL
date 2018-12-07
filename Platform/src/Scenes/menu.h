@@ -1,12 +1,11 @@
 #ifndef MENU_H
 #define MENU_H
 
-#include "../Utility/buttons.h"
+#include "../Utility/scenes.h"
 
 namespace platform {
 	
-	class Menu {
-		static bool _sceneEnd;
+	class Menu : public Scene {
 	public:
 		Menu();
 		~Menu();
@@ -14,8 +13,8 @@ namespace platform {
 		void update();
 		void draw();
 		void deInit();
-		bool getSceneEnd();
-		static void setSceneEnd(bool end);
+		void showGUI();
+		void hideGUI();
 	};
 }
 #endif // !MENU_H

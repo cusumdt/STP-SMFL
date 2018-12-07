@@ -11,8 +11,6 @@
 #include "../Utility/camera.h"
 #include "../Utility/const_data.h"
 
-#include "../Utility/buttons.h"
-
 #include "../Enemy/enemy.h"
 #include <ctime>
 
@@ -40,8 +38,6 @@ namespace platform {
 	//sf::RectangleShape test; // not used in final game, just for testing purposes.
 	sf::RectangleShape rectangles[maxColisionsBoxes];
 
-	bool Gameplay::_sceneEnd = false;
-
 	View vw1;
 	Player* player = new Player();
 	Enemy* vecEnemy[CANT_ENEMYS];
@@ -63,8 +59,6 @@ namespace platform {
 	}
 
 	void Gameplay::init() {
-
-		
 
 		srand(time(0));
 		_time = 0;
@@ -256,12 +250,20 @@ namespace platform {
 		}
 	}
 
-	bool Gameplay::getSceneEnd() {
-		return _sceneEnd;
+	void Gameplay::showGUI() {
+		/*for (int i = 0; i < maxButtons; i++) {
+			if (buttons[i] != NULL) {
+				buttons[i]->setVisible(true);
+			}
+		}*/
 	}
 
-	void Gameplay::setSceneEnd(bool end) {
-		_sceneEnd = end;
+	void Gameplay::hideGUI() {
+		/*for (int i = 0; i < maxButtons; i++) {
+			if (buttons[i] != NULL) {
+				buttons[i]->setVisible(false);
+			}
+		}*/
 	}
 }
 

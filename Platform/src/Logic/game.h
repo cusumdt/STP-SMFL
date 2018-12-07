@@ -4,6 +4,8 @@
 #include "STP/TMXLoader.hpp"
 #include "TGUI\TGUI.hpp"
 
+#include "../Utility/scenes.h"
+
 namespace platform {
 
 	extern tmx::TileMap map;
@@ -16,14 +18,15 @@ namespace platform {
 	enum ActualScene {
 		MenuScene,
 		GameScene,
-		GameoverScene,
-		CreditsScene
+		CreditsScene,
+		GameOverScene
 	};
 
-	extern ActualScene actualScene;
+	const int scenesAmount = 3;
 
 	class Game {
-		static int _currentScene;
+		static ActualScene _currentScene;
+		static Scene* scenes[scenesAmount];
 	public:
 		static const short int screenWidth;
 		static const short int screenHeight;
@@ -37,9 +40,9 @@ namespace platform {
 		void runGame();
 		void setDeltaTime(float elapsed);
 		float getDeltaTime();
-		static void setCurrentScene(int current);
-		static int getCurrentScene();
-		ActualScene getActualScene();
+
+		static void setCurrentScene(ActualScene current);
+		static ActualScene getCurrentScene();
 	};
 
 }

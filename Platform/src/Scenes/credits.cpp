@@ -17,16 +17,9 @@ namespace platform {
 	//UI Theme
 	static tgui::Theme blackTheme{ "res/themes/Black.txt" };
 
-	bool Credits::_sceneEnd = false;
-
 	//Buttons
 	static const int maxButtons = 1;
 	static tgui::Button::Ptr buttons[maxButtons];
-
-	static void actualSceneIsMenu() {
-		Credits::setSceneEnd(true);
-		Game::setCurrentScene(MenuScene);
-	}
 
 	Credits::Credits() {
 
@@ -45,9 +38,9 @@ namespace platform {
 			buttons[i]->setInheritedFont(fontButtons);
 		}
 
-		buttons[0]->setPosition(160, Game::screenHeight - 100);
+		buttons[0]->setPosition(100, Game::screenHeight - 150);
 		buttons[0]->setText("Back");
-		buttons[0]->connect("Pressed", actualSceneIsMenu);
+		buttons[0]->connect("Pressed", [&]() { Game::setCurrentScene(MenuScene); });
 
 	}
 	void Credits::update() {
@@ -56,18 +49,23 @@ namespace platform {
 
 	}
 	void Credits::deInit() {
-		for (int i = 0; i < maxButtons; i++)
-		{
-			buttons[i]->setVisible(false);
+
+	}
+
+	void Credits::showGUI() {
+		for (int i = 0; i < maxButtons; i++) {
+			if (buttons[i] != NULL) {
+				buttons[i]->setVisible(true);
+			}
 		}
 	}
 
-	bool Credits::getSceneEnd() {
-		return _sceneEnd;
-	}
-
-	void Credits::setSceneEnd(bool end) {
-		_sceneEnd = end;
+	void Credits::hideGUI() {
+		for (int i = 0; i < maxButtons; i++) {
+			if (buttons[i] != NULL) {
+				buttons[i]->setVisible(false);
+			}
+		}
 	}
 }
 

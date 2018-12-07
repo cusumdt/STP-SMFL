@@ -32,6 +32,7 @@
     <ClCompile Include="..\src\Utility\camera.cpp" />
     <ClCompile Include="..\src\Utility\Collision.cpp" />
     <ClCompile Include="..\src\Utility\gravity.cpp" />
+    <ClCompile Include="..\src\Utility\scenes.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Enemy\enemy.h" />
@@ -48,6 +49,7 @@
     <ClInclude Include="..\src\Utility\Collision.h" />
     <ClInclude Include="..\src\Utility\const_data.h" />
     <ClInclude Include="..\src\Utility\gravity.h" />
+    <ClInclude Include="..\src\Utility\scenes.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
