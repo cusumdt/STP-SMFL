@@ -196,7 +196,7 @@ namespace platform {
 			//Player
 			if (!player->getIsOnGround() && !player->getIsJump()) {
 				gravity->state(Game::_deltaTime);
-				player->setY(player->getY() + gravity->getStrong());
+				player->setY(player->getY() + gravity->getStrong()*Game::_deltaTime);
 			}
 
 			player->movement();

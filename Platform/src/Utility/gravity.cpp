@@ -4,7 +4,7 @@
 namespace platform {
 
 	Gravity::Gravity() {
-		_intensity = 0.5f;
+		_intensity = 500.0f;
 		_strong = 0;
 		_time = 0.0f;
 		_state = true;
