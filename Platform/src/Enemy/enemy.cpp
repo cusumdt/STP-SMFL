@@ -10,9 +10,9 @@ namespace platform {
 		texture.loadFromFile("res/Enemy/enemy.png");
 		sprite.setTexture(texture);
 		sprite.setPosition(_x, _y);
-		sprite.setOrigin(texture.getSize().x / 2, 1);
+		sprite.setOrigin(static_cast<float>(texture.getSize().x / 2), static_cast<float>(1));
 		_collider.setPosition(sprite.getPosition());
-		_collider.setSize(sf::Vector2f(texture.getSize().x, texture.getSize().y));
+		_collider.setSize(sf::Vector2f(static_cast<float>(texture.getSize().x), static_cast<float>(texture.getSize().y)));
 	}
 	Enemy::~Enemy() {
 	

@@ -39,120 +39,120 @@ namespace platform {
 		//Scene
 		if (tiles[0] == NULL) {
 			tiles[0] = new Tiles(
-				levelTutorialConstData::PLATFORM1CORDINATE_X,
-				levelTutorialConstData::PLATFORM1CORDINATE_Y, 
+				static_cast<float>(levelTutorialConstData::PLATFORM1CORDINATE_X),
+				static_cast<float>(levelTutorialConstData::PLATFORM1CORDINATE_Y), 
 				PLATFORM, 
 				PLATFORM_LARGE
 			);
 		}
 		if (tiles[1] == NULL) {
 			tiles[1] = new Tiles(
-				levelTutorialConstData::PLATFORM2CORDINATE_X, 
-				levelTutorialConstData::PLATFORM2CORDINATE_Y, 
+				static_cast<float>(levelTutorialConstData::PLATFORM2CORDINATE_X),
+				static_cast<float>(levelTutorialConstData::PLATFORM2CORDINATE_Y), 
 				PLATFORM, 
 				PLATFORM_LARGE
 			);
 		}
 		if (tiles[2] == NULL) {
 			tiles[2] = new Tiles(
-				levelTutorialConstData::PLATFORM3CORDINATE_X, 
-				levelTutorialConstData::PLATFORM3CORDINATE_Y, 
+				static_cast<float>(levelTutorialConstData::PLATFORM3CORDINATE_X),
+				static_cast<float>(levelTutorialConstData::PLATFORM3CORDINATE_Y), 
 				PLATFORM,
 				PLATFORM_LARGE
 			);
 		}
 		if (tiles[3] == NULL) {
 			tiles[3] = new Tiles(
-				levelTutorialConstData::PLATFORM4CORDINATE_X,
-				levelTutorialConstData::PLATFORM4CORDINATE_Y, 
+				static_cast<float>(levelTutorialConstData::PLATFORM4CORDINATE_X),
+				static_cast<float>(levelTutorialConstData::PLATFORM4CORDINATE_Y), 
 				PLATFORM, 
 				PLATFORM_LARGE
 			);
 		}
 		if (tiles[4] == NULL) {
 			tiles[4] = new Tiles(
-				levelTutorialConstData::CACTUS1CORDINATE_X, 
-				levelTutorialConstData::CACTUS1CORDINATE_Y,
+				static_cast<float>(levelTutorialConstData::CACTUS1CORDINATE_X),
+				static_cast<float>(levelTutorialConstData::CACTUS1CORDINATE_Y),
 				DECORATION, 
 				CACTUS
 			);
 		}
 		if (tiles[5] == NULL) {
 			tiles[5] = new Tiles(
-				levelTutorialConstData::GRASS1CORDINATE_X,
-				levelTutorialConstData::GRASS1CORDINATE_Y,
+				static_cast<float>(levelTutorialConstData::GRASS1CORDINATE_X),
+				static_cast<float>(levelTutorialConstData::GRASS1CORDINATE_Y),
 				DECORATION, 
 				GRASS1
 			);
 		}
 		if (tiles[6] == NULL) {
 			tiles[6] = new Tiles(
-				levelTutorialConstData::GRASS2CORDINATE_X,
-				levelTutorialConstData::GRASS2CORDINATE_Y,
+				static_cast<float>(levelTutorialConstData::GRASS2CORDINATE_X),
+				static_cast<float>(levelTutorialConstData::GRASS2CORDINATE_Y),
 				DECORATION, 
 				GRASS2
 			);
 		}
 		if (tiles[7] == NULL) {
 			tiles[7] = new Tiles(
-				levelTutorialConstData::GRASS3CORDINATE_X,
-				levelTutorialConstData::GRASS3CORDINATE_Y,
+				static_cast<float>(levelTutorialConstData::GRASS3CORDINATE_X),
+				static_cast<float>(levelTutorialConstData::GRASS3CORDINATE_Y),
 				DECORATION,
 				GRASS1
 			);
 		}
 		if (tiles[8] == NULL) {
 			tiles[8] = new Tiles(
-				levelTutorialConstData::CACTUS2CORDINATE_X,
-				levelTutorialConstData::CACTUS2CORDINATE_Y,
+				static_cast<float>(levelTutorialConstData::CACTUS2CORDINATE_X),
+				static_cast<float>(levelTutorialConstData::CACTUS2CORDINATE_Y),
 				DECORATION,
 				CACTUS
 			);
 		}
 		if (tiles[9] == NULL) {
 			tiles[9] = new Tiles(
-				levelTutorialConstData::MUSHROOM1CORDINATE_X,
-				levelTutorialConstData::MUSHROOM1CORDINATE_Y,
+				static_cast<float>(levelTutorialConstData::MUSHROOM1CORDINATE_X),
+				static_cast<float>(levelTutorialConstData::MUSHROOM1CORDINATE_Y),
 				DECORATION,
 				MUSHROOM
 			);
 		}
 		if (tiles[10] == NULL) {
 			tiles[10] = new Tiles(
-				levelTutorialConstData::PORTALCORDINATE_X,
-				levelTutorialConstData::PORTALCORDINATE_Y,
+				static_cast<float>(levelTutorialConstData::PORTALCORDINATE_X),
+				static_cast<float>(levelTutorialConstData::PORTALCORDINATE_Y),
 				PORTAL,
 				PORTAL1
 			);
 		}
 		if (tiles[11] == NULL) {
 			tiles[11] = new Tiles(
-				levelTutorialConstData::TEXTKEY1CORDINATE_X,
-				levelTutorialConstData::TEXTKEY1CORDINATE_Y,
+				static_cast<float>(levelTutorialConstData::TEXTKEY1CORDINATE_X),
+				static_cast<float>(levelTutorialConstData::TEXTKEY1CORDINATE_Y),
 				DECORATION,
 				TUTORIALKEY
 			);
 		}
 		if (tiles[12] == NULL) {
 			tiles[12] = new Tiles(
-				levelTutorialConstData::TEXTKEY2CORDINATE_X,
-				levelTutorialConstData::TEXTKEY2CORDINATE_Y,
+				static_cast<float>(levelTutorialConstData::TEXTKEY2CORDINATE_X),
+				static_cast<float>(levelTutorialConstData::TEXTKEY2CORDINATE_Y),
 				DECORATION,
 				TUTORIALKEY2
 			);
 		}
 		if (tiles[13] == NULL) {
 			tiles[13] = new Tiles(
-				levelTutorialConstData::TEXTCORDINATE_X,
-				levelTutorialConstData::TEXTCORDINATE_Y,
+				static_cast<float>(levelTutorialConstData::TEXTCORDINATE_X),
+				static_cast<float>(levelTutorialConstData::TEXTCORDINATE_Y),
 				DECORATION,
 				TUTORIALTEXT
 			);
 		}
 		if (tiles[14] == NULL) {
 			tiles[14] = new Tiles(
-				levelTutorialConstData::TEXT2CORDINATE_X,
-				levelTutorialConstData::TEXT2CORDINATE_Y,
+				static_cast<float>(levelTutorialConstData::TEXT2CORDINATE_X),
+				static_cast<float>(levelTutorialConstData::TEXT2CORDINATE_Y),
 				DECORATION,
 				TUTORIALTEXT2
 			);
@@ -187,24 +187,24 @@ namespace platform {
 		if (vecEnemy[0] != NULL) {
 			if (vecEnemy[0]->getLife() > 0) {
 				vecEnemy[0]->movement(
-					levelTutorialConstData::ENEMY1MAX_X,
-					levelTutorialConstData::ENEMY1MIN_X
+					static_cast<float>(levelTutorialConstData::ENEMY1MAX_X),
+					static_cast<float>(levelTutorialConstData::ENEMY1MIN_X)
 				);
 			}
 		}
 		if (vecEnemy[1] != NULL) {
 			if (vecEnemy[1]->getLife() > 0) {
 				vecEnemy[1]->movement(
-					levelTutorialConstData::ENEMY2MAX_X,
-					levelTutorialConstData::ENEMY2MIN_X
+					static_cast<float>(levelTutorialConstData::ENEMY2MAX_X),
+					static_cast<float>(levelTutorialConstData::ENEMY2MIN_X)
 				);
 			}
 		}
 		if (vecEnemy[2] != NULL) {
 			if (vecEnemy[2]->getLife() > 0) {
 				vecEnemy[2]->movement(
-					levelTutorialConstData::ENEMY3MAX_X,
-					levelTutorialConstData::ENEMY3MIN_X
+					static_cast<float>(levelTutorialConstData::ENEMY3MAX_X),
+					static_cast<float>(levelTutorialConstData::ENEMY3MIN_X)
 				);
 			}
 		}

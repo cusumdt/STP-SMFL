@@ -38,88 +38,88 @@ namespace platform {
 		//Scene
 		if (tiles[0] == NULL) {
 			tiles[0] = new Tiles(
-				levelOneConstData::PLATFORM1CORDINATE_X,
-				levelOneConstData::PLATFORM1CORDINATE_Y,
+				static_cast<float>(levelOneConstData::PLATFORM1CORDINATE_X),
+				static_cast<float>(levelOneConstData::PLATFORM1CORDINATE_Y),
 				PLATFORM,
 				PLATFORM_LARGE
 			);
 		}
 		if (tiles[1] == NULL) {
 			tiles[1] = new Tiles(
-				levelOneConstData::PLATFORM2CORDINATE_X,
-				levelOneConstData::PLATFORM2CORDINATE_Y,
+				static_cast<float>(levelOneConstData::PLATFORM2CORDINATE_X),
+				static_cast<float>(levelOneConstData::PLATFORM2CORDINATE_Y),
 				PLATFORM,
 				PLATFORM_LARGE
 			);
 		}
 		if (tiles[2] == NULL) {
 			tiles[2] = new Tiles(
-				levelOneConstData::PLATFORM3CORDINATE_X,
-				levelOneConstData::PLATFORM3CORDINATE_Y,
+				static_cast<float>(levelOneConstData::PLATFORM3CORDINATE_X),
+				static_cast<float>(levelOneConstData::PLATFORM3CORDINATE_Y),
 				PLATFORM,
 				PLATFORM_LARGE
 			);
 		}	
 		if (tiles[3] == NULL) {
 			tiles[3] = new Tiles(
-				levelOneConstData::PLATFORM4CORDINATE_X,
-				levelOneConstData::PLATFORM4CORDINATE_Y,
+				static_cast<float>(levelOneConstData::PLATFORM4CORDINATE_X),
+				static_cast<float>(levelOneConstData::PLATFORM4CORDINATE_Y),
 				PLATFORM,
 				PLATFORM_LARGE
 			);
 		}
 		if (tiles[4] == NULL) {
 			tiles[4] = new Tiles(
-				levelOneConstData::PLATFORM5CORDINATE_X,
-				levelOneConstData::PLATFORM5CORDINATE_Y,
+				static_cast<float>(levelOneConstData::PLATFORM5CORDINATE_X),
+				static_cast<float>(levelOneConstData::PLATFORM5CORDINATE_Y),
 				PLATFORM,
 				PLATFORM_LARGE
 			);
 		}
 		if (tiles[5] == NULL) {
 			tiles[5] = new Tiles(
-				levelOneConstData::PLATFORM6CORDINATE_X,
-				levelOneConstData::PLATFORM6CORDINATE_Y,
+				static_cast<float>(levelOneConstData::PLATFORM6CORDINATE_X),
+				static_cast<float>(levelOneConstData::PLATFORM6CORDINATE_Y),
 				PLATFORM,
 				PLATFORM_LARGE
 			);
 		}
 		if (tiles[6] == NULL) {
 			tiles[6] = new Tiles(
-				levelOneConstData::PORTALCORDINATE_X,
-				levelOneConstData::PORTALCORDINATE_Y,
+				static_cast<float>(levelOneConstData::PORTALCORDINATE_X),
+				static_cast<float>(levelOneConstData::PORTALCORDINATE_Y),
 				PORTAL,
 				PORTAL1
 			);
 		}
 		if (tiles[7] == NULL) {
 			tiles[7] = new Tiles(
-				levelOneConstData::MUSHROOM1CORDINATE_X,
-				levelOneConstData::MUSHROOM1CORDINATE_Y,
+				static_cast<float>(levelOneConstData::MUSHROOM1CORDINATE_X),
+				static_cast<float>(levelOneConstData::MUSHROOM1CORDINATE_Y),
 				DECORATION,
 				MUSHROOM
 			);
 		}
 		if (tiles[8] == NULL) {
 			tiles[8] = new Tiles(
-				levelOneConstData::CACTUS1CORDINATE_X,
-				levelOneConstData::CACTUS1CORDINATE_Y,
+				static_cast<float>(levelOneConstData::CACTUS1CORDINATE_X),
+				static_cast<float>(levelOneConstData::CACTUS1CORDINATE_Y),
 				DECORATION,
 				CACTUS
 			);
 		}
 		if (tiles[9] == NULL) {
 			tiles[9] = new Tiles(
-				levelOneConstData::CACTUS2CORDINATE_X,
-				levelOneConstData::CACTUS2CORDINATE_Y,
+				static_cast<float>(levelOneConstData::CACTUS2CORDINATE_X),
+				static_cast<float>(levelOneConstData::CACTUS2CORDINATE_Y),
 				DECORATION,
 				CACTUS
 			);
 		}
 		if (tiles[10] == NULL) {
 			tiles[10] = new Tiles(
-				levelOneConstData::GRASS1CORDINATE_X,
-				levelOneConstData::GRASS1CORDINATE_Y,
+				static_cast<float>(levelOneConstData::GRASS1CORDINATE_X),
+				static_cast<float>(levelOneConstData::GRASS1CORDINATE_Y),
 				DECORATION,
 				GRASS2
 			);
@@ -127,8 +127,8 @@ namespace platform {
 		}
 		if (tiles[11] == NULL) {
 			tiles[11] = new Tiles(
-				levelOneConstData::GRASS2CORDINATE_X,
-				levelOneConstData::GRASS2CORDINATE_Y,
+				static_cast<float>(levelOneConstData::GRASS2CORDINATE_X),
+				static_cast<float>(levelOneConstData::GRASS2CORDINATE_Y),
 				DECORATION,
 				GRASS2
 			);
@@ -136,8 +136,8 @@ namespace platform {
 		}
 		if (tiles[12] == NULL) {
 			tiles[12] = new Tiles(
-				levelOneConstData::GRASS3CORDINATE_X,
-				levelOneConstData::GRASS3CORDINATE_Y,
+				static_cast<float>(levelOneConstData::GRASS3CORDINATE_X),
+				static_cast<float>(levelOneConstData::GRASS3CORDINATE_Y),
 				DECORATION,
 				GRASS1
 			);
@@ -207,56 +207,56 @@ namespace platform {
 		if (vecEnemy[0] != NULL) {
 			if (vecEnemy[0]->getLife() > 0) {
 				vecEnemy[0]->movement(
-					levelOneConstData::ENEMY1MAX_X,
-					levelOneConstData::ENEMY1MIN_X
+					static_cast<float>(levelOneConstData::ENEMY1MAX_X),
+					static_cast<float>(levelOneConstData::ENEMY1MIN_X)
 				);
 			}
 		}
 		if (vecEnemy[1] != NULL) {
 			if (vecEnemy[1]->getLife() > 0) {
 				vecEnemy[1]->movement(
-					levelOneConstData::ENEMY2MAX_X,
-					levelOneConstData::ENEMY2MIN_X
+					static_cast<float>(levelOneConstData::ENEMY2MAX_X),
+					static_cast<float>(levelOneConstData::ENEMY2MIN_X)
 				);
 			}
 		}
 		if (vecEnemy[2] != NULL) {
 			if (vecEnemy[2]->getLife() > 0) {
 				vecEnemy[2]->movement(
-					levelOneConstData::ENEMY3MAX_X,
-					levelOneConstData::ENEMY3MIN_X
+					static_cast<float>(levelOneConstData::ENEMY3MAX_X),
+					static_cast<float>(levelOneConstData::ENEMY3MIN_X)
 				);
 			}
 		}
 		if (vecEnemy[3] != NULL) {
 			if (vecEnemy[3]->getLife() > 0) {
 				vecEnemy[3]->movement(
-					levelOneConstData::ENEMY4MAX_X,
-					levelOneConstData::ENEMY4MIN_X
+					static_cast<float>(levelOneConstData::ENEMY4MAX_X),
+					static_cast<float>(levelOneConstData::ENEMY4MIN_X)
 				);
 			}
 		}
 		if (vecEnemy[4] != NULL) {
 			if (vecEnemy[4]->getLife() > 0) {
 				vecEnemy[4]->movement(
-					levelOneConstData::ENEMY5MAX_X,
-					levelOneConstData::ENEMY5MIN_X
+					static_cast<float>(levelOneConstData::ENEMY5MAX_X),
+					static_cast<float>(levelOneConstData::ENEMY5MIN_X)
 				);
 			}
 		}
 		if (vecEnemy[5] != NULL) {
 			if (vecEnemy[5]->getLife() > 0) {
 				vecEnemy[5]->movement(
-					levelOneConstData::ENEMY6MAX_X,
-					levelOneConstData::ENEMY6MIN_X
+					static_cast<float>(levelOneConstData::ENEMY6MAX_X),
+					static_cast<float>(levelOneConstData::ENEMY6MIN_X)
 				);
 			}
 		}
 		if (vecEnemy[6] != NULL) {
 			if (vecEnemy[6]->getLife() > 0) {
 				vecEnemy[6]->movement(
-					levelOneConstData::ENEMY7MAX_X,
-					levelOneConstData::ENEMY7MIN_X
+					static_cast<float>(levelOneConstData::ENEMY7MAX_X),
+					static_cast<float>(levelOneConstData::ENEMY7MIN_X)
 				);
 			}
 		}

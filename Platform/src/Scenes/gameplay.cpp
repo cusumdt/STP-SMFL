@@ -14,8 +14,6 @@
 #include "../Map/levelTutorial.h"
 #include "../Map/levelOne.h"
 
-#include <ctime>
-
 #include <iostream>
 
 using namespace tmx;
@@ -91,7 +89,6 @@ namespace platform {
 	}
 
 	void Gameplay::init() {
-		srand(time(0));
 		levelTutorial->initLevel();
 		levelOne->initLevel();
 		player->init();
@@ -108,11 +105,11 @@ namespace platform {
 		int i = 0;
 		for (pugi::xml_node_iterator it = object.begin(); it != object.end(); ++it)
 		{
-			rectangles[i].setPosition(sf::Vector2f(it->attribute("x").as_int(),
-				it->attribute("y").as_int()));
+			rectangles[i].setPosition(sf::Vector2f(static_cast<float>(it->attribute("x").as_int()),
+				static_cast<float>(it->attribute("y").as_int())));
 
-			rectangles[i].setSize(sf::Vector2f(it->attribute("width").as_int(),
-				it->attribute("height").as_int()));
+			rectangles[i].setSize(sf::Vector2f(static_cast<float>(it->attribute("width").as_int()),
+				static_cast<float>(it->attribute("height").as_int())));
 
 			rectangles[i].setFillColor(sf::Color::Transparent);
 			i++;
@@ -128,7 +125,7 @@ namespace platform {
 		pauseText.setCharacterSize(80);
 		pauseText.setStyle(sf::Text::Bold);
 		pauseText.setFillColor(sf::Color::White);
-		pauseText.setOrigin(pauseText.getCharacterSize() / 2, 1);
+		pauseText.setOrigin(static_cast<float>(pauseText.getCharacterSize() / 2), 1.0f);
 		pauseText.setPosition(static_cast<float>(Game::screenWidth / 2 - 50), 50.0f);
 
 		for (int i = 0; i < maxButtons; i++) {

@@ -43,7 +43,7 @@ namespace platform {
 		gameOverText.setCharacterSize(150);
 		gameOverText.setStyle(sf::Text::Bold);
 		gameOverText.setFillColor(sf::Color::White);
-		gameOverText.setOrigin(gameOverText.getCharacterSize() / 2,1);
+		gameOverText.setOrigin(static_cast<float>(gameOverText.getCharacterSize() / 2),1.0f);
 		gameOverText.setPosition(static_cast<float>(Game::screenWidth/2 - 350), 50.0f);
 
 		for (int i = 0; i < maxButtons; i++) {

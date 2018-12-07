@@ -17,10 +17,10 @@ namespace platform
 		_y = 500;
 		sprite.setTexture(texture);
 		sprite.setPosition(_x, _y);
-		sprite.setOrigin(texture.getSize().x / 2, 1);
+		sprite.setOrigin(static_cast<float>(texture.getSize().x / 2), 1.0f);
 		direction = Direction::RIGHTD;
 		_collider.setPosition(sprite.getPosition());
-		_collider.setSize(sf::Vector2f(texture.getSize().x, texture.getSize().y));
+		_collider.setSize(sf::Vector2f(static_cast<float>(texture.getSize().x), static_cast<float>(texture.getSize().y)));
 		_isOnGround = false;
 		_isJumping = false;
 		_timeJump = 0;
@@ -67,7 +67,7 @@ namespace platform
 
 				}
 				else {
-					_x = texture.getSize().x / 2;
+					_x = static_cast<float>(texture.getSize().x / 2);
 				}
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 					if (_isOnGround) {
